@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Background Remover</title>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-md m-2 bg-white fixed-top" id="topnav">
+<ul class="navbar-nav m-2">
+    <li class="nav-item ml-0">
+        <button id="plusbtn"  type="button" class="bg-success text-center justify-content-center"><i class="fa fa-plus text-white"></i></button>
+<!--    </li>-->
+    <li class="nav-item ml-2">
+    <button id="minusbtn" type="button" class="bg-danger text-center justify-content-center"><i class="fa fa-minus  text-white"></i> </button>
+<!--</li>-->
+    <li class="nav-item ml-2">
+        <button id="eraserbtn" type="button" class="text-center justify-content-center bg-outline-none"><i class="fa fa-eraser text-secondary"></i> </button>
+<!--</li>-->
+    <li class="nav-item ml-2">
+        <button id="scalebtn" type="button" class="text-center justify-content-center bg-outline-none"><i class="fa fa-eraser text-secondary"></i> </button>
+<!--</li>-->
+    <li class="nav-item ml-2">
+        <button id="handbtn" type="button" class="text-center justify-content-center bg-outline-none"><i class="fa fa-hand-paper-o text-secondary"></i> </button>
+</li>
+    <li class="nav-item ml-0 m-2 bg-primary">
+    <li class="nav-item dropdown" data-toggle="dropdown"><button class="btn-rounded btn-small text-dark text-capitalize dropdown-toggle">edit</button>
+    <div class="dropdown-menu">
+        <a class="dropdown-item"><i class="fa fa-undo text-dark"></i><span>Undo</span> </a>
+        <a class="dropdown-item"><i class="fa fa-share text-dark"></i><span>Redo</span> </a>
+        <hr>
+        <a class="dropdown-item"><i class="fa fa-copy-o text-dark text-muted"></i><span>Copy Marks</span> </a>
+        <a class="dropdown-item"><i class="fa fa-paste text-dark text-muted"></i><span>Paste Marks</span> </a>
+        <a class="dropdown-item"><i class="fa fa-times text-danger"></i><span>Clear Marks</span> </a>
+        <a class="dropdown-item"><i class="fa fa-fast-backward text-danger"></i><span>Clear All</span> </a>
+    </div>
+    </li>
+    <button type="button" class="text-white bg-primary" id="undobtn"><i class="fa fa-undo text-white"></i></button>
+    <button type="button" class="text-white bg-primary" id="redobtn"><i class="fa fa-share text-white"></i></button>
+    <button type="button" class="text-white bg-primary" id="zoominbtn"><i class="fa fa-search-plus text-white"></i></button>
+    <button type="button" class="text-white bg-primary" id="zoomoutbtn"><i class="fa fa-search-minus text-white"></i></button>
+    <button type="button" class="text-white bg-primary" id="fittoscreenbtn"><i class="fa fa-search-minus text-white"></i></button>
+    <button type="button" class="text-white bg-white" id="singlescreenbtn"><i class="fa fa-caret-square-o-up text-dark"></i></button>
+    <button type="button" class="text-white bg-white" id="doublescreenbtn"><i class="fa fa-columns text-dark"></i></button>
+    <button type="button" class="text-white bg-white" id="savebtn"><i class="fa fa-save text-dark"></i></button>
+    <button type="button" class="text-white bg-primary" id="downloadbtn"><span class="text-capitalize">Subscribe to download</span><i class="fa fa-download text-white"></i></button>
+    <button type="button" class="text-white bg-white" id="settingbtn"><i class="fa fa-cogs text-dark"></i></button>
+    <button type="button" class=" bg-white" id="pricingbtn"><span class="text-capitalize">pricing</span> <i class="fa fa-external-link text-dark"></i></button>
+    </li>
+</ul>
+<!--    <ul id="sidenav">-->
+<!--    <li class="nav-item bg-white ">-->
+<!--        <button type="button" class="text-white bg-white" id="helpbtn"><i class="fa fa-question-square text-white"></i></button>-->
+<!--    </li>-->
+<!--</ul>-->
+
+
+
+
+
+
+
+
+
+</nav>
+<div>
+<canvas id="leftcanvas"></canvas>
+</div>
+<div>
+    <canvas id="rightcanvas"></canvas>
+</div>
+
+    <nav class="navbar navbar-expand-md bg-white fixed-bottom" id="bottomnav">
+        <ul class="navbar-nav m-2">
+        <li class="nav-item">
+            <button type="button" class="text-white bg-white" id="bottomsettingbtn"><i class="fa fa-cog text-dark"></i></button>
+            <button type="button" class="text-white bg-white" id="shopingbtn"><i class="fa fa-shopping-cart text-dark"></i></button>
+        </li>
+            <li class="nav-item " id="bottombutton"><a class="text-center text-dark text-capitalize"><span>Brush:</span><button class="btn-rounded btn-primary" id="sizebtn">20px</button> </a>
+
+            </li>
+            <li class="nav-item" id="">
+                <a  class="text-center text-dark text-capitalize"><span>Background:</span> <i class="fa fa-palette text-dark"></i> </a>
+            </li>
+            <li class="nav-item">
+                <button type="button" class="text-white bg-light" id="colorbtn"><i class="fa fa-adjust text-dark"></i><span class="text-capitalize text-dark">Color</span></button>
+            </li>
+            <li class="nav-item">
+                <button type="button" class="text-white bg-light" id="cropbtn"><i class="fa fa-crop text-dark"></i><span class="text-capitalize text-dark">Crop</span></button>
+            </li>
+            <li class="nav-item">
+                <button type="button" class="text-white bg-light" id="shadowsbtn"><i class="fa fa-clone text-dark"></i><span class="text-capitalize text-dark">Shadows</span></button>
+            </li>
+            <li class="nav-item " id="bottomedgebutton"><a class="text-center text-dark text-capitalize"><span>Edges:</span><button class="btn-rounded btn-primary" id="edgebtn">1 , 1, 0</button> </a>
+
+            </li>
+        </ul>
+
+    </nav>
+
+
+</body>
+
+</html>
