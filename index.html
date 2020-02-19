@@ -14,12 +14,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
-        <script src = 'https://cdnjs.cloudflare.com/ajax/libs/fabric.js/3.6.2/fabric.js'></script>
-        <script src = 'add.js'></script>
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Background Remover</title>
 </head>
@@ -1069,7 +1064,15 @@
 <!--    </div>-->
 <!--</div>-->
 
-<div class="text-center" id="sidenav">
+<div  class="row">
+<div class="col-6">
+<canvas id="leftcanvas"></canvas>
+</div>
+<div class="col-6">
+    <canvas id="rightcanvas"></canvas>
+</div>
+</div>
+    <div class="text-center" id="sidenav">
         <div >
             <button class="btn bg-primary text-light " id="originalbtn" type="button" data-toggle="tooltip" data-placement="bottom" title="Hover to show original (Keyboard: Q)">Original</button>
         </div>
@@ -1088,14 +1091,6 @@
 
 
     </div>
-<div class = 'row px-0 mx-0' width = '100%'>
-    <div class = 'col-6 px-0 mx-0'>
-        <canvas id="leftcanvas"></canvas>
-    </div>
-    <div class = 'col-6 px-0 mx-0'>
-        <canvas id="rightcanvas"></canvas>
-    </div>
-</div>
 <div class="bottomdivs">
     <div id="ecommercediv">
 <p>Some Text Here</p>
@@ -1228,44 +1223,141 @@
 </div>
 
     </div>
-<div class="modal" id="colormodal">
-    <div class="modal-dialog modal-xl">
+<div class="modal m-4" id="colormodal">
+    <div class="modal-xl">
         <div class="modal-content">
             <div class="modal-body">
                 <div class="row">
-                    <div class="col-7">
+                    <div class="col-8">
                         <canvas id="modalcanvas">
 
                         </canvas>
                     </div>
-                    <div class="col-5">
-                        <div class="row">
-                        <div class="col-2">
+                    <div class="col-4">
+                        <div class="row bg-primary headmodal">
+                        <div class="col-4">
                         <button id="modalundo" type="button" class="btn btn-primary"><i class="fa fa-undo"></i> </button>
-                        <button id="modalredo" type="button" class="btn btn-primary"><i class="fa fa-redo"></i> </button>
+                        <button id="modalredo" type="button" class="btn btn-primary"><i class="fa fa-share"></i> </button>
                         </div>
-                        <div class="col-3">
+                        <div class="col-7 ml-0">
                             <button id="modalzoomin" type="button" class="btn btn-primary"><i class="fa fa-search-plus"></i> </button>
                             <button id="modalzoomout" type="button" class="btn btn-primary"><i class="fa fa-search-minus"></i> </button>
                             <button id="modalfitscreen" type="button" class="btn btn-primary"><i class="fa fa-search-minus"></i> </button>
                             <button id="modaldownload" type="button" class="btn btn-primary"><i class="fa fa-arrow-down"></i> </button>
                         </div>
-                        <div class="col-3">
+                        <div class="col-1 text-right">
                             <button id="modalcorrect" type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-check"></i> </button>
                         </div>
                         </div>
                         <div class="row">
                             <div class="col-4">
-                                <button id="modalColor" type="button" class="btn btn-primary"><i class="fa fa-adjust"></i><span>Color</span> </button>
+                                <button id="modalColor"  class=" btn-white"><i class="fa fa-adjust"></i><span>Color</span> </button>
                             </div>
                             <div class="col-4">
-                                <button id="modalCrop" type="button" class="btn btn-primary"><i class="fa fa-crop"></i><span>Crop</span> </button>
+                                <button id="modalCrop"  class=" btn-white"><i class="fa fa-crop"></i><span>Crop</span> </button>
 
                             </div>
                             <div class="col-4">
-                                <button id="modalShadow" type="button" class="btn btn-primary"><i class="fa fa-clone"></i><span>Shadows</span> </button>
+                                <button id="modalShadow" class="btn-white"><i class="fa fa-clone"></i><span>Shadows</span> </button>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-12 mt-2">
+                               <h3>Color Adjustments</h3>
+                            </div>
+                        </div>
+                        <div class="row bg-light">
+                            <div class="col-4">
+                                <p>Brightness: </p>
+                            </div>
+                            <div class="col-4">
+                            <h5 class="text-primary">0</h5>
+                        </div>
+                            <div class="col-4 text-center">
+                                <button class="btn-primary  modal-button"><i class="fa fa-minus"></i> </button>
+                                <button class="btn-primary  modal-button"><i class="fa fa-plus"></i> </button>
+                                <button class="btn-secondary text-muted ml-2  modal-button"><i class="fa fa-undo text-white"></i> </button>
+                            </div>
+                        </div>
+                        <div class="row bg-white">
+                            <div class="col-4">
+                                <p>Shadows: </p>
+                            </div>
+                            <div class="col-4">
+                                <h5 class="text-primary">0</h5>
+                            </div>
+                            <div class="col-4 text-center">
+                                <button class="btn-primary  modal-button"><i class="fa fa-minus"></i> </button>
+                                <button class="btn-primary  modal-button"><i class="fa fa-plus"></i> </button>
+                                <button class="btn-secondary text-muted ml-2  modal-button"><i class="fa fa-undo text-white"></i> </button>
+                            </div>
+                        </div>
+
+                        <div class="row bg-light">
+                            <div class="col-4">
+                                <p>Highlights: </p>
+                            </div>
+                            <div class="col-4">
+                                <h5 class="text-primary">0</h5>
+                            </div>
+                            <div class="col-4 text-center">
+                                <button class="btn-primary  modal-button"><i class="fa fa-minus"></i> </button>
+                                <button class="btn-primary  modal-button"><i class="fa fa-plus"></i> </button>
+                                <button class="btn-secondary text-muted ml-2  modal-button"><i class="fa fa-undo text-white"></i> </button>
+                            </div>
+                        </div>
+                        <div class="row bg-white">
+                            <div class="col-4">
+                                <p>Temperature: </p>
+                            </div>
+                            <div class="col-4">
+                                <h5 class="text-primary">0</h5>
+                            </div>
+                            <div class="col-4 text-center">
+                                <button class="btn-primary  modal-button"><i class="fa fa-minus"></i> </button>
+                                <button class="btn-primary  modal-button"><i class="fa fa-plus"></i> </button>
+                                <button class="btn-secondary text-muted ml-2  modal-button"><i class="fa fa-undo text-white"></i> </button>
+                            </div>
+                        </div>
+                        <div class="row bg-light">
+                            <div class="col-4">
+                                <p>Saturation: </p>
+                            </div>
+                            <div class="col-4">
+                                <h5 class="text-primary">0</h5>
+                            </div>
+                            <div class="col-4 text-center">
+                                <button class="btn-primary  modal-button"><i class="fa fa-minus"></i> </button>
+                                <button class="btn-primary  modal-button"><i class="fa fa-plus"></i> </button>
+                                <button class="btn-secondary text-muted ml-2  modal-button"><i class="fa fa-undo text-white"></i> </button>
+                            </div>
+                        </div>
+                        <div class="row bg-white mt-2">
+                            <div class="col-10">
+                                <button class="btn-primary  modal-button">Auto Levels </button>
+                                <button class="btn-white text-muted  modal-button">Reset</button>
+                            </div>
+                            <div class="col-2 text-right">
+
+                                <button class="btn-white text-muted  modal-button"><i class="fa fa-cog text-secondary"></i> </button>
+
+                            </div>
+                        </div>
+                        <div class="row bg-white mt-2" id="modalwbbtn">
+                            <div class="col-12">
+                                <h3><button class="bg-white"><i class="fa fa-square-o bg-white text-white"></i> </button><span class="ml-2">White Balance</span></h3>
+                            </div>
+                        </div>
+                        <div class="row bg-white mt-2" id="modalwbbtnshow" style="display: none">
+                            <div class="col-12" >
+                                <h3><button class="bg-primary modal-button" ><i class="fa fa-check bg-primary text-white"></i> </button><span class="ml-2">White Balance</span></h3>
+                                <div><button class="btn-white modal-button"><i class="fa fa-hand-pointer text-light"></i> </button>
+                                    <button class="btn-white modal-button"><i class="fa fa-hand-pointer text-light"></i> </button> </div>
+                                <p class="font-italic">Pick a color that should be neutral (white/gray)</p>
+                            </div>
+
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -1274,7 +1366,7 @@
 </div>
 
 
-        <nav class="navbar navbar-expand-md bg-white fixed-bottom" id="bottomnav">
+    <nav class="navbar navbar-expand-md bg-white fixed-bottom" id="bottomnav">
         <ul class="navbar-nav m-2">
         <li class="nav-item">
             <button type="button" class="text-white bg-white" id="bottomsettingbtn" data-toggle="tooltip" data-placement="bottom" title="Application Preferences"><i class="fa fa-cog text-dark"></i></button>
@@ -1287,29 +1379,22 @@
                 <a  class="text-center text-dark text-capitalize"><span>Background:</span> <i class="fa fa-palette text-dark" id="bckrndbtn"></i> </a>
             </li>
             <li class="nav-item">
-                <button type="button" class="text-white bg-light" id="colorbtn" data-target="#colormodal" data-toggle="modal" ><i class="fa fa-adjust text-dark"></i><span data-toggle="tooltip" data-placement="bottom" title="Open Color Editor" class="text-capitalize text-dark">Color</span></button>
+                <button type="button" class="text-white bg-light" id="colorbtn" data-target="#colormodal" data-toggle="modal" ><i class="fa fa-adjust text-dark"></i><span data-toggle="tooltip modal" data-placement="bottom" title="Open Color Editor" class="text-capitalize text-dark">Color</span></button>
             </li>
             <li class="nav-item">
-                <button type="button" class="text-white bg-light" id="cropbtn"><i class="fa fa-crop text-dark"></i><span class="text-capitalize text-dark" data-toggle="tooltip" data-placement="bottom" title="Open Crop Editor">Crop</span></button>
+                <button type="button" class="text-white bg-light" id="cropbtn"><i class="fa fa-crop text-dark"></i><span class="text-capitalize text-dark" data-toggle="tooltip modal" data-placement="bottom" title="Open Crop Editor">Crop</span></button>
             </li>
             <li class="nav-item">
-                <button type="button" class="text-white bg-light" id="shadowsbtn"><i class="fa fa-clone text-dark"></i><span class="text-capitalize text-dark" data-toggle="tooltip" data-placement="bottom" title="Open Shadows Editor">Shadows</span></button>
+                <button type="button" class="text-white bg-light" id="shadowsbtn"><i class="fa fa-clone text-dark"></i><span class="text-capitalize text-dark" data-toggle="tooltip modal" data-placement="bottom" title="Open Shadows Editor">Shadows</span></button>
             </li>
-            <li class="nav-item " id="bottomedgebutton"><a class="text-center text-dark text-capitalize"><span>Edges:</span><button class="btn-rounded btn-primary" id="edgebtn" data-toggle="tooltip" data-placement="bottom" title="Refine Edges: Smoothing, Feathering, Offset">1 , 1, 0</button> </a>
-                <button class="btn-rounded btn-primary" id="reviewbtn" data-toggle="tooltip" data-placement="bottom" title="Review">Review</button>
+            <li class="nav-item " id="bottomedgebutton"><a class="text-center text-dark text-capitalize"><span>Edges:</span><button class="btn-rounded btn-primary" id="edgebtn" data-toggle="tooltip modal" data-placement="bottom" title="Refine Edges: Smoothing, Feathering, Offset">1 , 1, 0</button> </a>
+                <button class="btn-rounded btn-primary" id="reviewbtn" data-toggle="tooltip modal" data-placement="bottom" title="Review">Review</button>
             </li>
         </ul>
 
     </nav>
 
 </div>
-<script src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
-<script src = 'https://cdnjs.cloudflare.com/ajax/libs/fabric.js/3.6.2/fabric.js'></script>
-<script src = 'add.js'></script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
 </body>
 <script>
     $(document).ready(function () {
@@ -1415,7 +1500,6 @@
                 $("#placeholder30px").hide();
                 $("#placeholder40px").hide();
                 $("#sizebtn").html("5px");
-                $("#brushdiv").hide();
             }
         });
         $("#placeholder5-5px").click(function () {
@@ -1426,7 +1510,6 @@
                 $("#placeholder30px").hide();
                 $("#placeholder40px").hide();
                 $("#sizebtn").html("5px");
-                $("#brushdiv").hide();
             }
         });
         $("#placeholder30-5px").click(function () {
@@ -1437,7 +1520,6 @@
                 $("#placeholder30px").hide();
                 $("#placeholder40px").hide();
                 $("#sizebtn").html("5px");
-                $("#brushdiv").hide();
             }
         });
         $("#placeholder40-5px").click(function () {
@@ -1448,7 +1530,6 @@
                 $("#placeholder30px").hide();
                 $("#placeholder40px").hide();
                 $("#sizebtn").html("5px");
-                $("#brushdiv").hide();
             }
         });
 
@@ -1460,7 +1541,6 @@
                 $("#placeholder30px").hide();
                 $("#placeholder40px").hide();
                 $("#sizebtn").html("10px");
-                $("#brushdiv").hide();
             }
         });
         $("#placeholder10-10px").click(function () {
@@ -1471,7 +1551,6 @@
                 $("#placeholder30px").hide();
                 $("#placeholder40px").hide();
                 $("#sizebtn").html("10px");
-                $("#brushdiv").hide();
             }
         });
         $("#placeholder5-10px").click(function () {
@@ -1482,7 +1561,6 @@
                 $("#placeholder30px").hide();
                 $("#placeholder40px").hide();
                 $("#sizebtn").html("10px");
-                $("#brushdiv").hide();
             }
         });
         $("#placeholder30-10px").click(function () {
@@ -1493,7 +1571,6 @@
                 $("#placeholder30px").hide();
                 $("#placeholder40px").hide();
                 $("#sizebtn").html("10px");
-                $("#brushdiv").hide();
             }
         });
         $("#placeholder40-10px").click(function () {
@@ -1504,7 +1581,6 @@
                 $("#placeholder30px").hide();
                 $("#placeholder40px").hide();
                 $("#sizebtn").html("10px");
-                $("#brushdiv").hide();
             }
         });
 
@@ -1516,7 +1592,6 @@
                 $("#placeholder30px").hide();
                 $("#placeholder40px").hide();
                 $("#sizebtn").html("20px");
-                $("#brushdiv").hide();
             }
         });
         $("#placeholder10-20px").click(function () {
@@ -1527,7 +1602,6 @@
                 $("#placeholder30px").hide();
                 $("#placeholder40px").hide();
                 $("#sizebtn").html("20px");
-                $("#brushdiv").hide();
             }
         });
         $("#placeholder5-20px").click(function () {
@@ -1538,7 +1612,6 @@
                 $("#placeholder30px").hide();
                 $("#placeholder40px").hide();
                 $("#sizebtn").html("20px");
-                $("#brushdiv").hide();
             }
         });
         $("#placeholder30-20px").click(function () {
@@ -1549,7 +1622,6 @@
                 $("#placeholder30px").hide();
                 $("#placeholder40px").hide();
                 $("#sizebtn").html("20px");
-                $("#brushdiv").hide();
             }
         });
         $("#placeholder40-20px").click(function () {
@@ -1560,7 +1632,6 @@
                 $("#placeholder30px").hide();
                 $("#placeholder40px").hide();
                 $("#sizebtn").html("20px");
-                $("#brushdiv").hide();
             }
         });
 
@@ -1572,7 +1643,6 @@
                 $("#placeholder20px").hide();
                 $("#placeholder40px").hide();
                 $("#sizebtn").html("30px");
-                $("#brushdiv").hide();
             }
         });
         $("#placeholder10-30px").click(function () {
@@ -1583,7 +1653,6 @@
                 $("#placeholder20px").hide();
                 $("#placeholder40px").hide();
                 $("#sizebtn").html("20px");
-                $("#brushdiv").hide();
             }
         });
         $("#placeholder5-30px").click(function () {
@@ -1594,7 +1663,6 @@
                 $("#placeholder20px").hide();
                 $("#placeholder40px").hide();
                 $("#sizebtn").html("30px");
-                $("#brushdiv").hide();
             }
         });
         $("#placeholder30-30px").click(function () {
@@ -1605,7 +1673,6 @@
                 $("#placeholder5px").hide();
                 $("#placeholder40px").hide();
                 $("#sizebtn").html("30px");
-                $("#brushdiv").hide();
             }
         });
         $("#placeholder40-30px").click(function () {
@@ -1616,7 +1683,6 @@
                 $("#placeholder5px").hide();
                 $("#placeholder40px").hide();
                 $("#sizebtn").html("30px");
-                $("#brushdiv").hide();
             }
         });
 
@@ -1628,7 +1694,6 @@
                 $("#placeholder20px").hide();
                 $("#placeholder30px").hide();
                 $("#sizebtn").html("40px");
-                $("#brushdiv").hide();
             }
         });
         $("#placeholder10-40px").click(function () {
@@ -1639,7 +1704,6 @@
                 $("#placeholder20px").hide();
                 $("#placeholder30px").hide();
                 $("#sizebtn").html("30px");
-                $("#brushdiv").hide();
             }
         });
         $("#placeholder5-40px").click(function () {
@@ -1650,7 +1714,6 @@
                 $("#placeholder20px").hide();
                 $("#placeholder30px").hide();
                 $("#sizebtn").html("40px");
-                $("#brushdiv").hide();
             }
         });
         $("#placeholder30-40px").click(function () {
@@ -1661,7 +1724,6 @@
                 $("#placeholder5px").hide();
                 $("#placeholder30px").hide();
                 $("#sizebtn").html("40px");
-                $("#brushdiv").hide();
             }
         });
         $("#placeholder40-40px").click(function () {
@@ -1672,7 +1734,18 @@
                 $("#placeholder5px").hide();
                 $("#placeholder30px").hide();
                 $("#sizebtn").html("40px");
-                $("#brushdiv").hide();
+            }
+        });
+        $("#modalwbbtn").click(function () {
+            if($("#modalwbbtnshow").hide()){
+                $("#modalwbbtnshow").show();
+                $("#modalwbbtn").hide();
+            }
+        });
+        $("#modalwbbtnshow").click(function () {
+            if($("#modalwbbtn").hide()){
+                $("#modalwbbtn").show();
+                $("#modalwbbtnshow").hide();
             }
         });
     });

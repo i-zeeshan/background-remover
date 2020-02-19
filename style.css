@@ -33,8 +33,8 @@
 #rightcanvas{
     width: 100%;
     height: 100vh;
-    position: relative;
-    z-index: 1;
+    position: absolute;
+    z-index: 0;
     border: 1px solid;
 }
 #maintopdiv{
@@ -301,4 +301,40 @@
     position: absolute;
     top: 450px;
     left: 3px;
+}
+#modalColor{
+    width:140px;
+    text-align: center;
+    border: none;
+    height: 60px;
+}
+#modalCrop{
+    width:141px;
+    text-align: center;
+    border: none;
+    height: 60px;
+}
+#modalShadow{
+    width:120px;
+    text-align: center;
+    border: none;
+    height: 60px;
+}
+.modal-button{
+    font-size: smaller;
+    border: none;
+    font-weight: lighter;
+}
+.modal-button i{
+    font-size: smaller;
+    border: none;
+}
+#modalcanvas{
+    border: 1px solid;
+width: 100%;
+    height: 85vh;
+}
+.headmodal{
+    width: 390px;
+    position: sticky;
 }
