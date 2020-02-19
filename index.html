@@ -14,6 +14,7 @@
 </head>
 
 <body>
+<div class="main">
 <nav class="navbar navbar-expand-md m-2 bg-white fixed-top" id="topnav">
 <ul class="navbar-nav m-2">
     <li class="nav-item ml-0">
@@ -56,27 +57,1123 @@
     <button type="button" class=" bg-white" id="pricingbtn"><span class="text-capitalize">pricing</span> <i class="fa fa-external-link text-dark"></i></button>
     </li>
 </ul>
-<!--    <ul id="sidenav">-->
-<!--    <li class="nav-item bg-white ">-->
-<!--        <button type="button" class="text-white bg-white" id="helpbtn"><i class="fa fa-question-square text-white"></i></button>-->
-<!--    </li>-->
-<!--</ul>-->
-
-
-
-
-
-
-
-
-
 </nav>
+
+    <!--Settings-->
+<!--<div class="maintab" id="setting">-->
+<!--    <div class="container m-0">-->
+<!--        <div class="row fixed" id="settingtop">-->
+<!--            <div class="col-3 m-2">-->
+<!--            <p class="-weight-bold text-center text-capitalize"><i class="fa fa-cog text-dark"></i>Preferences</p>-->
+<!--            </div>-->
+<!--        <div class="col-6 m-2">-->
+<!--            <ul class="nav nav-tabs md-tabs tabs-orange" id="Tabs" role="tablist">-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link active" id="defaultsetting" data-toggle="tab" href="#defaultsetting-md" role="tab" aria-controls="defaultsetting"-->
+<!--                       aria-selected="fasle">Default Settings</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" id="inputoption" data-toggle="tab" href="#inputoption-md" role="tab" aria-controls="inputoption"-->
+<!--                       aria-selected="false">Input Options</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" id="outputoption" data-toggle="tab" href="#outputoption-md" role="tab" aria-controls="outputoption"-->
+<!--                       aria-selected="true">Output Options</a>-->
+<!--                </li>-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--        <div class="col-2 m-2">-->
+<!--            <i class="fa fa-times" id="closesetting"></i>-->
+<!--        </div>-->
+
+<!--    </div>-->
+
+<!--        <div class="tab-content pt-5" id="TabContent">-->
+<!--            <div class="tab-pane fade show active" id="defaultsetting-md" role="tabpanel" aria-labelledby="defaultsetting">-->
+<!--                <p class="psettings">The default settings below apply to new images</p>-->
+<!--                <div class="container mt-4">-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-3 ">-->
+<!--                            <h3>General</h3>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 size">-->
+<!--                            <p>Default</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 size">-->
+<!--                            <p>Current Image</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 size">-->
+<!--                            <p>Factory Default</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                    <div class="row">-->
+<!--                        <div class="col-3">-->
+<!--                            <p>Brush size</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 ">-->
+<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">20px</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">20px</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">20px</span></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-3">-->
+<!--                            <p>Background Color</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 ">-->
+<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2"></span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2"></span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2"></span></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="container mt-4">-->
+<!--                        <div class="row">-->
+<!--                            <div class="col-3 ">-->
+<!--                                <h3>Output Options</h3>-->
+<!--                            </div>-->
+<!--                            <div class="col-3 size">-->
+<!--                                <p>Default</p>-->
+<!--                            </div>-->
+<!--                            <div class="col-3 size">-->
+<!--                                <p>Current Image</p>-->
+<!--                            </div>-->
+<!--                            <div class="col-3 size">-->
+<!--                                <p>Factory Default</p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+
+<!--                        <div class="row">-->
+<!--                            <div class="col-3">-->
+<!--                                <p>Output Color Space</p>-->
+<!--                            </div>-->
+<!--                            <div class="col-3 ">-->
+<!--                                <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">sRGB</span></p>-->
+<!--                            </div>-->
+<!--                            <div class="col-3 text-muted">-->
+<!--                                <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">sRGB</span></p>-->
+<!--                            </div>-->
+<!--                            <div class="col-3 text-muted">-->
+<!--                                <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">sRGB</span></p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="row">-->
+<!--                            <div class="col-3">-->
+<!--                                <p>Output DPI</p>-->
+<!--                            </div>-->
+<!--                            <div class="col-3 ">-->
+<!--                                <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">72 DPI</span></p>-->
+<!--                            </div>-->
+<!--                            <div class="col-3 text-muted">-->
+<!--                                <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">72 DPI</span></p>-->
+<!--                            </div>-->
+<!--                            <div class="col-3 text-muted">-->
+<!--                                <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">72 DPI</span></p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="row">-->
+<!--                            <div class="col-3">-->
+<!--                                <p>Opaque File Format</p>-->
+<!--                            </div>-->
+<!--                            <div class="col-3 ">-->
+<!--                                <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">JPEG</span></p>-->
+<!--                            </div>-->
+<!--                            <div class="col-3 text-muted">-->
+<!--                                <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">JPEG</span></p>-->
+<!--                            </div>-->
+<!--                            <div class="col-3 text-muted">-->
+<!--                                <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">JPEG</span></p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+
+<!--                        <div class="row">-->
+<!--                            <div class="col-3">-->
+<!--                                <p>JPEG Quality</p>-->
+<!--                            </div>-->
+<!--                            <div class="col-3 ">-->
+<!--                                <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">75</span></p>-->
+<!--                            </div>-->
+<!--                            <div class="col-3 text-muted">-->
+<!--                                <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">75</span></p>-->
+<!--                            </div>-->
+<!--                            <div class="col-3 text-muted">-->
+<!--                                <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">75</span></p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="row">-->
+<!--                            <div class="col-3">-->
+<!--                                <p>JPEG optimization</p>-->
+<!--                            </div>-->
+<!--                            <div class="col-3 ">-->
+<!--                                <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">Enabled</span></p>-->
+<!--                            </div>-->
+<!--                            <div class="col-3 text-muted">-->
+<!--                                <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">Enabled</span></p>-->
+<!--                            </div>-->
+<!--                            <div class="col-3 text-muted">-->
+<!--                                <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">Enabled</span></p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="row">-->
+<!--                            <div class="col-3">-->
+<!--                                <p>PNG Optimization</p>-->
+<!--                            </div>-->
+<!--                            <div class="col-3 ">-->
+<!--                                <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">Lossless</span></p>-->
+<!--                            </div>-->
+<!--                            <div class="col-3 text-muted">-->
+<!--                                <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">Lossless</span></p>-->
+<!--                            </div>-->
+<!--                            <div class="col-3 text-muted">-->
+<!--                                <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">Lossless</span></p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="container mt-4">-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-3 ">-->
+<!--                            <h3>Colors</h3>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 size">-->
+<!--                            <p>Default</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 size">-->
+<!--                            <p>Current Image</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 size">-->
+<!--                            <p>Factory Default</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                    <div class="row">-->
+<!--                        <div class="col-3">-->
+<!--                            <p>Auto Colors Level</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 ">-->
+<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">Off</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">On</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">Off</span></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="container mt-4">-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-3 ">-->
+<!--                            <h3>Crop & Resize</h3>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 size">-->
+<!--                            <p>Default</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 size">-->
+<!--                            <p>Current Image</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 size">-->
+<!--                            <p>Factory Default</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                    <div class="row">-->
+<!--                        <div class="col-3">-->
+<!--                            <p>Mode</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 ">-->
+<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">Unconstrained</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">Unconstrained</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">Unconstrained</span></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                    <div class="row">-->
+<!--                        <div class="col-3">-->
+<!--                            <p>Aspect Ratio</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 ">-->
+<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">Unchanged</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">Unchanged</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">Unchanged</span></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-3">-->
+<!--                            <p>Target Size</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 ">-->
+<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">Unchanged</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">Unchanged</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">Unchanged</span></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                    <div class="row">-->
+<!--                        <div class="col-3">-->
+<!--                            <p>Allow Enlarging</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 ">-->
+<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">Off</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">Off</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">Off</span></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                    <div class="row">-->
+<!--                        <div class="col-3">-->
+<!--                            <p>Fit to Result</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 ">-->
+<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">Off</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">Off</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">Off</span></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-3">-->
+<!--                            <p>Margin (Percent)</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 ">-->
+<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">5%</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">5%</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">5%</span></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-3">-->
+<!--                            <p>Margin (Pixels)</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 ">-->
+<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">25px</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">25px</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">25px</span></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-3">-->
+<!--                            <p>Margin Units</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 ">-->
+<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">Percent</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">Percent</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">Percent</span></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-3">-->
+<!--                            <p>Object Size</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 ">-->
+<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">Large</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">Large</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">Large</span></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-3">-->
+<!--                            <p>Verticle Alignment</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 ">-->
+<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">Middle</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">Middle</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">Middle</span></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-3">-->
+<!--                            <p>Shadows</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 ">-->
+<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">Pad</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">Pad</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">Pad</span></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="container mt-4">-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-3 ">-->
+<!--                            <h3>Edges</h3>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 size">-->
+<!--                            <p>Default</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 size">-->
+<!--                            <p>Current Image</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 size">-->
+<!--                            <p>Factory Default</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                    <div class="row">-->
+<!--                        <div class="col-3">-->
+<!--                            <p>Corners</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 ">-->
+<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">On</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">On</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">On</span></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-3">-->
+<!--                            <p>Smoothing</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 ">-->
+<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">Smart</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">Smart</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">Smart</span></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-3">-->
+<!--                            <p>Smoothing Level</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 ">-->
+<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">1</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">1</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">1</span></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-3">-->
+<!--                            <p>Feathering</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 ">-->
+<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">Smart</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">Smart</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">Smart</span></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-3">-->
+<!--                            <p>Feathering Radius</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 ">-->
+<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">1</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">1</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">1</span></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-3">-->
+<!--                            <p>Offset</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 ">-->
+<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">0px</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">0px</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">0px</span></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="container mt-4">-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-3 ">-->
+<!--                            <h3>Oval Shadows</h3>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 size">-->
+<!--                            <p>Default</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 size">-->
+<!--                            <p>Current Image</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 size">-->
+<!--                            <p>Factory Default</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                    <div class="row">-->
+<!--                        <div class="col-3">-->
+<!--                            <p>Opacity</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 ">-->
+<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">50%</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">50%</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">50%</span></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-3">-->
+<!--                            <p>Core Size</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 ">-->
+<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">25%</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">25%</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">25%</span></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                </div>-->
+
+<!--                <div class="container mt-4">-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-3 ">-->
+<!--                            <h3>Drop Shadows</h3>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 size">-->
+<!--                            <p>Default</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 size">-->
+<!--                            <p>Current Image</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 size">-->
+<!--                            <p>Factory Default</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                    <div class="row">-->
+<!--                        <div class="col-3">-->
+<!--                            <p>Enabled</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 ">-->
+<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">Off</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">Off</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">Off</span></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-3">-->
+<!--                            <p>Clipping Enabled</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 ">-->
+<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">Off</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">Off</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">Off</span></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-3">-->
+<!--                            <p>Opacity</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 ">-->
+<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">75%</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">75%</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">75%</span></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-3">-->
+<!--                            <p>Blur Radius</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 ">-->
+<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">25px</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">25px</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">25px</span></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-3">-->
+<!--                            <p>Offset X</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 ">-->
+<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">30px</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">30px</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">30px</span></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-3">-->
+<!--                            <p>Offset Y</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 ">-->
+<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">30px</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">30px</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">30px</span></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+
+<!--                <div class="container mt-4">-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-3 ">-->
+<!--                            <h3>Reflections</h3>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 size">-->
+<!--                            <p>Default</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 size">-->
+<!--                            <p>Current Image</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 size">-->
+<!--                            <p>Factory Default</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                    <div class="row">-->
+<!--                        <div class="col-3">-->
+<!--                            <p>Enabled</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 ">-->
+<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">Off</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">Off</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">Off</span></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-3">-->
+<!--                            <p>Opacity</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 ">-->
+<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">50%</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">50%</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">50%</span></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-3">-->
+<!--                            <p>Height</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 ">-->
+<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">200px</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">200px</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">200px</span></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--                <div class="container mt-4 mb-2">-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-3 ">-->
+<!--                            <h3>Cast Shadows</h3>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 size">-->
+<!--                            <p>Default</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 size">-->
+<!--                            <p>Current Image</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 size">-->
+<!--                            <p>Factory Default</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                    <div class="row">-->
+<!--                        <div class="col-3">-->
+<!--                            <p>Enabled</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 ">-->
+<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">Off</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">Off</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">Off</span></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-3">-->
+<!--                            <p>Opacity</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 ">-->
+<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">25%</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">25%</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">25%</span></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-3">-->
+<!--                            <p>Opacity Scale</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 ">-->
+<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">50%</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">50%</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">50%</span></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-3">-->
+<!--                            <p>Blur Radius</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 ">-->
+<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">10px</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">10px</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">10px</span></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-3">-->
+<!--                            <p>Blur Radius Scale</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 ">-->
+<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">400%</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">400%</span></p>-->
+<!--                        </div>-->
+<!--                        <div class="col-3 text-muted">-->
+<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">400%</span></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="fixed">-->
+<!--                    <div class="container m-5">-->
+<!--                        <div class="row">-->
+<!--                            <div class="col-3"></div>-->
+<!--                            <div class="col-3"></div>-->
+<!--                            <div class="col-6">-->
+<!--                                <button class="btn btn-gray text-muted text-white" type="button">Reset All</button>-->
+<!--                                <button class="btn btn-gray text-muted text-white" type="button">Set All</button>-->
+<!--                                <button class="btn btn-gray text-muted text-white" type="button">Restore All</button>-->
+<!--                                <button class="btn btn-primary ml-2 text-white" type="button">Ok</button>-->
+<!--                            </div>-->
+
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--            </div>-->
+<!--            <div class="tab-pane fade" id="inputoption-md" role="tabpanel" aria-labelledby="inputoption">-->
+<!--                <div><strong>Input Options</strong></div><hr>-->
+<!--                <div class="row mt-2">-->
+<!--                    <div class="col-6">-->
+<!--                        <p>Image Size Limit: 4 megapixels</p>-->
+<!--                        <button type="btn" class="btn btn-secondary bg-secondary"><i class="fa fa-minus text-white"></i> </button>-->
+<!--                        <button type="btn" class="btn btn-secondary bg-secondary ml-2"><i class="fa fa-plus text-white"></i> </button>-->
+<!--                        <button type="btn" class="btn btn-secondary bg-secondary ml-4"><i class="fa fa-undo text-white"></i> </button>-->
+<!--                    </div>-->
+<!--                    <div class="col-6 text-center">-->
+<!--                        <p>Max: 8</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <hr>-->
+<!--                <p class="text-secondary font-italic">Images that exceed the size limit will be shrunk to match it.</p>-->
+<!--                <p class="mt-2 font-italic">We recommend choosing the smallest size limit that meets your needs. Larger images take longer to upload and process, and can lead to a sluggish user interface, especially on older computers.-->
+<!--                </p>-->
+<!--                <hr>-->
+<!--                <form>-->
+<!--                    <input type="checkbox"  class="form-group mr-2 text-muted"> Enable Pre-Crop-->
+<!--                </form>-->
+<!--                <p class="text-muted text-secondary font-italic">When an image exceeds the size limit, Pre-Crop allows you to crop out unneeded parts of the image to maximize the resolution of the result.-->
+<!--                </p>-->
+<!--                <hr>-->
+<!--                <h3 class="mt-2">Processing Mode Options</h3>-->
+<!--                <hr>-->
+<!--                <form>-->
+<!--                    <input type="checkbox"  class="form-group mr-2"> Always Use Normal Photo Mode For New Images-->
+<!--                </form>-->
+<!--                <p class="text-secondary text-muted font-italic">Check this box to not use Graphics Mode for newly uploaded images.-->
+<!--                </p>-->
+<!--                <hr>-->
+<!--                <form>-->
+<!--                    <input type="checkbox"  class="form-group mr-2"> Enable Auto-Clip For New Images-->
+<!--                </form>-->
+<!--                <p class="text-secondary text-muted font-italic">Check this box to enable the fully-automatic Auto-Clip feature when available..-->
+<!--                </p>-->
+<!--                <hr>-->
+<!--                <div class="fixed">-->
+<!--                    <div class="container m-5">-->
+<!--                        <div class="row">-->
+<!--                            <div class="col-3"></div>-->
+<!--                            <div class="col-3"></div>-->
+<!--                            <div class="col-6 text-left">-->
+<!--                                <button class="btn btn-primary text-white" type="button">Ok</button>-->
+<!--                            </div>-->
+
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="tab-pane fade" id="outputoption-md" role="tabpanel" aria-labelledby="outputoption">-->
+<!--                <div><strong>Output Options</strong></div>-->
+<!--                <div class="container">-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-4">-->
+<!--                            <p>Color Space:</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-4">-->
+<!--                            <div class="dropdown">-->
+<!--                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">sRGB-->
+<!--                                    <span class="caret"></span></button>-->
+<!--                                <ul class="dropdown-menu">-->
+<!--                                    <li><a href="#">sRGB(Web Standard)</a></li>-->
+<!--                                    <li><a href="#">Adobe RGB (1998)</a></li>-->
+<!--                                    <li><a href="#">Apple RGB</a></li>-->
+<!--                                    <li><a href="#">ColorMatch RGB</a></li>-->
+<!--                                </ul>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="col-4">-->
+<!--                            <i class="fa fa-cog text-secondary"></i>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-4">-->
+<!--                            <p>DPI:</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-4">-->
+<!--                            <div class="dropdown">-->
+<!--                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">72DPI-->
+<!--                                    <span class="caret"></span></button>-->
+<!--                                <ul class="dropdown-menu">-->
+<!--                                    <li><a href="#">72 DPI</a></li>-->
+<!--                                    <li><a href="#">96 DPI</a></li>-->
+<!--                                    <li><a href="#">300 DPI</a></li>-->
+<!--                                </ul>-->
+<!--                            </div>-->
+<!--                            <button type="btn" class="btn btn-primary text-white"><i class="fa fa-minus text-white"></i> </button>-->
+<!--                            <button type="btn" class="btn btn-primary text-white"><i class="fa fa-plus text-white"></i> </button>-->
+<!--                            <button type="btn" class="btn btn-secondary ml-2 text-white"><i class="fa fa-undo text-white"></i> </button>-->
+<!--                        </div>-->
+<!--                        <div class="col-4">-->
+<!--                            <i class="fa fa-cog text-secondary"></i>-->
+<!--                        </div>-->
+<!--                        <p class="text-danger font-italic">Web-optimized output does not contain DPI information</p>-->
+<!--                    </div>-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-4">-->
+<!--                            <p>Opaque File Format:</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-4">-->
+<!--                            <button type="btn" class="btn btn-primary text-white">JPEG</button>-->
+<!--                            <button type="btn" class="btn btn-white text-dark">PNG </button>-->
+
+<!--                        </div>-->
+<!--                        <div class="col-4">-->
+<!--                            <i class="fa fa-cog text-secondary"></i>-->
+<!--                        </div>-->
+<!--                        <p class="text-secondary font-italic">Results witha a transparent background are always save as PNGs</p>-->
+<!--                    </div>-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-4">-->
+<!--                            <p>DPI:</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-4">-->
+<!--                            <div class="dropdown">-->
+<!--                                <button class="btn btn-primary text-white dropdown-toggle" type="button" data-toggle="dropdown">75-->
+<!--                                    <span class="caret"></span></button>-->
+<!--                                <ul class="dropdown-menu">-->
+<!--                                    <li><a href="#">25 (very low)</a></li>-->
+<!--                                    <li><a href="#">50 (low)</a></li>-->
+<!--                                    <li><a href="#">75 (medium)</a></li>-->
+<!--                                    <li><a href="#">90 (high)</a></li>-->
+<!--                                    <li><a href="#">100 (highest)</a></li>-->
+<!--                                </ul>-->
+<!--                            </div>-->
+<!--                            <button type="btn" class="btn btn-primary text-white"><i class="fa fa-minus text-white"></i> </button>-->
+<!--                            <button type="btn" class="btn btn-primary text-white"><i class="fa fa-plus text-white"></i> </button>-->
+<!--                            <button type="btn" class="btn btn-secondary ml-2 text-white"><i class="fa fa-undo text-white"></i> </button>-->
+<!--                        </div>-->
+<!--                        <div class="col-4">-->
+<!--                            <i class="fa fa-cog text-secondary"></i>-->
+<!--                        </div>-->
+<!--                        <p class="text-danger font-italic">	A higher JPEG quality means better image quality, but a larger file size.</p>-->
+<!--                    </div>-->
+
+
+<!--                </div>-->
+
+
+
+<!--                <div><strong>Web Optimized Output</strong></div>-->
+<!--                <div class="container">-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-4">-->
+<!--                            <p>Color Space:</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-4">-->
+<!--                            <button type="btn" class="btn btn-white text-dark">None</button>-->
+<!--                            <button type="btn" class="btn btn-primary text-white">Enabled </button>-->
+<!--                        </div>-->
+<!--                        <div class="col-4">-->
+<!--                            <i class="fa fa-cog text-secondary"></i>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-4">-->
+<!--                            <p>DPI:</p>-->
+<!--                        </div>-->
+<!--                        <div class="col-4">-->
+<!--                            <button type="btn" class="btn btn-white text-dark">None</button>-->
+<!--                            <button type="btn" class="btn btn-primary text-white">Lossless </button>-->
+<!--                            <button type="btn" class="btn btn-ehite text-dark">Lossy </button>-->
+<!--                        </div>-->
+<!--                        <div class="col-4">-->
+<!--                            <i class="fa fa-cog text-secondary"></i>-->
+<!--                        </div>-->
+<!--                        <p class="text-danger font-italic">-->
+<!--                            To minimize file size, web-optimized output does not contain color space or DPI information.</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="fixed">-->
+<!--                    <div class="container m-5">-->
+<!--                        <div class="row">-->
+<!--                            <div class="col-3"></div>-->
+<!--                            <div class="col-3"></div>-->
+<!--                            <div class="col-6">-->
+<!--                                <button class="btn btn-primary text-white" type="button">Download</button>-->
+<!--                                <button class="btn btn-primary ml-2 text-white" type="button">Ok</button>-->
+<!--                            </div>-->
+
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+
+<!--    </div>-->
+<!--</div>-->
+
+<div class="m-4 fixed-top" id="sidenavbuttons">
+    <button type="button" class="text-white bg-primary" id="closebtn"><i class="fa fa-times text-white"></i></button>
+    <button type="button" class="text-white mr-2" id="helpbtn"><i class="fa fa-question text-white"></i></button>
+
+</div>
+<div class="text-center justify-content-between" id="sidenav">
+    <div >
+        <button class="btn bg-primary text-light " id="originalbtn" type="button">Original</button>
+    </div>
+    <div >
+        <button class="btn bg-primary text-light " id="autoclipbtn" type="button"><i class="fa fa-check" style="border: 1px solid"></i> <span >Auto-Clip</span></button>
+    </div>
+    <div >
+        <button class="btn bg-primary text-light " id="graphicbtn" type="button">Graphic</button>
+    </div>
+    <div >
+        <button class="btn bg-white text-dark " id="photobtn" type="button">Photo</button>
+    </div>
+    <div  class="text-center">
+        <button class="btn bg-white text-dark" id="modebtn" type="button">Mode <span class="bg-white"><i class="fa fa-info-circle bg-white text-black"></i> </span></button>
+    </div>
+
+
+</div>
 <div>
 <canvas id="leftcanvas"></canvas>
 </div>
 <div>
     <canvas id="rightcanvas"></canvas>
 </div>
+<div class="bottomdivs">
+    <div id="ecommercediv">
+<p>Some Text Here</p>
+    <i class="fa fa-external-link text-primary"></i>
+</div>
+    <div id="brushdiv">
+        <p>Brush Size: <strong>20px</strong>
+        <button type="button" class="btn btn-primary btn-small"><i class="fa fa-minus text-small"></i> </button>
+            <button type="button" class="btn btn-primary btn-small"><i class="fa fa-plus text-small"></i> </button>
+            <button type="button" class="btn btn-primary btn-small ml-3">5px </button>
+            <button type="button" class="btn btn-primary btn-small ">5px </button>
+            <button type="button" class="btn btn-primary btn-small ">10px </button>
+            <button type="button" class="btn btn-primary btn-small ">20px </button>
+            <button type="button" class="btn btn-primary btn-small ">30px </button>
+            <button type="button" class="btn btn-primary btn-small ">40px </button>
+            <i class="fa fa-cog text-secondary ml-3"></i>
+        </p>
+    </div>
+
+    <div id="backgrounddiv">
+        <p>Background Color:
+            <button type="button" class="btn btn-primary btn-small"> </button>
+            <button type="button" class="btn btn-white btn-small"> </button>
+            <button type="button" class="btn btn-gray btn-small ml-2"> </button>
+            <button type="button" class="btn btn-black btn-small ml-2"></button>
+            <button type="button" class="btn btn-brown btn-small ml-2"> </button>
+            <button type="button" class="btn btn-warning btn-small ml-2"> </button>
+            <button type="button" class="btn btn-green btn-small ml-2"> </button>
+            <button type="button" class="btn btn-blue btn-small ml-2"> </button> |
+            <button type="button" class="btn btn-blue btn-sky ml-2"> </button>
+            <button type="button" class="btn btn-blue btn-success text-white ml-2 ">#338855 </button>
+            <i class="fa fa-cog text-secondary ml-3"></i>
+        </p>
+    </div>
+    <div id="reviewdiv">
+        <p>Review Contour:
+            <button type="button" class="btn btn-primary btn-small ml-2"><i class="fa fa-greater-than text-white"></i> </button>
+            <button type="button" class="btn btn-white btn-small"> <i class="fa fa-less-than text-white"></i></button>
+        </p>
+    </div>
+</div>
+    <div class="edgebottomdiv">
+<div id="edgediv">
+    <div class="container">
+        <div class="row">
+            <div class="col-3">
+                <p>Corners:</p>
+            </div>
+            <div class="col-3">
+                <p>Smoothing Level: <strong>1</strong></p>
+            </div>
+            <div class="col-3">
+                <p>Feathering radius: <strong>1px</strong></p>
+            </div>
+            <div class="col-2">
+                <p>Offset: <strong>0px</strong></p>
+            </div>
+
+            <div class="col-1">
+                <i class="fa fa-cog text-secondary"></i>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <button type="button" class="btn btn-secondary text-muted">On</button>
+                <button type="button" class="btn btn-secondary text-muted">Off</button>
+            </div>
+            <div class="col-5">
+                <button type="button" class="btn btn-secondary text-muted">Smart</button>
+                <button type="button" class="btn btn-secondary text-muted">Fixed</button>
+                <button type="button" class="btn btn-secondary text-muted"><i class="fa fa-minus fa-1px text-muted"></i></button>
+                <button type="button" class="btn btn-secondary text-muted"><i class="fa fa-minus fa-1px text-muted"></i></button>
+                <button type="button" class="btn btn-secondary text-muted">Reset</button>
+            </div>
+            <div class="col-4">
+                <button type="button" class="btn btn-primary text-left">Smart</button>
+                <button type="button" class="btn bg-white">Fixed</button>
+                <button type="button" class="btn btn-primary text-muted ml-2"><i class="fa fa-minus fa-1px text-muted"></i></button>
+                <button type="button" class="btn btn-primary text-muted"><i class="fa fa-minus fa-1px text-muted"></i></button>
+                <button type="button" class="btn btn-secondary text-muted">Reset</button>
+            </div>
+            <div class="col-1">
+                <button type="button" class="btn btn-secondary text-muted"><i class="fa fa-minus fa-1px text-muted"></i></button>
+                <button type="button" class="btn btn-secondary text-muted"><i class="fa fa-minus fa-1px text-muted"></i></button>
+                <button type="button" class="btn btn-secondary text-muted">Reset</button>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+    </div>
+
 
     <nav class="navbar navbar-expand-md bg-white fixed-bottom" id="bottomnav">
         <ul class="navbar-nav m-2">
@@ -87,8 +1184,8 @@
             <li class="nav-item " id="bottombutton"><a class="text-center text-dark text-capitalize"><span>Brush:</span><button class="btn-rounded btn-primary" id="sizebtn">20px</button> </a>
 
             </li>
-            <li class="nav-item" id="">
-                <a  class="text-center text-dark text-capitalize"><span>Background:</span> <i class="fa fa-palette text-dark"></i> </a>
+            <li class="nav-item" id="background">
+                <a  class="text-center text-dark text-capitalize"><span>Background:</span> <i class="fa fa-palette text-dark" id="bckrndbtn"></i> </a>
             </li>
             <li class="nav-item">
                 <button type="button" class="text-white bg-light" id="colorbtn"><i class="fa fa-adjust text-dark"></i><span class="text-capitalize text-dark">Color</span></button>
@@ -100,13 +1197,98 @@
                 <button type="button" class="text-white bg-light" id="shadowsbtn"><i class="fa fa-clone text-dark"></i><span class="text-capitalize text-dark">Shadows</span></button>
             </li>
             <li class="nav-item " id="bottomedgebutton"><a class="text-center text-dark text-capitalize"><span>Edges:</span><button class="btn-rounded btn-primary" id="edgebtn">1 , 1, 0</button> </a>
-
+                <button class="btn-rounded btn-primary" id="reviewbtn">Review</button>
             </li>
         </ul>
 
     </nav>
 
-
+</div>
 </body>
+<script>
+    $(document).ready(function () {
+    // $("#bottomsettingbtn").click(function () {
+    //     if($("#setting").hide()) {
+    //         $("#setting").show();
+    //         $("#topnav").hide();
+    //         $("#leftcanvas").hide();
+    //         $("#bottomnav").hide();
+    //     }
+    // });
+        $("#shopingbtn").click(function () {
+            if($("#ecommercediv").hide()) {
+                $("#ecommercediv").show();
+                $("#setting").hide();
+                $("#brushdiv").hide();
+                $("#backgrounddiv").hide();
+                $("#reviewdiv").hide();
+                $("#edgediv").hide();
 
+            }
+        });
+        $("#bottombutton").click(function () {
+            if($("#brushdiv").hide()) {
+                $("#brushdiv").show();
+                $("#ecommercediv").hide();
+                $("#backgrounddiv").hide();
+                $("#reviewdiv").hide();
+                $("#edgediv").hide();
+                $("#setting").hide();
+
+            }
+        });
+        $("#sizebtn").click(function () {
+            if($("#brushdiv").hide()) {
+                $("#brushdiv").show();
+                $("#ecommercediv").hide();
+                $("#backgrounddiv").hide();
+                $("#reviewdiv").hide();
+                $("#edgediv").hide();
+                $("#setting").hide();
+            }
+        });
+        $("#background").click(function () {
+            if($("#backgrounddiv").hide()) {
+                $("#backgrounddiv").show();
+                $("#reviewdiv").hide();
+                $("#edgediv").hide();
+                $("#setting").hide();
+                $("#ecommercediv").hide();
+                $("#brushdiv").hide();
+
+
+            }
+        });
+        $("#bckrndbtn").click(function () {
+            if($("#backgrounddiv").hide()) {
+                $("#backgrounddiv").show();
+                $("#reviewdiv").hide();
+                $("#edgediv").hide();
+                $("#setting").hide();
+                $("#ecommercediv").hide();
+                $("#brushdiv").hide();
+            }
+        });
+        $("#reviewbtn").click(function () {
+            if($("#reviewdiv").hide()) {
+                $("#reviewdiv").show();
+                $("#edgediv").hide();
+                $("#setting").hide();
+                $("#ecommercediv").hide();
+                $("#brushdiv").hide();
+                $("#backgrounddiv").hide();
+            }
+        });
+        $("#edgebtn").click(function () {
+            if($("#edgediv").hide()) {
+                $("#edgediv").show();
+                $("#setting").hide();
+                $("#ecommercediv").hide();
+                $("#brushdiv").hide();
+                $("#backgrounddiv").hide();
+                $("#reviewdiv").hide();
+            }
+        });
+    });
+</script>
 </html>

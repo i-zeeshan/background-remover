@@ -1,10 +1,27 @@
+.main{
+    position: relative;
+    left: 0px;
+    max-height: 100vh;
+}
+.maintab{
+    position: absolute;
+    width: 75%;
+    left: 0px;
+    max-height: 100vh;
+    display: none;
+}
 #topnav{
-    width: content-box;
+    width: fit-content;
     margin-left: 0px;
+    border: 1px solid;
+    border-radius: 5px;
 }
 #bottomnav{
-    width: content-box;
+    width: fit-content;
     margin-left: 0px;
+    border: 1px solid;
+    border-radius: 5px;
+    margin-bottom: 2px;
 }
 #leftcanvas{
     width: 660px;
@@ -101,11 +118,23 @@
     width: 100px;
 }
 #sidenav{
-    float: end;
+    float: right;
     list-style-type: none;
+    /*width: fit-content;*/
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column-reverse;
+    position: fixed;
+    /*border: 1px solid;*/
+
 }
 #helpbtn{
     border: none;
+    background-color: orange;
+    width: 25px;
+    border-radius: 5px;
+    font-size: 12px;
+    height: 30px;
 }
 #footer{
     margin-bottom: 2px;
@@ -144,9 +173,10 @@
     margin-left: 2px;
     border: none;
     width: 100px;
+    justify-content: space-around;
 }
 #bottomedgebutton{
-    width: 120px;
+    width: 200px;
     border: none;
 }
 #edgebtn{
@@ -154,4 +184,118 @@
     width: 60px;
     border-radius: 10%;
     margin-left: 2px;
+}
+#reviewbtn{
+    border: cornflowerblue;
+    width: 60px;
+    border-radius: 10%;
+    margin-left: 2px;
+}
+#sidenavbuttons{
+    float: right;
+    /*width: fit-content;*/
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row-reverse;
+    /*border: 1px solid;*/
+}
+#closebtn{
+    border: none;
+    width: 30px;
+    border-radius: 5px;
+    font-size: 12px;
+    height: 30px;
+}
+#sidebarnav{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+}
+#modebtn{
+    border: 1px;
+    font-size: small;
+}
+#photobtn{
+    border: 1px;
+    font-size: small;
+}
+#graphicbtn{
+    width: 100px;
+    border: 1px;
+    font-size: small;
+}
+#autoclipbtn{
+    margin-top: 15px;
+    border: 1px;
+    width: 110px;
+    font-size: small;
+}
+#originalbtn{
+    margin-top: 15px;
+    border: 1px;
+    width: 110px;
+    font-size: small;
+    padding: 3px;
+    height: 50px;
+}
+#setting{
+    display: none;
+    background-color: white;
+    max-width: 75%;
+    border: 1px solid;
+    justify-content: left;
+}
+#settingtop{
+    border-bottom: 1px lightblue;
+}
+#Tabs{
+    border: 1px dimgray;
+}
+#closesetting{
+    float: right;
+    margin-right: 20px
+}
+.fixed{
+    border: 1px solid;
+    position: sticky;
+
+}
+.psettings{
+    font-style: italic;
+    font-size: small;
+
+}
+.fontsize{
+    font-size: medium;
+    font-weight: bold;
+}
+.bottomdivs{
+    position: absolute;
+    top: 500px;
+    left: 3px;
+}
+#ecommercediv{
+    display: none;
+}
+#brushdiv{
+    display: none;
+}
+#backgrounddiv{
+    display: none;
+}
+#reviewdiv{
+    display: none;
+}
+#edgediv{
+    display: none;
+
+}
+#edgediv button{
+    width:50px;
+    text-align: left;
+}
+.edgebottomdiv{
+    position: absolute;
+    top: 450px;
+    left: 3px;
 }
