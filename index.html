@@ -14,7 +14,12 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
+<script src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+        <script src = 'https://cdnjs.cloudflare.com/ajax/libs/fabric.js/3.6.2/fabric.js'></script>
+        <script src = 'add.js'></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Background Remover</title>
 </head>
@@ -1097,23 +1102,56 @@
     <i class="fa fa-external-link text-primary"></i>
 </div>
     <div id="brushdiv">
-        <p>Brush Size: <strong>20px</strong></p>    <script src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
-        <script src = 'https://cdnjs.cloudflare.com/ajax/libs/fabric.js/3.6.2/fabric.js'></script>
-        <script src = 'add.js'></script>
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    
-        <p style="display: inline-block">
+        <div id="placeholder5px" style="display: none">Brush Size: <strong>5px</strong>
         <button type="button" class="btn btn-primary btn-small"><i class="fa fa-minus text-small"></i> </button>
             <button type="button" class="btn btn-primary btn-small"><i class="fa fa-plus text-small"></i> </button>
-            <button type="button" class="btn btn-primary btn-small ml-3" id="5px">5px </button>
-            <button type="button" class="btn btn-primary btn-small" id="10px">10px </button>
-            <button type="button" class="btn btn-primary btn-small " id="20px">20px </button>
-            <button type="button" class="btn btn-primary btn-small " id="30px">30px </button>
-            <button type="button" class="btn btn-primary btn-small " id="40px">40px </button>
+            <button type="button" class="btn btn-primary btn-small ml-3" id="placeholder5-5px">5px </button>
+            <button type="button" class="btn btn-primary btn-small" id="placeholder5-10px">10px </button>
+            <button type="button" class="btn btn-primary btn-small " id="placeholder5-20px">20px </button>
+            <button type="button" class="btn btn-primary btn-small " id="placeholder5-30px">30px </button>
+            <button type="button" class="btn btn-primary btn-small " id="placeholder5-40px">40px </button>
             <i class="fa fa-cog text-secondary ml-3"></i>
-        </p>
+        </div>
+        <div id="placeholder10px" style="display: none">Brush Size: <strong>10px</strong>
+            <button type="button" class="btn btn-primary btn-small"><i class="fa fa-minus text-small"></i> </button>
+            <button type="button" class="btn btn-primary btn-small"><i class="fa fa-plus text-small"></i> </button>
+            <button type="button" class="btn btn-primary btn-small ml-3" id="placeholder10-5px">5px </button>
+            <button type="button" class="btn btn-primary btn-small" id="placeholder10-10px">10px </button>
+            <button type="button" class="btn btn-primary btn-small " id="placeholder10-20px">20px </button>
+            <button type="button" class="btn btn-primary btn-small " id="placeholder10-30px">30px </button>
+            <button type="button" class="btn btn-primary btn-small " id="placeholder10-40px">40px </button>
+            <i class="fa fa-cog text-secondary ml-3"></i>
+        </div>
+        <div id="placeholder20px"> Brush Size: <strong>20px</strong>
+            <button type="button" class="btn btn-primary btn-small"><i class="fa fa-minus text-small"></i> </button>
+            <button type="button" class="btn btn-primary btn-small"><i class="fa fa-plus text-small"></i> </button>
+            <button type="button" class="btn btn-primary btn-small ml-3" id="placeholder20-5px">5px </button>
+            <button type="button" class="btn btn-primary btn-small" id="placeholder20-10px">10px </button>
+            <button type="button" class="btn btn-primary btn-small " id="placeholder20-20px">20px </button>
+            <button type="button" class="btn btn-primary btn-small " id="placeholder20-30px">30px </button>
+            <button type="button" class="btn btn-primary btn-small " id="placeholder20-40px">40px </button>
+            <i class="fa fa-cog text-secondary ml-3"></i>
+        </div>
+        <div id="placeholder30px" style="display: none">Brush Size: <strong>30px</strong>
+            <button type="button" class="btn btn-primary btn-small"><i class="fa fa-minus text-small"></i> </button>
+            <button type="button" class="btn btn-primary btn-small"><i class="fa fa-plus text-small"></i> </button>
+            <button type="button" class="btn btn-primary btn-small ml-3" id="placeholder30-5px">5px </button>
+            <button type="button" class="btn btn-primary btn-small" id="placeholder30-10px">10px </button>
+            <button type="button" class="btn btn-primary btn-small " id="placeholder30-20px">20px </button>
+            <button type="button" class="btn btn-primary btn-small " id="placeholder30-30px">30px </button>
+            <button type="button" class="btn btn-primary btn-small " id="placeholder30-40px">40px </button>
+            <i class="fa fa-cog text-secondary ml-3"></i>
+        </div>
+        <div id="placeholder40px" style="display: none">Brush Size: <strong>40px</strong>
+            <button type="button" class="btn btn-primary btn-small"><i class="fa fa-minus text-small"></i> </button>
+            <button type="button" class="btn btn-primary btn-small"><i class="fa fa-plus text-small"></i> </button>
+            <button type="button" class="btn btn-primary btn-small ml-3" id="placeholder40-5px">5px </button>
+            <button type="button" class="btn btn-primary btn-small" id="placeholder40-10px">10px </button>
+            <button type="button" class="btn btn-primary btn-small " id="placeholder40-20px">20px </button>
+            <button type="button" class="btn btn-primary btn-small " id="placeholder40-30px">30px </button>
+            <button type="button" class="btn btn-primary btn-small " id="placeholder40-40px">40px </button>
+            <i class="fa fa-cog text-secondary ml-3"></i>
+        </div>
     </div>
 
     <div id="backgrounddiv">
@@ -1357,9 +1395,260 @@
                 $("#reviewdiv").hide();
             }
         });
-        $("#5px").click(function () {
-            $("#sizebtn").hide();
-            $("#size5px").show();
+
+        $("#placeholder20-5px").click(function () {
+            if($("#placeholder5px").hide()) {
+                $("#placeholder5px").show();
+                $("#placeholder10px").hide();
+                $("#placeholder20px").hide();
+                $("#placeholder30px").hide();
+                $("#placeholder40px").hide();
+                $("#sizebtn").html("5px");
+            }
+        });
+        $("#placeholder10-5px").click(function () {
+            if($("#placeholder5px").hide()) {
+                $("#placeholder5px").show();
+                $("#placeholder20px").hide();
+                $("#placeholder10px").hide();
+                $("#placeholder30px").hide();
+                $("#placeholder40px").hide();
+                $("#sizebtn").html("5px");
+            }
+        });
+        $("#placeholder5-5px").click(function () {
+            if($("#placeholder5px").hide()) {
+                $("#placeholder5px").show();
+                $("#placeholder20px").hide();
+                $("#placeholder10px").hide();
+                $("#placeholder30px").hide();
+                $("#placeholder40px").hide();
+                $("#sizebtn").html("5px");
+            }
+        });
+        $("#placeholder30-5px").click(function () {
+            if($("#placeholder5px").hide()) {
+                $("#placeholder5px").show();
+                $("#placeholder20px").hide();
+                $("#placeholder10px").hide();
+                $("#placeholder30px").hide();
+                $("#placeholder40px").hide();
+                $("#sizebtn").html("5px");
+            }
+        });
+        $("#placeholder40-5px").click(function () {
+            if($("#placeholder5px").hide()) {
+                $("#placeholder5px").show();
+                $("#placeholder20px").hide();
+                $("#placeholder10px").hide();
+                $("#placeholder30px").hide();
+                $("#placeholder40px").hide();
+                $("#sizebtn").html("5px");
+            }
+        });
+
+        $("#placeholder20-10px").click(function () {
+            if($("#placeholder10px").hide()) {
+                $("#placeholder10px").show();
+                $("#placeholder5px").hide();
+                $("#placeholder20px").hide();
+                $("#placeholder30px").hide();
+                $("#placeholder40px").hide();
+                $("#sizebtn").html("10px");
+            }
+        });
+        $("#placeholder10-10px").click(function () {
+            if($("#placeholder10px").hide()) {
+                $("#placeholder10px").show();
+                $("#placeholder20px").hide();
+                $("#placeholder5px").hide();
+                $("#placeholder30px").hide();
+                $("#placeholder40px").hide();
+                $("#sizebtn").html("10px");
+            }
+        });
+        $("#placeholder5-10px").click(function () {
+            if($("#placeholder10px").hide()) {
+                $("#placeholder10px").show();
+                $("#placeholder20px").hide();
+                $("#placeholder5px").hide();
+                $("#placeholder30px").hide();
+                $("#placeholder40px").hide();
+                $("#sizebtn").html("10px");
+            }
+        });
+        $("#placeholder30-10px").click(function () {
+            if($("#placeholder10px").hide()) {
+                $("#placeholder10px").show();
+                $("#placeholder20px").hide();
+                $("#placeholder5px").hide();
+                $("#placeholder30px").hide();
+                $("#placeholder40px").hide();
+                $("#sizebtn").html("10px");
+            }
+        });
+        $("#placeholder40-10px").click(function () {
+            if($("#placeholder10px").hide()) {
+                $("#placeholder10px").show();
+                $("#placeholder20px").hide();
+                $("#placeholder5px").hide();
+                $("#placeholder30px").hide();
+                $("#placeholder40px").hide();
+                $("#sizebtn").html("10px");
+            }
+        });
+
+        $("#placeholder20-20px").click(function () {
+            if($("#placeholder20px").hide()) {
+                $("#placeholder20px").show();
+                $("#placeholder10px").hide();
+                $("#placeholder5px").hide();
+                $("#placeholder30px").hide();
+                $("#placeholder40px").hide();
+                $("#sizebtn").html("20px");
+            }
+        });
+        $("#placeholder10-20px").click(function () {
+            if($("#placeholder20px").hide()) {
+                $("#placeholder20px").show();
+                $("#placeholder5px").hide();
+                $("#placeholder10px").hide();
+                $("#placeholder30px").hide();
+                $("#placeholder40px").hide();
+                $("#sizebtn").html("20px");
+            }
+        });
+        $("#placeholder5-20px").click(function () {
+            if($("#placeholder20px").hide()) {
+                $("#placeholder20px").show();
+                $("#placeholder5px").hide();
+                $("#placeholder10px").hide();
+                $("#placeholder30px").hide();
+                $("#placeholder40px").hide();
+                $("#sizebtn").html("20px");
+            }
+        });
+        $("#placeholder30-20px").click(function () {
+            if($("#placeholder20px").hide()) {
+                $("#placeholder20px").show();
+                $("#placeholder5px").hide();
+                $("#placeholder10px").hide();
+                $("#placeholder30px").hide();
+                $("#placeholder40px").hide();
+                $("#sizebtn").html("20px");
+            }
+        });
+        $("#placeholder40-20px").click(function () {
+            if($("#placeholder20px").hide()) {
+                $("#placeholder20px").show();
+                $("#placeholder5px").hide();
+                $("#placeholder10px").hide();
+                $("#placeholder30px").hide();
+                $("#placeholder40px").hide();
+                $("#sizebtn").html("20px");
+            }
+        });
+
+        $("#placeholder20-30px").click(function () {
+            if($("#placeholder30px").hide()) {
+                $("#placeholder30px").show();
+                $("#placeholder10px").hide();
+                $("#placeholder5px").hide();
+                $("#placeholder20px").hide();
+                $("#placeholder40px").hide();
+                $("#sizebtn").html("30px");
+            }
+        });
+        $("#placeholder10-30px").click(function () {
+            if($("#placeholder30px").hide()) {
+                $("#placeholder30px").show();
+                $("#placeholder5px").hide();
+                $("#placeholder10px").hide();
+                $("#placeholder20px").hide();
+                $("#placeholder40px").hide();
+                $("#sizebtn").html("20px");
+            }
+        });
+        $("#placeholder5-30px").click(function () {
+            if($("#placeholder30px").hide()) {
+                $("#placeholder30px").show();
+                $("#placeholder5px").hide();
+                $("#placeholder10px").hide();
+                $("#placeholder20px").hide();
+                $("#placeholder40px").hide();
+                $("#sizebtn").html("30px");
+            }
+        });
+        $("#placeholder30-30px").click(function () {
+            if($("#placeholder30px").hide()) {
+                $("#placeholder30px").show();
+                $("#placeholder5px").hide();
+                $("#placeholder10px").hide();
+                $("#placeholder5px").hide();
+                $("#placeholder40px").hide();
+                $("#sizebtn").html("30px");
+            }
+        });
+        $("#placeholder40-30px").click(function () {
+            if($("#placeholder30px").hide()) {
+                $("#placeholder30px").show();
+                $("#placeholder5px").hide();
+                $("#placeholder10px").hide();
+                $("#placeholder5px").hide();
+                $("#placeholder40px").hide();
+                $("#sizebtn").html("30px");
+            }
+        });
+
+        $("#placeholder20-40px").click(function () {
+            if($("#placeholder40px").hide()) {
+                $("#placeholder40px").show();
+                $("#placeholder10px").hide();
+                $("#placeholder5px").hide();
+                $("#placeholder20px").hide();
+                $("#placeholder30px").hide();
+                $("#sizebtn").html("40px");
+            }
+        });
+        $("#placeholder10-40px").click(function () {
+            if($("#placeholder40px").hide()) {
+                $("#placeholder40px").show();
+                $("#placeholder5px").hide();
+                $("#placeholder10px").hide();
+                $("#placeholder20px").hide();
+                $("#placeholder30px").hide();
+                $("#sizebtn").html("30px");
+            }
+        });
+        $("#placeholder5-40px").click(function () {
+            if($("#placeholder40px").hide()) {
+                $("#placeholder40px").show();
+                $("#placeholder5px").hide();
+                $("#placeholder10px").hide();
+                $("#placeholder20px").hide();
+                $("#placeholder30px").hide();
+                $("#sizebtn").html("40px");
+            }
+        });
+        $("#placeholder30-40px").click(function () {
+            if($("#placeholder40px").hide()) {
+                $("#placeholder40px").show();
+                $("#placeholder5px").hide();
+                $("#placeholder10px").hide();
+                $("#placeholder5px").hide();
+                $("#placeholder30px").hide();
+                $("#sizebtn").html("40px");
+            }
+        });
+        $("#placeholder40-40px").click(function () {
+            if($("#placeholder40px").hide()) {
+                $("#placeholder40px").show();
+                $("#placeholder5px").hide();
+                $("#placeholder10px").hide();
+                $("#placeholder5px").hide();
+                $("#placeholder30px").hide();
+                $("#sizebtn").html("40px");
+            }
         });
     });
 </script>
