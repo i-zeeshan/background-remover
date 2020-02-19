@@ -197,6 +197,8 @@
     border-radius: 5px;
     display: flex;
     flex-direction: row-reverse;
+    margin-top: 25px;
+    /*margin-right: 5px;*/
     /*border: 1px solid;*/
 }
 #closebtn{
@@ -291,8 +293,9 @@
 
 }
 #edgediv button{
-    width:50px;
-    text-align: left;
+    width:80px;
+    text-align: center;
+    color: white;
 }
 .edgebottomdiv{
     position: absolute;

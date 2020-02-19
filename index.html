@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <!-- Required meta tags -->
-    <!--what can i say-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,26 +9,34 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Background Remover</title>
 </head>
 
 <body>
 <div class="main">
+    <div class="row fixed-top">
+        <div class="col-10">
 <nav class="navbar navbar-expand-md m-2 bg-white fixed-top" id="topnav">
 <ul class="navbar-nav m-2">
     <li class="nav-item ml-0">
-        <button id="plusbtn"  type="button" class="bg-success text-center justify-content-center"><i class="fa fa-plus text-white"></i></button>
-<!--    </li>-->
+        <button id="plusbtn"  type="button" class="bg-success text-center justify-content-center"><i class="fa fa-plus text-white" ></i></button>
+    </li>
     <li class="nav-item ml-2">
     <button id="minusbtn" type="button" class="bg-danger text-center justify-content-center"><i class="fa fa-minus  text-white"></i> </button>
-<!--</li>-->
+</li>
     <li class="nav-item ml-2">
         <button id="eraserbtn" type="button" class="text-center justify-content-center bg-outline-none"><i class="fa fa-eraser text-secondary"></i> </button>
-<!--</li>-->
+</li>
     <li class="nav-item ml-2">
         <button id="scalebtn" type="button" class="text-center justify-content-center bg-outline-none"><i class="fa fa-eraser text-secondary"></i> </button>
-<!--</li>-->
+</li>
     <li class="nav-item ml-2">
         <button id="handbtn" type="button" class="text-center justify-content-center bg-outline-none"><i class="fa fa-hand-paper-o text-secondary"></i> </button>
 </li>
@@ -56,10 +63,16 @@
     <button type="button" class="text-white bg-primary" id="downloadbtn"><span class="text-capitalize">Subscribe to download</span><i class="fa fa-download text-white"></i></button>
     <button type="button" class="text-white bg-white" id="settingbtn"><i class="fa fa-cogs text-dark"></i></button>
     <button type="button" class=" bg-white" id="pricingbtn"><span class="text-capitalize">pricing</span> <i class="fa fa-external-link text-dark"></i></button>
+
     </li>
 </ul>
 </nav>
-
+        </div>
+        <div class="col-2" id="sidenavbuttons">
+            <button type="button" class="text-white bg-primary" id="closebtn"><i class="fa fa-times text-white"></i></button>
+            <button type="button" class="text-white mr-2" id="helpbtn"><i class="fa fa-question text-white"></i></button>
+        </div>
+    </div>
     <!--Settings-->
 <!--<div class="maintab" id="setting">-->
 <!--    <div class="container m-0">-->
@@ -1051,11 +1064,6 @@
 <!--    </div>-->
 <!--</div>-->
 
-<div class="m-4 fixed-top" id="sidenavbuttons">
-    <button type="button" class="text-white bg-primary" id="closebtn"><i class="fa fa-times text-white"></i></button>
-    <button type="button" class="text-white mr-2" id="helpbtn"><i class="fa fa-question text-white"></i></button>
-
-</div>
 <div class="text-center justify-content-between" id="sidenav">
     <div >
         <button class="btn bg-primary text-light " id="originalbtn" type="button">Original</button>
@@ -1087,15 +1095,15 @@
     <i class="fa fa-external-link text-primary"></i>
 </div>
     <div id="brushdiv">
-        <p>Brush Size: <strong>20px</strong>
+        <p>Brush Size: <strong>20px</strong></p>
+        <p style="display: inline-block">
         <button type="button" class="btn btn-primary btn-small"><i class="fa fa-minus text-small"></i> </button>
             <button type="button" class="btn btn-primary btn-small"><i class="fa fa-plus text-small"></i> </button>
-            <button type="button" class="btn btn-primary btn-small ml-3">5px </button>
-            <button type="button" class="btn btn-primary btn-small ">5px </button>
-            <button type="button" class="btn btn-primary btn-small ">10px </button>
-            <button type="button" class="btn btn-primary btn-small ">20px </button>
-            <button type="button" class="btn btn-primary btn-small ">30px </button>
-            <button type="button" class="btn btn-primary btn-small ">40px </button>
+            <button type="button" class="btn btn-primary btn-small ml-3" id="5px">5px </button>
+            <button type="button" class="btn btn-primary btn-small" id="10px">10px </button>
+            <button type="button" class="btn btn-primary btn-small " id="20px">20px </button>
+            <button type="button" class="btn btn-primary btn-small " id="30px">30px </button>
+            <button type="button" class="btn btn-primary btn-small " id="40px">40px </button>
             <i class="fa fa-cog text-secondary ml-3"></i>
         </p>
     </div>
@@ -1149,22 +1157,22 @@
                 <button type="button" class="btn btn-secondary text-muted">Off</button>
             </div>
             <div class="col-5">
-                <button type="button" class="btn btn-secondary text-muted">Smart</button>
+                <button type="button" class="btn btn-secondary text-muted text-white">Smart</button>
                 <button type="button" class="btn btn-secondary text-muted">Fixed</button>
-                <button type="button" class="btn btn-secondary text-muted"><i class="fa fa-minus fa-1px text-muted"></i></button>
-                <button type="button" class="btn btn-secondary text-muted"><i class="fa fa-minus fa-1px text-muted"></i></button>
+                <button type="button" class="btn btn-secondary text-muted"><i class="fa fa-minus text-muted"></i></button>
+                <button type="button" class="btn btn-secondary text-muted"><i class="fa fa-plus text-muted"></i></button>
                 <button type="button" class="btn btn-secondary text-muted">Reset</button>
             </div>
             <div class="col-4">
                 <button type="button" class="btn btn-primary text-left">Smart</button>
                 <button type="button" class="btn bg-white">Fixed</button>
-                <button type="button" class="btn btn-primary text-muted ml-2"><i class="fa fa-minus fa-1px text-muted"></i></button>
-                <button type="button" class="btn btn-primary text-muted"><i class="fa fa-minus fa-1px text-muted"></i></button>
+                <button type="button" class="btn btn-primary text-muted ml-2"><i class="fa fa-minus text-muted"></i></button>
+                <button type="button" class="btn btn-primary text-muted"><i class="fa fa-plus text-muted"></i></button>
                 <button type="button" class="btn btn-secondary text-muted">Reset</button>
             </div>
             <div class="col-1">
                 <button type="button" class="btn btn-secondary text-muted"><i class="fa fa-minus fa-1px text-muted"></i></button>
-                <button type="button" class="btn btn-secondary text-muted"><i class="fa fa-minus fa-1px text-muted"></i></button>
+                <button type="button" class="btn btn-secondary text-muted"><i class="fa fa-plus text-muted"></i></button>
                 <button type="button" class="btn btn-secondary text-muted">Reset</button>
             </div>
 
@@ -1174,6 +1182,50 @@
 </div>
 
     </div>
+<div class="modal" id="colormodal">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-7">
+                        <canvas id="modalcanvas">
+
+                        </canvas>
+                    </div>
+                    <div class="col-5">
+                        <div class="row">
+                        <div class="col-2">
+                        <button id="modalundo" type="button" class="btn btn-primary"><i class="fa fa-undo"></i> </button>
+                        <button id="modalredo" type="button" class="btn btn-primary"><i class="fa fa-redo"></i> </button>
+                        </div>
+                        <div class="col-3">
+                            <button id="modalzoomin" type="button" class="btn btn-primary"><i class="fa fa-search-plus"></i> </button>
+                            <button id="modalzoomout" type="button" class="btn btn-primary"><i class="fa fa-search-minus"></i> </button>
+                            <button id="modalfitscreen" type="button" class="btn btn-primary"><i class="fa fa-search-minus"></i> </button>
+                            <button id="modaldownload" type="button" class="btn btn-primary"><i class="fa fa-arrow-down"></i> </button>
+                        </div>
+                        <div class="col-3">
+                            <button id="modalcorrect" type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-check"></i> </button>
+                        </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">
+                                <button id="modalColor" type="button" class="btn btn-primary"><i class="fa fa-adjust"></i><span>Color</span> </button>
+                            </div>
+                            <div class="col-4">
+                                <button id="modalCrop" type="button" class="btn btn-primary"><i class="fa fa-crop"></i><span>Crop</span> </button>
+
+                            </div>
+                            <div class="col-4">
+                                <button id="modalShadow" type="button" class="btn btn-primary"><i class="fa fa-clone"></i><span>Shadows</span> </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
     <nav class="navbar navbar-expand-md bg-white fixed-bottom" id="bottomnav">
@@ -1182,14 +1234,14 @@
             <button type="button" class="text-white bg-white" id="bottomsettingbtn"><i class="fa fa-cog text-dark"></i></button>
             <button type="button" class="text-white bg-white" id="shopingbtn"><i class="fa fa-shopping-cart text-dark"></i></button>
         </li>
-            <li class="nav-item " id="bottombutton"><a class="text-center text-dark text-capitalize"><span>Brush:</span><button class="btn-rounded btn-primary" id="sizebtn">20px</button> </a>
+            <li class="nav-item " id="bottombutton"><a class="text-center text-dark text-capitalize"><span>Brush:</span><button class="btn-rounded btn-primary" id="sizebtn">20px</button> <button class="btn-rounded btn-primary" id="size5px" style="display: none">5px</button> </a>
 
             </li>
             <li class="nav-item" id="background">
                 <a  class="text-center text-dark text-capitalize"><span>Background:</span> <i class="fa fa-palette text-dark" id="bckrndbtn"></i> </a>
             </li>
             <li class="nav-item">
-                <button type="button" class="text-white bg-light" id="colorbtn"><i class="fa fa-adjust text-dark"></i><span class="text-capitalize text-dark">Color</span></button>
+                <button type="button" class="text-white bg-light" id="colorbtn" data-target="#colormodal" data-toggle="modal"><i class="fa fa-adjust text-dark"></i><span class="text-capitalize text-dark">Color</span></button>
             </li>
             <li class="nav-item">
                 <button type="button" class="text-white bg-light" id="cropbtn"><i class="fa fa-crop text-dark"></i><span class="text-capitalize text-dark">Crop</span></button>
@@ -1289,6 +1341,10 @@
                 $("#backgrounddiv").hide();
                 $("#reviewdiv").hide();
             }
+        });
+        $("#5px").click(function () {
+            $("#sizebtn").hide();
+            $("#size5px").show();
         });
     });
 </script>
