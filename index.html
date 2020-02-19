@@ -31,25 +31,25 @@
 <nav class="navbar navbar-expand-md m-2 bg-white fixed-top" id="topnav">
 <ul class="navbar-nav m-2">
     <li class="nav-item ml-0">
-        <button id="plusbtn"  type="button" class="bg-success text-center justify-content-center"><i class="fa fa-plus text-white" ></i></button>
+        <button id="plusbtn"  type="button" class="bg-success text-center justify-content-center" data-toggle="tooltip" data-placement="bottom" title="Keep Tool (Keyboard: Toggle Spacebar)"><i class="fa fa-plus text-white" ></i></button>
     </li>
     <li class="nav-item ml-2">
-    <button id="minusbtn" type="button" class="bg-danger text-center justify-content-center"><i class="fa fa-minus  text-white"></i> </button>
+    <button id="minusbtn" type="button" class="bg-danger text-center justify-content-center" data-toggle="tooltip" data-placement="bottom" title="Remove Tool (Keyboard: Toggle Spacebar)"><i class="fa fa-minus  text-white"></i> </button>
 </li>
     <li class="nav-item ml-2">
-        <button id="eraserbtn" type="button" class="text-center justify-content-center bg-outline-none"><i class="fa fa-eraser text-secondary"></i> </button>
+        <button id="eraserbtn" type="button" class="text-center justify-content-center bg-outline-none" data-toggle="tooltip" data-placement="bottom" title="Eraser (Keyboard: X)"><i class="fa fa-eraser text-secondary"></i> </button>
 </li>
     <li class="nav-item ml-2">
-        <button id="scalebtn" type="button" class="text-center justify-content-center bg-outline-none"><i class="fa fa-eraser text-secondary"></i> </button>
+        <button id="scalebtn" type="button" class="text-center justify-content-center bg-outline-none" data-toggle="tooltip" data-placement="bottom" title="Scalpel (Keyboard: S)"><i class="fa fa-eraser text-secondary"></i> </button>
 </li>
     <li class="nav-item ml-2">
-        <button id="handbtn" type="button" class="text-center justify-content-center bg-outline-none"><i class="fa fa-hand-paper-o text-secondary"></i> </button>
+        <button id="handbtn" type="button" class="text-center justify-content-center bg-outline-none" data-toggle="tooltip" data-placement="bottom" title="Pan Tool (Keyboard: Shift or C)"><i class="fa fa-hand-paper-o text-secondary"></i> </button>
 </li>
     <li class="nav-item ml-0 m-2 bg-primary">
     <li class="nav-item dropdown" data-toggle="dropdown"><button class="btn-rounded btn-small text-dark text-capitalize dropdown-toggle">edit</button>
     <div class="dropdown-menu">
-        <a class="dropdown-item"><i class="fa fa-undo text-dark"></i><span>Undo</span> </a>
-        <a class="dropdown-item"><i class="fa fa-share text-dark"></i><span>Redo</span> </a>
+        <a class="dropdown-item" data-toggle="tooltip" data-placement="bottom" title="Undo (Keyboard: Z)"><i class="fa fa-undo text-dark"></i><span>Undo</span> </a>
+        <a class="dropdown-item" data-toggle="tooltip" data-placement="bottom" title="Redo (Keyboard: Y)"><i class="fa fa-share text-dark"></i><span>Redo</span> </a>
         <hr>
         <a class="dropdown-item"><i class="fa fa-copy-o text-dark text-muted"></i><span>Copy Marks</span> </a>
         <a class="dropdown-item"><i class="fa fa-paste text-dark text-muted"></i><span>Paste Marks</span> </a>
@@ -57,16 +57,16 @@
         <a class="dropdown-item"><i class="fa fa-fast-backward text-danger"></i><span>Clear All</span> </a>
     </div>
     </li>
-    <button type="button" class="text-white bg-primary" id="undobtn"><i class="fa fa-undo text-white"></i></button>
-    <button type="button" class="text-white bg-primary" id="redobtn"><i class="fa fa-share text-white"></i></button>
-    <button type="button" class="text-white bg-primary" id="zoominbtn"><i class="fa fa-search-plus text-white"></i></button>
-    <button type="button" class="text-white bg-primary" id="zoomoutbtn"><i class="fa fa-search-minus text-white"></i></button>
-    <button type="button" class="text-white bg-primary" id="fittoscreenbtn"><i class="fa fa-search-minus text-white"></i></button>
-    <button type="button" class="text-white bg-white" id="singlescreenbtn"><i class="fa fa-caret-square-o-up text-dark"></i></button>
-    <button type="button" class="text-white bg-white" id="doublescreenbtn"><i class="fa fa-columns text-dark"></i></button>
+    <button type="button" class="text-white bg-primary" id="undobtn" data-toggle="tooltip" data-placement="bottom" title="Undo (Keyboard: Z)"><i class="fa fa-undo text-white"></i></button>
+    <button type="button" class="text-white bg-primary" id="redobtn" data-toggle="tooltip" data-placement="bottom" title="Redo (Keyboard: Y)"><i class="fa fa-share text-white"></i></button>
+    <button type="button" class="text-white bg-primary" id="zoominbtn" data-toggle="tooltip" data-placement="bottom" title="Zoom In (Mouse Wheel)"><i class="fa fa-search-plus text-white"></i></button>
+    <button type="button" class="text-white bg-primary" id="zoomoutbtn" data-toggle="tooltip" data-placement="bottom" title="Zoom Out (Mouse Wheel)"><i class="fa fa-search-minus text-white"></i></button>
+    <button type="button" class="text-white bg-primary" id="fittoscreenbtn" data-toggle="tooltip" data-placement="bottom" title="Zoom to Fit (Keyboard: Home)"><i class="fa fa-search-minus text-white"></i></button>
+    <button type="button" class="text-white bg-white" id="singlescreenbtn" data-toggle="tooltip" data-placement="bottom" title="Single Pane View (Keyboard: 1)"><i class="fa fa-caret-square-o-up text-dark"></i></button>
+    <button type="button" class="text-white bg-white" id="doublescreenbtn" data-toggle="tooltip" data-placement="bottom" title="Split View (Keyboard: 2)"><i class="fa fa-columns text-dark"></i></button>
     <button type="button" class="text-white bg-white" id="savebtn"><i class="fa fa-save text-dark"></i></button>
-    <button type="button" class="text-white bg-primary" id="downloadbtn"><span class="text-capitalize">Subscribe to download</span><i class="fa fa-download text-white"></i></button>
-    <button type="button" class="text-white bg-white" id="settingbtn"><i class="fa fa-cogs text-dark"></i></button>
+    <button type="button" class="text-white bg-primary" id="downloadbtn" data-toggle="tooltip" data-placement="bottom" title="Download Results"><span class="text-capitalize">Subscribe to download</span><i class="fa fa-download text-white"></i></button>
+    <button type="button" class="text-white bg-white" id="settingbtn" data-toggle="tooltip" data-placement="bottom" title="Output Results"><i class="fa fa-cogs text-dark"></i></button>
     <button type="button" class=" bg-white" id="pricingbtn"><span class="text-capitalize">pricing</span> <i class="fa fa-external-link text-dark"></i></button>
 
     </li>
@@ -74,7 +74,7 @@
 </nav>
         </div>
         <div class="col-2" id="sidenavbuttons">
-            <button type="button" class="text-white bg-primary" id="closebtn"><i class="fa fa-times text-white"></i></button>
+            <button type="button" class="text-white bg-primary" id="closebtn" data-toggle="tooltip" data-placement="bottom" title="Exit"><i class="fa fa-times text-white"></i></button>
             <button type="button" class="text-white mr-2" id="helpbtn"><i class="fa fa-question text-white"></i></button>
         </div>
     </div>
@@ -1069,25 +1069,25 @@
 <!--    </div>-->
 <!--</div>-->
 
-<div class="text-center justify-content-between" id="sidenav">
-    <div >
-        <button class="btn bg-primary text-light " id="originalbtn" type="button">Original</button>
-    </div>
-    <div >
-        <button class="btn bg-primary text-light " id="autoclipbtn" type="button"><i class="fa fa-check" style="border: 1px solid"></i> <span >Auto-Clip</span></button>
-    </div>
-    <div >
-        <button class="btn bg-primary text-light " id="graphicbtn" type="button">Graphic</button>
-    </div>
-    <div >
-        <button class="btn bg-white text-dark " id="photobtn" type="button">Photo</button>
-    </div>
-    <div  class="text-center">
-        <button class="btn bg-white text-dark" id="modebtn" type="button">Mode <span class="bg-white"><i class="fa fa-info-circle bg-white text-black"></i> </span></button>
-    </div>
+<div class="text-center" id="sidenav">
+        <div >
+            <button class="btn bg-primary text-light " id="originalbtn" type="button" data-toggle="tooltip" data-placement="bottom" title="Hover to show original (Keyboard: Q)">Original</button>
+        </div>
+        <div >
+            <button class="btn bg-primary text-light " id="autoclipbtn" type="button" data-toggle="tooltip" data-placement="bottom" title="Toggle whether a result is produced automatically"><i class="fa fa-check" style="border: 1px solid" ></i> <span >Auto-Clip</span></button>
+        </div>
+        <div >
+            <button class="btn bg-primary text-light " id="graphicbtn" type="button">Graphic</button>
+        </div>
+        <div >
+            <button class="btn bg-white text-dark " id="photobtn" type="button">Photo</button>
+        </div>
+        <div  class="text-center">
+            <button class="btn bg-white text-dark" id="modebtn" type="button">Mode <span class="bg-white"><i class="fa fa-info-circle bg-white text-black"></i> </span></button>
+        </div>
 
 
-</div>
+    </div>
 <div class = 'row px-0 mx-0' width = '100%'>
     <div class = 'col-6 px-0 mx-0'>
         <canvas id="leftcanvas"></canvas>
@@ -1274,29 +1274,29 @@
 </div>
 
 
-    <nav class="navbar navbar-expand-md bg-white fixed-bottom" id="bottomnav">
+        <nav class="navbar navbar-expand-md bg-white fixed-bottom" id="bottomnav">
         <ul class="navbar-nav m-2">
         <li class="nav-item">
-            <button type="button" class="text-white bg-white" id="bottomsettingbtn"><i class="fa fa-cog text-dark"></i></button>
-            <button type="button" class="text-white bg-white" id="shopingbtn"><i class="fa fa-shopping-cart text-dark"></i></button>
+            <button type="button" class="text-white bg-white" id="bottomsettingbtn" data-toggle="tooltip" data-placement="bottom" title="Application Preferences"><i class="fa fa-cog text-dark"></i></button>
+            <button type="button" class="text-white bg-white" id="shopingbtn" data-toggle="tooltip" data-placement="bottom" title="eCommerce"><i class="fa fa-shopping-cart text-dark"></i></button>
         </li>
-            <li class="nav-item " id="bottombutton"><a class="text-center text-dark text-capitalize"><span>Brush:</span><button class="btn-rounded btn-primary" id="sizebtn">20px</button> <button class="btn-rounded btn-primary" id="size5px" style="display: none">5px</button> </a>
+            <li class="nav-item " id="bottombutton"><a class="text-center text-dark text-capitalize"><span>Brush:</span><button class="btn-rounded btn-primary" id="sizebtn" data-toggle="tooltip" data-placement="bottom" title="Brush Size">20px</button> </a>
 
             </li>
             <li class="nav-item" id="background">
                 <a  class="text-center text-dark text-capitalize"><span>Background:</span> <i class="fa fa-palette text-dark" id="bckrndbtn"></i> </a>
             </li>
             <li class="nav-item">
-                <button type="button" class="text-white bg-light" id="colorbtn" data-target="#colormodal" data-toggle="modal"><i class="fa fa-adjust text-dark"></i><span class="text-capitalize text-dark">Color</span></button>
+                <button type="button" class="text-white bg-light" id="colorbtn" data-target="#colormodal" data-toggle="modal" ><i class="fa fa-adjust text-dark"></i><span data-toggle="tooltip" data-placement="bottom" title="Open Color Editor" class="text-capitalize text-dark">Color</span></button>
             </li>
             <li class="nav-item">
-                <button type="button" class="text-white bg-light" id="cropbtn"><i class="fa fa-crop text-dark"></i><span class="text-capitalize text-dark">Crop</span></button>
+                <button type="button" class="text-white bg-light" id="cropbtn"><i class="fa fa-crop text-dark"></i><span class="text-capitalize text-dark" data-toggle="tooltip" data-placement="bottom" title="Open Crop Editor">Crop</span></button>
             </li>
             <li class="nav-item">
-                <button type="button" class="text-white bg-light" id="shadowsbtn"><i class="fa fa-clone text-dark"></i><span class="text-capitalize text-dark">Shadows</span></button>
+                <button type="button" class="text-white bg-light" id="shadowsbtn"><i class="fa fa-clone text-dark"></i><span class="text-capitalize text-dark" data-toggle="tooltip" data-placement="bottom" title="Open Shadows Editor">Shadows</span></button>
             </li>
-            <li class="nav-item " id="bottomedgebutton"><a class="text-center text-dark text-capitalize"><span>Edges:</span><button class="btn-rounded btn-primary" id="edgebtn">1 , 1, 0</button> </a>
-                <button class="btn-rounded btn-primary" id="reviewbtn">Review</button>
+            <li class="nav-item " id="bottomedgebutton"><a class="text-center text-dark text-capitalize"><span>Edges:</span><button class="btn-rounded btn-primary" id="edgebtn" data-toggle="tooltip" data-placement="bottom" title="Refine Edges: Smoothing, Feathering, Offset">1 , 1, 0</button> </a>
+                <button class="btn-rounded btn-primary" id="reviewbtn" data-toggle="tooltip" data-placement="bottom" title="Review">Review</button>
             </li>
         </ul>
 
