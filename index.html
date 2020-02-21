@@ -1217,6 +1217,7 @@
 </div>
 
     </div>
+<!--Modals-->
 <div class="modal m-4" id="colormodal">
     <div class="modal-xl">
         <div class="modal-content">
@@ -1243,9 +1244,9 @@
                             <button id="modalcorrect" type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-check"></i> </button>
                         </div>
                         </div>
-                        <div class="row">
+                        <div class="row headmodal mt-0">
                             <div class="col-4">
-                                <button id="modalColor"  class=" btn-white"><i class="fa fa-adjust"></i><span>Color</span> </button>
+                                <button id="modalColor" class=" btn-white"><i class="fa fa-adjust"></i><span>Color</span> </button>
                             </div>
                             <div class="col-4">
                                 <button id="modalCrop"  class=" btn-white"><i class="fa fa-crop"></i><span>Crop</span> </button>
@@ -1344,12 +1345,40 @@
                         </div>
                         <div class="row bg-white mt-2" id="modalwbbtnshow" style="display: none">
                             <div class="col-12" >
-                                <h3><button class="bg-primary modal-button" ><i class="fa fa-check bg-primary text-white"></i> </button><span class="ml-2">White Balance</span></h3>
-                                <div><button class="btn-white modal-button"><i class="fa fa-hand-pointer text-light"></i> </button>
-                                    <button class="btn-white modal-button"><i class="fa fa-hand-pointer text-light"></i> </button> </div>
+                                <h3 id="modalwbbtnhide"><button class="bg-primary modal-button" ><i class="fa fa-check bg-primary text-white"></i> </button><span class="ml-2">White Balance</span></h3>
+                                <div><button class="btn-white modal-button text-secondary"><i class="fa fa-eyedropper text-secondary"></i> </button>
+                                    <button class="btn-white modal-button"><i class="fa fa-hand-paper-o text-secondary"></i> </button> </div>
                                 <p class="font-italic">Pick a color that should be neutral (white/gray)</p>
                             </div>
 
+                        </div>
+                        <div class="row bg-white mt-2" id="modalccrbtn">
+                            <div class="col-12">
+                                <h3><button class="bg-white"><i class="fa fa-square-o bg-white text-white"></i> </button><span class="ml-2">Color Cast Removal</span></h3>
+                            </div>
+                        </div>
+                        <div class="row bg-white mt-2" id="modalccrbtnshow" style="display: none">
+                            <div class="col-12" >
+                                <h3 id="modalccrbtnhide"><button class="bg-primary modal-button" ><i class="fa fa-check bg-primary text-white"></i> </button><span class="ml-2">Color Cast Removal</span></h3>
+                                <div><button class="btn-white modal-button text-secondary"><i class="fa fa-eyedropper text-secondary"></i> </button>
+                                    <button class="btn-white modal-button"><i class="fa fa-hand-paper-o text-secondary"></i> </button> </div>
+                            </div>
+
+                                <div class="col-12 bg-light mt-2">
+                                    <p>Foreground Guard:  <span class="text-primary">+4</span>
+
+                                    <button class="btn-primary  modal-button ml-5"><i class="fa fa-minus"></i> </button>
+                                    <button class="btn-primary  modal-button"><i class="fa fa-plus"></i> </button>
+                                    <button class="btn-secondary text-muted ml-2  modal-button"><i class="fa fa-undo text-white"></i> </button>
+                                    </p></div>
+
+                        </div>
+
+                        <div class="row bg-light mt-2 mb-0">
+                            <div class="col-12 text-right">
+                                <button class="bg-white modal-button-bottom">Reset </button>
+                                    <button class="bg-primary modal-button-bottom ml-3 text-white w-25"data-dismiss="modal">Ok </button>
+                            </div>
                         </div>
 
                     </div>
@@ -1359,8 +1388,523 @@
     </div>
 </div>
 
+    <!--CropModal-->
+    <div class="modal m-4" id="cropmodal">
+        <div class="modal-xl">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-8">
+                            <canvas id="modalcropcanvas">
 
-    <nav class="navbar navbar-expand-md bg-white fixed-bottom" id="bottomnav">
+                            </canvas>
+                        </div>
+                        <div class="col-4">
+                            <div class="row bg-primary headmodal">
+                                <div class="col-4">
+                                    <button id="modalcropundo" type="button" class="btn btn-primary"><i class="fa fa-undo"></i> </button>
+                                    <button id="modalcropredo" type="button" class="btn btn-primary"><i class="fa fa-share"></i> </button>
+                                </div>
+                                <div class="col-7 ml-0">
+                                    <button id="modalcropzoomin" type="button" class="btn btn-primary"><i class="fa fa-search-plus"></i> </button>
+                                    <button id="modalcropzoomout" type="button" class="btn btn-primary"><i class="fa fa-search-minus"></i> </button>
+                                    <button id="modalcropfitscreen" type="button" class="btn btn-primary"><i class="fa fa-search-minus"></i> </button>
+                                    <button id="modalcropdownload" type="button" class="btn btn-primary"><i class="fa fa-arrow-down"></i> </button>
+                                </div>
+                                <div class="col-1 text-right">
+                                    <button id="modalcropcorrect" type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-check"></i> </button>
+                                </div>
+                            </div>
+                            <div class="row headmodal mt-0">
+                                <div class="col-4">
+                                    <button id="modalcropColor" class=" btn-white"><i class="fa fa-adjust"></i><span>Color</span> </button>
+                                </div>
+                                <div class="col-4">
+                                    <button id="modalcropCrop"  class=" btn-white"><i class="fa fa-crop"></i><span>Crop</span> </button>
+
+                                </div>
+                                <div class="col-4">
+                                    <button id="modalcropShadow" class="btn-white"><i class="fa fa-clone"></i><span>Shadows</span> </button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-10 mt-2">
+                                    <h3>Crop & Resize</h3>
+                                </div>
+
+                                <div class="col-2 mt-2">
+                                    <button class="btn-white text-muted"><i class="fa fa-cog text-secondary"></i> </button>
+                                </div>
+                            </div>
+                            <div class="row bg-light mt-2">
+                                <div class="col-6">
+                                <p><input type="radio"><span class="ml-3">Unconstrained</span></p>
+                                </div>
+                            </div>
+                            <div class="row bg-white mt-2">
+                                <div class="col-6">
+                                    <p><input type="radio"><span class="ml-3">Aspect Ratio:</span>
+                                    <button type="button" class="dropdown-toggle btn-primary" data-toggle="dropdown-menu" aria-haspopup="true" aria-expanded="false">
+                                        3:2
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">1:1</a>
+                                        <a class="dropdown-item" href="#">5:4</a>
+                                        <a class="dropdown-item" href="#">4:3</a>
+                                        <a class="dropdown-item" href="#">3:2</a>
+                                        <a class="dropdown-item" href="#">1.618:1</a>
+                                        <a class="dropdown-item" href="#">16:9</a>
+                                        <a class="dropdown-item" href="#">Custom</a>
+                                    </div>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row bg-light mt-2">
+                                <div class="col-12">
+                                    <p><input type="radio"><span class="ml-3">Target Size:</span>
+                                        <button type="button" class="dropdown-toggle btn-primary" data-toggle="dropdown-menu" aria-haspopup="true" aria-expanded="false">
+                                            1500x1000px(3:2)
+
+                                        </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">640x360px (16:9)</a>
+                                        <a class="dropdown-item" href="#">851x315px (2.702:1)</a>
+                                        <a class="dropdown-item" href="#">1920x1080px (16:9)</a>
+                                        <a class="dropdown-item" href="#">2048x2048px (1:1)</a>
+                                        <a class="dropdown-item" href="#">3000x3000px (1:1)</a>
+                                        <a class="dropdown-item" href="#">1500x1000px (3:2)</a>
+                                        <a class="dropdown-item" href="#">Custom</a>
+                                    </div>
+                                    </p>
+                                    <input class="ml-4" type="checkbox"> <span>Allow Enlarging Result</span>
+                                </div>
+                            </div>
+                            <div class="row bg-white mt-3" id="modalfittoscreenbtn">
+                                <div class="col-10">
+                                    <h5><button class="bg-white"><i class="fa fa-square-o bg-white text-white"></i> </button><span class="ml-2">Fit to Result</span></h5>
+                                </div>
+                                <div class="col-2">
+                                    <button class="btn-white text-muted"><i class="fa fa-cog text-secondary"></i> </button>
+                                </div>
+                            </div>
+                            <div id="modalfittoscreenbtnshow" style="display: none">
+                                <div class="row bg-white mt-2" id="modalfittoscreenbtnhide">
+                                    <div class="col-10">
+                                        <h5><button class="bg-white"><i class="fa fa-square-o bg-white text-white"></i> </button><span class="ml-2">Fit to Result</span></h5>
+                                    </div>
+                                    <div class="col-2">
+                                        <button class="btn-white text-muted"><i class="fa fa-cog text-secondary"></i> </button>
+                                    </div>
+                                </div>
+                            <div class="row bg-white mt-2" >
+
+                                <div class="col-4">
+                                    <p>Margin: </p>
+                                </div>
+                                <div class="col-4">
+                                    <h5 class="text-primary">5.0&percnt;</h5>
+                                </div>
+                                <div class="col-4 text-center">
+                                    <button class="btn-primary  modal-button"><i class="fa fa-minus"></i> </button>
+                                    <button class="btn-primary  modal-button"><i class="fa fa-plus"></i> </button>
+                                    <button class="btn-secondary text-muted ml-2  modal-button"><i class="fa fa-undo text-white"></i> </button>
+                                </div>
+
+                            </div>
+                                <div class="row bg-light" >
+
+                                    <div class="col-4">
+                                        <p>Units: </p>
+                                    </div>
+                                    <div class="col-4">
+                                        <button class="btn-white text-dark  modal-button">Pixels </button>
+                                        <button class="btn-primary  modal-button">Percent </button>
+
+                                    </div>
+
+                                </div>
+                                <div class="row bg-white" >
+
+                                    <div class="col-4">
+                                        <p>Object Size: </p>
+                                    </div>
+                                    <div class="col-8">
+                                        <button class="btn-white text-dark  modal-button">Small </button>
+                                        <button class="btn-primary  modal-button">Medium </button>
+                                        <button class="btn-white text-dark  modal-button">Large </button>
+
+                                    </div>
+
+                                </div>
+                                <div class="row bg-light" >
+
+                                    <div class="col-4">
+                                        <p>Alignment: </p>
+                                    </div>
+                                    <div class="col-8">
+                                        <button class="btn-white text-dark  modal-button">Top </button>
+                                        <button class="btn-primary  modal-button">Middle </button>
+                                        <button class="btn-white text-dark  modal-button">Bottom </button>
+
+                                    </div>
+
+                                </div>
+                                <div class="row bg-white" >
+
+                                    <div class="col-4">
+                                        <p>Shadows: </p>
+                                    </div>
+                                    <div class="col-8">
+                                        <button class="btn-white text-dark  modal-button">Ignore </button>
+                                        <button class="btn-primary  modal-button">Pad </button>
+                                        <button class="btn-white text-dark  modal-button">Tight </button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="row bg-white mt-2">
+                                <div class="col-12">
+                                    <h4>Rotate</h4>
+                                </div>
+                            </div>
+                            <div class="row bg-light mt-2">
+                                <div class="col-4 mt-2">
+                                    <p>Rotate 90&deg;</p>
+                                </div>
+                                <div class="col-4 mt-2 text-center">
+                                    <h6 class="text-primary">0&deg;</h6>
+                                </div>
+                                <div class="col-4 mt-2 text-center">
+                                    <button class="btn-primary  modal-button"><i class="fa fa-minus"></i> </button>
+                                    <button class="btn-primary  modal-button"><i class="fa fa-plus"></i> </button>
+                                    <button class="btn-secondary text-muted ml-2  modal-button"><i class="fa fa-undo text-white"></i> </button>
+                                </div>
+                            </div>
+                            <div class="row bg-white">
+                                <div class="col-4 mt-2">
+                                    <p>Straighten:</p>
+                                </div>
+                                <div class="col-4 mt-2 text-center">
+                                    <h6 class="text-primary">0.0&deg;</h6>
+                                </div>
+                                <div class="col-4 mt-2 text-center">
+                                    <button class="btn-primary  modal-button"><i class="fa fa-minus"></i> </button>
+                                    <button class="btn-primary  modal-button"><i class="fa fa-plus"></i> </button>
+                                    <button class="btn-secondary text-muted ml-2  modal-button"><i class="fa fa-undo text-white"></i> </button>
+                                </div>
+                            </div>
+                            <div class="row bg-white mt-2" >
+
+                                <div class="col-12 bg-white mt-2">
+                                    <p><strong>Output:</strong><span class="text-secondary ml-2">1451 x 1000px (1.451:1)</span>
+
+
+                                    </p>
+                                </div>
+
+                            </div>
+
+                            <div class="row bg-light mt-2 mb-0">
+                                <div class="col-12 text-right">
+                                    <button class="bg-white modal-button-bottom">Reset </button>
+                                    <button class="bg-primary modal-button-bottom ml-3 text-white w-25 " data-dismiss="modal">Ok </button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--EndCropModal-->
+
+    <!--ShadowModal-->
+    <div class="modal m-4" id="shadowmodal">
+        <div class="modal-xl">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-8">
+                            <canvas id="modalshadowcanvas">
+
+                            </canvas>
+                        </div>
+                        <div class="col-4">
+                            <div class="row bg-primary headmodal">
+                                <div class="col-4">
+                                    <button id="modalshadowundo" type="button" class="btn btn-primary"><i class="fa fa-undo"></i> </button>
+                                    <button id="modalshadowredo" type="button" class="btn btn-primary"><i class="fa fa-share"></i> </button>
+                                </div>
+                                <div class="col-7 ml-0">
+                                    <button id="modalshadowzoomin" type="button" class="btn btn-primary"><i class="fa fa-search-plus"></i> </button>
+                                    <button id="modalshadowzoomout" type="button" class="btn btn-primary"><i class="fa fa-search-minus"></i> </button>
+                                    <button id="modalshadowfitscreen" type="button" class="btn btn-primary"><i class="fa fa-search-minus"></i> </button>
+                                    <button id="modalshadowdownload" type="button" class="btn btn-primary"><i class="fa fa-arrow-down"></i> </button>
+                                </div>
+                                <div class="col-1 text-right">
+                                    <button id="modalshadowcorrect" type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-check"></i> </button>
+                                </div>
+                            </div>
+                            <div class="row headmodal mt-0">
+                                <div class="col-4">
+                                    <button id="modalshadowColor" class=" btn-white"><i class="fa fa-adjust"></i><span>Color</span> </button>
+                                </div>
+                                <div class="col-4">
+                                    <button id="modalshadowCrop"  class=" btn-white"><i class="fa fa-crop"></i><span>Crop</span> </button>
+
+                                </div>
+                                <div class="col-4">
+                                    <button id="modalshadowShadow" class="btn-white"><i class="fa fa-clone"></i><span>Shadows</span> </button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 mt-2">
+                                    <h3>Oval Shadows</h3>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-3 ml-4">
+                                    <button class="modal-button bg-white text-dark"><i class="fa fa-hand-paper-o"></i></button>
+                                    <button class="modal-button bg-white text-dark" ><i class="fa fa-circle"></i> </button>
+                                </div>
+                                <div class="col-6 text-left">
+                                    <p class="font-italic">Create new oval shadows</p>
+                                </div>
+                            </div>
+                            <div class="row bg-white mt-3" id="modaldropshadowbtn">
+                                <div class="col-10">
+                                    <h5><button class="bg-white"><i class="fa fa-square-o bg-white text-white"></i> </button><span class="ml-2">Drop Shadow</span></h5>
+                                </div>
+                                <div class="col-2">
+                                    <button class="btn-white text-muted"><i class="fa fa-cog text-secondary"></i> </button>
+                                </div>
+                            </div>
+                            <div id="modaldropshadowbtnshow" style="display: none">
+                                <div class="row bg-white mt-2" id="modaldropshadowbtnhide">
+                                    <div class="col-10">
+                                        <h5><button class="bg-white"><i class="fa fa-square-o bg-white text-white"></i> </button><span class="ml-2">Drop Shadow</span></h5>
+                                    </div>
+                                    <div class="col-2">
+                                        <button class="btn-white text-muted"><i class="fa fa-cog text-secondary"></i> </button>
+                                    </div>
+                                </div>
+                                <div class="row bg-white mt-2" >
+
+                                    <div class="col-4">
+                                        <p>Clipping: </p>
+                                    </div>
+                                    <div class="col-4  text-center">
+                                        <h6 class="text-primary">Off</h6>
+                                    </div>
+                                    <div class="col-4 text-center">
+                                        <button class="btn-primary  modal-button">Enable </button>
+                                    </div>
+
+                                </div>
+                                <div class="row bg-light" >
+
+                                    <div class="col-4">
+                                        <p>Opacity: </p>
+                                    </div>
+                                    <div class="col-4 text-center">
+                                        <h6 class="text-primary">75&percnt; </h6>
+                                    </div>
+                                    <div class="col-4 mt-2 text-center">
+                                        <button class="btn-primary  modal-button"><i class="fa fa-minus"></i> </button>
+                                        <button class="btn-primary  modal-button"><i class="fa fa-plus"></i> </button>
+                                        <button class="btn-secondary text-muted ml-2  modal-button"><i class="fa fa-undo text-white"></i> </button>
+                                    </div>
+
+                                </div>
+                                <div class="row bg-white" >
+
+                                    <div class="col-4">
+                                        <p>Blur Radius: </p>
+                                    </div>
+                                    <div class="col-4 text-center">
+                                        <h6 class="text-primary">25px </h6>
+                                    </div>
+                                    <div class="col-4 mt-2 text-center">
+                                        <button class="btn-primary  modal-button"><i class="fa fa-minus"></i> </button>
+                                        <button class="btn-primary  modal-button"><i class="fa fa-plus"></i> </button>
+                                        <button class="btn-secondary text-muted ml-2  modal-button"><i class="fa fa-undo text-white"></i> </button>
+                                    </div>
+
+                                </div>
+                                <div class="row bg-light" >
+
+                                    <div class="col-4">
+                                        <p>Offset: </p>
+                                    </div>
+                                    <div class="col-4 text-center">
+                                        <h6 class="text-primary">-50, +50 </h6>
+                                    </div>
+                                    <div class="col-4 mt-3 text-center">
+                                        <button class="btn-primary  modal-button"><i class="fa fa-clone"></i> </button>
+                                        <button class="btn-primary  modal-button"><i class="fa fa-clone"></i> </button>
+                                        <button class="btn-primary  modal-button"><i class="fa fa-clone"></i> </button>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="row bg-white mt-3" id="modalreflectionbtn">
+                                <div class="col-10">
+                                    <h5><button class="bg-white"><i class="fa fa-square-o bg-white text-white"></i> </button><span class="ml-2">Reflection</span></h5>
+                                </div>
+                                <div class="col-2">
+                                    <button class="btn-white text-muted"><i class="fa fa-cog text-secondary"></i> </button>
+                                </div>
+                            </div>
+                            <div id="modalreflectionbtnshow" style="display: none">
+                                <div class="row bg-white mt-2" id="modalreflectionbtnhide">
+                                    <div class="col-10">
+                                        <h5><button class="bg-white"><i class="fa fa-square-o bg-white text-white"></i> </button><span class="ml-2">Reflection</span></h5>
+                                    </div>
+                                    <div class="col-2">
+                                        <button class="btn-white text-muted"><i class="fa fa-cog text-secondary"></i> </button>
+                                    </div>
+                                </div>
+                                <div class="row bg-light" >
+
+                                    <div class="col-4">
+                                        <p>Opacity: </p>
+                                    </div>
+                                    <div class="col-4 text-center">
+                                        <h6 class="text-primary">50&percnt; </h6>
+                                    </div>
+                                    <div class="col-4 mt-2 text-center">
+                                        <button class="btn-primary  modal-button"><i class="fa fa-minus"></i> </button>
+                                        <button class="btn-primary  modal-button"><i class="fa fa-plus"></i> </button>
+                                        <button class="btn-secondary text-muted ml-2  modal-button"><i class="fa fa-undo text-white"></i> </button>
+                                    </div>
+
+                                </div>
+                                <div class="row bg-white" >
+
+                                    <div class="col-4">
+                                        <p>Height: </p>
+                                    </div>
+                                    <div class="col-4 text-center">
+                                        <h6 class="text-primary">200px </h6>
+                                    </div>
+                                    <div class="col-4 mt-2 text-center">
+                                        <button class="btn-primary  modal-button"><i class="fa fa-minus"></i> </button>
+                                        <button class="btn-primary  modal-button"><i class="fa fa-plus"></i> </button>
+                                        <button class="btn-secondary text-muted ml-2  modal-button"><i class="fa fa-undo text-white"></i> </button>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                            <div class="row bg-white mt-3" id="modalcastshadowbtn">
+                                <div class="col-10">
+                                    <h5><button class="bg-white"><i class="fa fa-square-o bg-white text-white"></i> </button><span class="ml-2">Cast Shadow</span></h5>
+                                </div>
+                                <div class="col-2">
+                                    <button class="btn-white text-muted"><i class="fa fa-cog text-secondary"></i> </button>
+                                </div>
+                            </div>
+                            <div id="modalcastshadowbtnshow" style="display: none">
+                                <div class="row bg-white mt-2" id="modalcastshadowbtnhide">
+                                    <div class="col-10">
+                                        <h5><button class="bg-white"><i class="fa fa-square-o bg-white text-white"></i> </button><span class="ml-2">Cast Shadow</span></h5>
+                                    </div>
+                                    <div class="col-2">
+                                        <button class="btn-white text-muted"><i class="fa fa-cog text-secondary"></i> </button>
+                                    </div>
+                                </div>
+                                <div class="row bg-light" >
+
+                                    <div class="col-4">
+                                        <p>Opacity: </p>
+                                    </div>
+                                    <div class="col-4 text-center">
+                                        <h6 class="text-primary">25&percnt; </h6>
+                                    </div>
+                                    <div class="col-4 mt-2 text-center">
+                                        <button class="btn-primary  modal-button"><i class="fa fa-minus"></i> </button>
+                                        <button class="btn-primary  modal-button"><i class="fa fa-plus"></i> </button>
+                                        <button class="btn-secondary text-muted ml-2  modal-button"><i class="fa fa-undo text-white"></i> </button>
+                                    </div>
+
+                                </div>
+                                <div class="row bg-white" >
+
+                                    <div class="col-4">
+                                        <p>Opacity Scale: </p>
+                                    </div>
+                                    <div class="col-4 text-center">
+                                        <h6 class="text-primary">50&percnt; </h6>
+                                    </div>
+                                    <div class="col-4 mt-2 text-center">
+                                        <button class="btn-primary  modal-button"><i class="fa fa-minus"></i> </button>
+                                        <button class="btn-primary  modal-button"><i class="fa fa-plus"></i> </button>
+                                        <button class="btn-secondary text-muted ml-2  modal-button"><i class="fa fa-undo text-white"></i> </button>
+                                    </div>
+
+                                </div>
+                                <div class="row bg-light" >
+
+                                    <div class="col-4">
+                                        <p>Blur Radius: </p>
+                                    </div>
+                                    <div class="col-4 text-center">
+                                        <h6 class="text-primary">10px </h6>
+                                    </div>
+                                    <div class="col-4 mt-2 text-center">
+                                        <button class="btn-primary  modal-button"><i class="fa fa-minus"></i> </button>
+                                        <button class="btn-primary  modal-button"><i class="fa fa-plus"></i> </button>
+                                        <button class="btn-secondary text-muted ml-2  modal-button"><i class="fa fa-undo text-white"></i> </button>
+                                    </div>
+
+                                </div>
+                                <div class="row bg-white" >
+
+                                    <div class="col-4">
+                                        <p>Blur Scale: </p>
+                                    </div>
+                                    <div class="col-4 text-center">
+                                        <h6 class="text-primary">400&percnt; </h6>
+                                    </div>
+                                    <div class="col-4 mt-2 text-center">
+                                        <button class="btn-primary  modal-button"><i class="fa fa-minus"></i> </button>
+                                        <button class="btn-primary  modal-button"><i class="fa fa-plus"></i> </button>
+                                        <button class="btn-secondary text-muted ml-2  modal-button"><i class="fa fa-undo text-white"></i> </button>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="row bg-light mt-2 mb-0">
+                                <div class="col-4">
+                                    <button class="bg-white modal-button-bottom">Preview </button>
+                                </div>
+                                <div class="col-8 text-right">
+                                    <button class="bg-white modal-button-bottom">Reset </button>
+                                    <button class="bg-primary modal-button-bottom ml-3 text-white w-25 " data-dismiss="modal">Ok </button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--EndShadowModal-->
+<!--EndModals-->
+
+
+<nav class="navbar navbar-expand-md bg-white fixed-bottom" id="bottomnav">
         <ul class="navbar-nav m-2">
         <li class="nav-item">
             <button type="button" class="text-white bg-white" id="bottomsettingbtn" data-toggle="tooltip" data-placement="bottom" title="Application Preferences"><i class="fa fa-cog text-dark"></i></button>
@@ -1376,10 +1920,10 @@
                 <button type="button" class="text-white bg-light" id="colorbtn" data-target="#colormodal" data-toggle="modal" ><i class="fa fa-adjust text-dark"></i><span data-toggle="tooltip modal" data-placement="bottom" title="Open Color Editor" class="text-capitalize text-dark">Color</span></button>
             </li>
             <li class="nav-item">
-                <button type="button" class="text-white bg-light" id="cropbtn"><i class="fa fa-crop text-dark"></i><span class="text-capitalize text-dark" data-toggle="tooltip modal" data-placement="bottom" title="Open Crop Editor">Crop</span></button>
+                <button type="button" class="text-white bg-light" id="cropbtn" data-target="#cropmodal" data-toggle="modal"><i class="fa fa-crop text-dark"></i><span class="text-capitalize text-dark" data-toggle="tooltip modal" data-placement="bottom" title="Open Crop Editor">Crop</span></button>
             </li>
             <li class="nav-item">
-                <button type="button" class="text-white bg-light" id="shadowsbtn"><i class="fa fa-clone text-dark"></i><span class="text-capitalize text-dark" data-toggle="tooltip modal" data-placement="bottom" title="Open Shadows Editor">Shadows</span></button>
+                <button type="button" class="text-white bg-light" id="shadowsbtn" data-target="#shadowmodal" data-toggle="modal"><i class="fa fa-clone text-dark"></i><span class="text-capitalize text-dark" data-toggle="tooltip modal" data-placement="bottom" title="Open Shadows Editor">Shadows</span></button>
             </li>
             <li class="nav-item " id="bottomedgebutton"><a class="text-center text-dark text-capitalize"><span>Edges:</span><button class="btn-rounded btn-primary" id="edgebtn" data-toggle="tooltip modal" data-placement="bottom" title="Refine Edges: Smoothing, Feathering, Offset">1 , 1, 0</button> </a>
                 <button class="btn-rounded btn-primary" id="reviewbtn" data-toggle="tooltip modal" data-placement="bottom" title="Review">Review</button>
@@ -1760,10 +2304,72 @@
                 $("#modalwbbtn").hide();
             }
         });
-        $("#modalwbbtnshow").click(function () {
+        $("#modalwbbtnhide").click(function () {
             if($("#modalwbbtn").hide()){
                 $("#modalwbbtn").show();
                 $("#modalwbbtnshow").hide();
+            }
+        });
+
+        $("#modalccrbtn").click(function () {
+            if($("#modalccrbtnshow").hide()){
+                $("#modalccrbtnshow").show();
+                $("#modalccrbtn").hide();
+            }
+        });
+        $("#modalccrbtnhide").click(function () {
+            if($("#modalccrbtn").hide()){
+                $("#modalccrbtn").show();
+                $("#modalccrbtnshow").hide();
+            }
+        });
+
+        $("#modalfittoscreenbtn").click(function () {
+            if($("#modalfittoscreenbtnshow").hide()){
+                $("#modalfittoscreenbtnshow").show();
+                $("#modalfittoscreenbtn").hide();
+            }
+        });
+        $("#modalfittoscreenbtnhide").click(function () {
+            if($("#modalfittoscreenbtn").hide()){
+                $("#modalfittoscreenbtn").show();
+                $("#modalfittoscreenbtnshow").hide();
+            }
+        });
+        $("#modaldropshadowbtn").click(function () {
+            if($("#modaldropshadowbtnshow").hide()){
+                $("#modaldropshadowbtnshow").show();
+                $("#modaldropshadowbtn").hide();
+            }
+        });
+        $("#modaldropshadowbtnhide").click(function () {
+            if($("#modaldropshadowbtn").hide()){
+                $("#modaldropshadowbtn").show();
+                $("#modaldropshadowbtnshow").hide();
+            }
+        });
+        $("#modalreflectionbtn").click(function () {
+            if($("#modalreflectionbtnshow").hide()){
+                $("#modalreflectionbtnshow").show();
+                $("#modalreflectionbtn").hide();
+            }
+        });
+        $("#modalreflectionbtnhide").click(function () {
+            if($("#modalreflectionbtn").hide()){
+                $("#modalreflectionbtn").show();
+                $("#modalreflectionbtnshow").hide();
+            }
+        });
+        $("#modalcastshadowbtn").click(function () {
+            if($("#modalcastshadowbtnshow").hide()){
+                $("#modalcastshadowbtnshow").show();
+                $("#modalcastshadowbtn").hide();
+            }
+        });
+        $("#modalcastshadowbtnhide").click(function () {
+            if($("#modalcastshadowbtn").hide()){
+                $("#modalcastshadowbtn").show();
+                $("#modalcastshadowbtnshow").hide();
             }
         });
     });
