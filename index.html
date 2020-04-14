@@ -70,12 +70,23 @@
             </div>
         </div>
         <div  class="row">
-            <div class="col-6">
-                <canvas id="leftcanvas"></canvas>
+            
+            <div class="row">
+                <div class="col-6">
+                    <canvas id="leftcanvas"></canvas>
+                </div>
+                <div class="col-6">
+                    <canvas id="rightcanvas"></canvas>
+                </div>
             </div>
-            <div class="col-6">
-                <canvas id="rightcanvas"></canvas>
+            <div class="row">
+                <form >
+                    <label for="img">Select image:</label>
+                    <input type="file" id="imgUploaded" name="img" accept="image/*">
+                    <button class = 'btn-black' id = "uploadImg">Submit</button>
+                </form>
             </div>
+            
         </div>
         <div class="text-center" id="sidenav">
             <div >

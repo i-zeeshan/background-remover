@@ -1,6 +1,40 @@
+let canvas = new fabric.Canvas('leftcanvas',{
+    backgroundColor: '#d3d3d3',
+    isDrawingMode : false,
+    
+});
+let canvas2 = new fabric.Canvas('rightcanvas',{
+    backgroundColor: '#d3d3d3',
+    isDrawingMode : false,
+    
+});
+canvas2.setHeight(650);
+canvas2.setWidth(649);
+
 drawingState = false;
 pastState = [0, 0];
-// Create WebSocket connection.
+let photo = null;
+let url = null;
+
+$('#imgUploaded').change(function () {
+    photo = this.files[0];
+    console.log(photo);
+    const file = photo;
+    const reader = new FileReader();
+
+    reader.addEventListener("load", function () {
+        console.log(reader.result)
+        url = reader.result;
+        fabric.Image.fromURL(reader.result, function(oImg) {
+            canvas.add(oImg);
+            });
+    }, false);
+
+    if (file) {
+        reader.readAsDataURL(file);
+    }
+    
+});
 const socket = new WebSocket('ws://192.168.100.120:5678');
 
 // Connection opened
@@ -22,18 +56,7 @@ dis = (state0, state1) => {
 }
 
 
-var canvas = new fabric.Canvas('leftcanvas',{
-    backgroundColor: '#d3d3d3',
-    isDrawingMode : false,
-    
-});
-var canvas2 = new fabric.Canvas('rightcanvas',{
-    backgroundColor: '#d3d3d3',
-    isDrawingMode : false,
-    
-});
-canvas2.setHeight(650);
-canvas2.setWidth(649);
+
 
 onObjectAdded  = function (event) {
     const addedObject = event.target;
@@ -53,32 +76,13 @@ onObjectAdded  = function (event) {
             "selectable": false
 
         });
-        function convertToDataURLviaCanvas(url, callback, outputFormat){
-            var img = new Image();
-            img.crossOrigin = 'Anonymous';
-            img.onload = function(){
-                var c = document.createElement('CANVAS');
-                var ctx = c.getContext('2d');
-                var dataURL;
-                c.height = this.height;
-                c.width = this.width;
-                ctx.drawImage(this, 0, 0);
-                dataURL = c.toDataURL(outputFormat);
-                callback(dataURL);
-                c = null; 
-            };
-            img.src = url;
+        if(socket.readyState === WebSocket.OPEN){
+            msg = {"event": "image", "data": url}
+            // print(JSON.stringify(msg))
+            // socket.send(JSON.parse(JSON.stringify(msg)));
+            socket.send(JSON.stringify(msg))
         }
-        // Usage
         
-        convertToDataURLviaCanvas('http://fabricjs.com/assets/pug_small.jpg', function(base64Img){
-            if(socket.readyState === WebSocket.OPEN){
-                msg = {"event": "image", "data": base64Img}
-                // print(JSON.stringify(msg))
-                // socket.send(JSON.parse(JSON.stringify(msg)));
-                socket.send(JSON.stringify(msg))
-            }
-        });
         // addedObject.center();
 
         
@@ -188,95 +192,95 @@ canvas.on('mouse:up', mouseUp)
 //     //opt.e.stopPropagation();
 //   })
 
-img = new fabric.Image.fromURL('http://fabricjs.com/assets/pug_small.jpg', function (img) {
-    // let c = document.createElement('canvas');
+// img = new fabric.Image.fromURL('http://fabricjs.com/assets/pug_small.jpg', function (img) {
+//     // let c = document.createElement('canvas');
     
-    // width = img.width * img.scaleX, 
-    // height = img.height * img.scaleY
-    // c.height = img.naturalHeight;
-    // c.width = img.naturalWidth;
-    // var ctx = c.getContext('2d');
-    // let imageObj = new Image();
-    // imageObj.src = 'http://fabricjs.com/assets/pug_small.jpg';
-    // imageObj.onload = function() {
-    //     ctx.drawImage(imageObj, 0, 0);
-    //     // let base64String = c.toDataURL();
-    //     // console.log({event: base64String})
-    //     console.log(imageObj);
-    // };
+//     // width = img.width * img.scaleX, 
+//     // height = img.height * img.scaleY
+//     // c.height = img.naturalHeight;
+//     // c.width = img.naturalWidth;
+//     // var ctx = c.getContext('2d');
+//     // let imageObj = new Image();
+//     // imageObj.src = 'http://fabricjs.com/assets/pug_small.jpg';
+//     // imageObj.onload = function() {
+//     //     ctx.drawImage(imageObj, 0, 0);
+//     //     // let base64String = c.toDataURL();
+//     //     // console.log({event: base64String})
+//     //     console.log(imageObj);
+//     // };
     
     
     
-    /*var scalex = canvas.width/img.width;
-    var scaley = canvas.height/img.height;
-    var scale;
-    if (scalex > 1){
-        scale = scaley;
-    }
-    else{
-        scale = scalex;
-    }*/
-    
-//     img.on('mousedown',function(options) {
-        
-//         /*var object = new fabric.Circle({
-//             radius: 15,
-//             fill: 'blue',
-//             left: 100,
-//             top: 100,
-//             clientX: options.e.clientX,
-//             clientY: options.e.clientY
-//         });
-//         object.set({ hasControls: false, hasBorders: false, selectable: false })
-//         canvas.add(object);
-//         console.log(options.e.clientX, options.e.clientY)});*/
-//     //canvas.freeDrawingBrush.color = '#00ff00';
-//     //canvas.freeDrawingBrush.width = 15;
-// });
-//     img.on('mousemove',function(options) {
-//         /*var object = new fabric.Circle({
-//             radius: 15,
-//             fill: 'blue',
-//             left: 100,
-//             top: 100,
-//             clientX: options.e.clientX,
-//             clientY: options.e.clientY
-//         });
-//         canvas.add(object);
-//     console.log(options.e.clientX, options.e.clientY)*/
-//     var color = document.getElementById("favcolor").value;
-//     console.log(color);
-//     canvas.freeDrawingBrush.color = color;
-//     canvas.freeDrawingBrush.width = 15;
-//     /*var i;
-//     var len = canvas.getObjects().length;
-//     for (i = 0; i < len; i++) {
-//         if(canvas.getObjects()[i].type == "path"){
-//             canvas.getObjects()[i].selectable = false;
-//         }
+//     /*var scalex = canvas.width/img.width;
+//     var scaley = canvas.height/img.height;
+//     var scale;
+//     if (scalex > 1){
+//         scale = scaley;
+//     }
+//     else{
+//         scale = scalex;
 //     }*/
-//     // isDrawingMode : false,
-//     // canvas.freeDrawingBrush.selectable = false;
-//     // canvas.freeDrawingBrush.hasControls = false;
-//     // canvas.freeDrawingBrush.hasBorders = false;
-//     // canvas.freeDrawingBrush.lockMovementX = true;
-//     // canvas.freeDrawingBrush.lockMovementY = true;
     
-//     canvas.renderAll();
+// //     img.on('mousedown',function(options) {
+        
+// //         /*var object = new fabric.Circle({
+// //             radius: 15,
+// //             fill: 'blue',
+// //             left: 100,
+// //             top: 100,
+// //             clientX: options.e.clientX,
+// //             clientY: options.e.clientY
+// //         });
+// //         object.set({ hasControls: false, hasBorders: false, selectable: false })
+// //         canvas.add(object);
+// //         console.log(options.e.clientX, options.e.clientY)});*/
+// //     //canvas.freeDrawingBrush.color = '#00ff00';
+// //     //canvas.freeDrawingBrush.width = 15;
+// // });
+// //     img.on('mousemove',function(options) {
+// //         /*var object = new fabric.Circle({
+// //             radius: 15,
+// //             fill: 'blue',
+// //             left: 100,
+// //             top: 100,
+// //             clientX: options.e.clientX,
+// //             clientY: options.e.clientY
+// //         });
+// //         canvas.add(object);
+// //     console.log(options.e.clientX, options.e.clientY)*/
+// //     var color = document.getElementById("favcolor").value;
+// //     console.log(color);
+// //     canvas.freeDrawingBrush.color = color;
+// //     canvas.freeDrawingBrush.width = 15;
+// //     /*var i;
+// //     var len = canvas.getObjects().length;
+// //     for (i = 0; i < len; i++) {
+// //         if(canvas.getObjects()[i].type == "path"){
+// //             canvas.getObjects()[i].selectable = false;
+// //         }
+// //     }*/
+// //     // isDrawingMode : false,
+// //     // canvas.freeDrawingBrush.selectable = false;
+// //     // canvas.freeDrawingBrush.hasControls = false;
+// //     // canvas.freeDrawingBrush.hasBorders = false;
+// //     // canvas.freeDrawingBrush.lockMovementX = true;
+// //     // canvas.freeDrawingBrush.lockMovementY = true;
+    
+// //     canvas.renderAll();
+// // });
+//     //var oImg;
+
+
+//   // Centers object vertically and horizontally on canvas to which is was added last
+//     //oImg = img.set({ hasControls: false, hasBorders: false, selectable: true });
+//     // img.centerH();
+//     // img.centerV();
+//     canvas.add(img);
+
 // });
-    //var oImg;
-
-
-  // Centers object vertically and horizontally on canvas to which is was added last
-    //oImg = img.set({ hasControls: false, hasBorders: false, selectable: true });
-    // img.centerH();
-    // img.centerV();
-    canvas.add(img);
-
-});
 
 canvas.on('object:added', onObjectAdded);
-img;
+// img;
 canvas.setHeight(650);
 canvas.setWidth(649);
 canvas.renderAll();
