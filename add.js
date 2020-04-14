@@ -17,7 +17,9 @@ socket.addEventListener('message', function (event) {
     console.log('Message from server ', event.data);
 });
 
-
+dis = (state0, state1) => {
+    return(Math.pow(Math.pow(state0[0]-state1[0], 2)+Math.pow(state0[1]-state1[1], 2), 1/2))
+}
 
 
 var canvas = new fabric.Canvas('leftcanvas',{
@@ -114,6 +116,7 @@ mouseDown = (opt) => {
         drawingState = true;
     }
     if(drawingState){
+        pastState = [opt.e.clientX, opt.e.clientY]
         console.log(opt.e.clientX);
         console.log(opt.e.clientY);
         if (canvas.freeDrawingBrush.color === "#00ff00"){
@@ -131,16 +134,21 @@ mouseDown = (opt) => {
 mouseMove = (opt) => {
     // console.log(canvas.isDrawingMode)
     if(drawingState){
-        console.log(opt.e.clientX);
-        console.log(opt.e.clientY);
-        if (canvas.freeDrawingBrush.color === "#00ff00"){
-            msg = {"event": "f", "data": {"x": opt.e.clientX, "y": opt.e.clientY}};
-            socket.send(JSON.stringify(msg));
+        
+        if(dis(pastState, [opt.e.clientX, opt.e.clientY])>10){
+            console.log(opt.e.clientX);
+            console.log(opt.e.clientY);
+            if (canvas.freeDrawingBrush.color === "#00ff00"){
+                msg = {"event": "f", "data": {"x": opt.e.clientX, "y": opt.e.clientY}};
+                socket.send(JSON.stringify(msg));
+            }
+            else if (canvas.freeDrawingBrush.color === "#ff0000"){
+                msg = {"event": "b", "data": {"x": opt.e.clientX, "y": opt.e.clientY}};
+                socket.send(JSON.stringify(msg));
+            }
+            pastState = [opt.e.clientX, opt.e.clientY];
         }
-        else if (canvas.freeDrawingBrush.color === "#ff0000"){
-            msg = {"event": "b", "data": {"x": opt.e.clientX, "y": opt.e.clientY}};
-            socket.send(JSON.stringify(msg));
-        }
+        
         
     }
 
