@@ -14,1481 +14,484 @@
 </head>
 
 <body>
-<div class="main">
-    <div class="row fixed-top">
-        <div class="col-10">
-<nav class="navbar navbar-expand-md m-2 bg-white fixed-top" id="topnav">
-<ul class="navbar-nav m-2">
-    <li class="nav-item ml-0">
-        <button id="plusbtn"  type="button" class="bg-success text-center justify-content-center" data-toggle="tooltip" data-placement="bottom" title="Keep Tool (Keyboard: Toggle Spacebar)"><i class="fa fa-plus text-white" ></i></button>
-    </li>
-    <li class="nav-item ml-2">
-    <button id="minusbtn" type="button" class="bg-danger text-center justify-content-center" data-toggle="tooltip" data-placement="bottom" title="Remove Tool (Keyboard: Toggle Spacebar)"><i class="fa fa-minus  text-white"></i> </button>
-</li>
-    <li class="nav-item ml-2">
-        <button id="eraserbtn" type="button" class="text-center justify-content-center bg-outline-none" data-toggle="tooltip" data-placement="bottom" title="Eraser (Keyboard: X)"><i class="fa fa-eraser text-secondary"></i> </button>
-</li>
-    <li class="nav-item ml-2">
-        <button id="scalebtn" type="button" class="text-center justify-content-center bg-outline-none" data-toggle="tooltip" data-placement="bottom" title="Scalpel (Keyboard: S)"><i class="fa fa-eraser text-secondary"></i> </button>
-</li>
-    <li class="nav-item ml-2">
-        <button id="handbtn" type="button" class="text-center justify-content-center bg-outline-none" data-toggle="tooltip" data-placement="bottom" title="Pan Tool (Keyboard: Shift or C)"><i class="fa fa-hand-paper-o text-secondary"></i> </button>
-</li>
-    <li class="nav-item ml-0 m-2 bg-primary">
-    <li class="nav-item dropdown" data-toggle="dropdown"><button class="btn-rounded btn-small text-dark text-capitalize dropdown-toggle">edit</button>
-    <div class="dropdown-menu">
-        <a class="dropdown-item" data-toggle="tooltip" data-placement="bottom" title="Undo (Keyboard: Z)"><i class="fa fa-undo text-dark"></i><span>Undo</span> </a>
-        <a class="dropdown-item" data-toggle="tooltip" data-placement="bottom" title="Redo (Keyboard: Y)"><i class="fa fa-share text-dark"></i><span>Redo</span> </a>
-        <hr>
-        <a class="dropdown-item"><i class="fa fa-copy-o text-dark text-muted"></i><span>Copy Marks</span> </a>
-        <a class="dropdown-item"><i class="fa fa-paste text-dark text-muted"></i><span>Paste Marks</span> </a>
-        <a class="dropdown-item"><i class="fa fa-times text-danger"></i><span>Clear Marks</span> </a>
-        <a class="dropdown-item"><i class="fa fa-fast-backward text-danger"></i><span>Clear All</span> </a>
-    </div>
-    </li>
-    <button type="button" class="text-white bg-primary" id="undobtn" data-toggle="tooltip" data-placement="bottom" title="Undo (Keyboard: Z)"><i class="fa fa-undo text-white"></i></button>
-    <button type="button" class="text-white bg-primary" id="redobtn" data-toggle="tooltip" data-placement="bottom" title="Redo (Keyboard: Y)"><i class="fa fa-share text-white"></i></button>
-    <button type="button" class="text-white bg-primary" id="zoominbtn" data-toggle="tooltip" data-placement="bottom" title="Zoom In (Mouse Wheel)"><i class="fa fa-search-plus text-white"></i></button>
-    <button type="button" class="text-white bg-primary" id="zoomoutbtn" data-toggle="tooltip" data-placement="bottom" title="Zoom Out (Mouse Wheel)"><i class="fa fa-search-minus text-white"></i></button>
-    <button type="button" class="text-white bg-primary" id="fittoscreenbtn" data-toggle="tooltip" data-placement="bottom" title="Zoom to Fit (Keyboard: Home)"><i class="fa fa-search-minus text-white"></i></button>
-    <button type="button" class="text-white bg-white" id="singlescreenbtn" data-toggle="tooltip" data-placement="bottom" title="Single Pane View (Keyboard: 1)"><i class="fa fa-caret-square-o-up text-dark"></i></button>
-    <button type="button" class="text-white bg-white" id="doublescreenbtn" data-toggle="tooltip" data-placement="bottom" title="Split View (Keyboard: 2)"><i class="fa fa-columns text-dark"></i></button>
-    <button type="button" class="text-white bg-white" id="savebtn"><i class="fa fa-save text-dark"></i></button>
-    <button type="button" class="text-white bg-primary" id="downloadbtn" data-toggle="tooltip" data-placement="bottom" title="Download Results"><span class="text-capitalize">Subscribe to download</span><i class="fa fa-download text-white"></i></button>
-    <button type="button" class="text-white bg-white" id="settingbtn" data-toggle="tooltip" data-placement="bottom" title="Output Results"><i class="fa fa-cogs text-dark"></i></button>
-    <button type="button" class=" bg-white" id="pricingbtn"><span class="text-capitalize">pricing</span> <i class="fa fa-external-link text-dark"></i></button>
+    <div class="main">
+        <div class="row fixed-top">
+            <div class="col-10">
+                <nav class="navbar navbar-expand-md m-2 bg-white fixed-top" id="topnav">
+                    <ul class="navbar-nav m-2">
+                        <li class="nav-item ml-0">
+                            <button id="plusbtn"  type="button" class="bg-success text-center justify-content-center" data-toggle="tooltip" data-placement="bottom" title="Keep Tool (Keyboard: Toggle Spacebar)"><i class="fa fa-plus text-white" ></i></button>
+                        </li>
+                        <li class="nav-item ml-2">
+                            <button id="minusbtn" type="button" class="bg-danger text-center justify-content-center" data-toggle="tooltip" data-placement="bottom" title="Remove Tool (Keyboard: Toggle Spacebar)"><i class="fa fa-minus  text-white"></i> </button>
+                        </li>
+                        <li class="nav-item ml-2">
+                            <button id="eraserbtn" type="button" class="text-center justify-content-center bg-outline-none" data-toggle="tooltip" data-placement="bottom" title="Eraser (Keyboard: X)"><i class="fa fa-eraser text-secondary"></i> </button>
+                        </li>
+                        <li class="nav-item ml-2">
+                            <button id="scalebtn" type="button" class="text-center justify-content-center bg-outline-none" data-toggle="tooltip" data-placement="bottom" title="Scalpel (Keyboard: S)"><i class="fa fa-eraser text-secondary"></i> </button>
+                        </li>
+                        <li class="nav-item ml-2">
+                            <button id="handbtn" type="button" class="text-center justify-content-center bg-outline-none" data-toggle="tooltip" data-placement="bottom" title="Pan Tool (Keyboard: Shift or C)"><i class="fa fa-hand-paper-o text-secondary"></i> </button>
+                        </li>
+                        <li class="nav-item ml-0 m-2 bg-primary">
+                            <li class="nav-item dropdown" data-toggle="dropdown"><button class="btn-rounded btn-small text-dark text-capitalize dropdown-toggle">edit</button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" data-toggle="tooltip" data-placement="bottom" title="Undo (Keyboard: Z)"><i class="fa fa-undo text-dark"></i><span>Undo</span> </a>
+                                    <a class="dropdown-item" data-toggle="tooltip" data-placement="bottom" title="Redo (Keyboard: Y)"><i class="fa fa-share text-dark"></i><span>Redo</span> </a>
+                                    <hr>
+                                    <a class="dropdown-item"><i class="fa fa-copy-o text-dark text-muted"></i><span>Copy Marks</span> </a>
+                                    <a class="dropdown-item"><i class="fa fa-paste text-dark text-muted"></i><span>Paste Marks</span> </a>
+                                    <a class="dropdown-item"><i class="fa fa-times text-danger"></i><span>Clear Marks</span> </a>
+                                    <a class="dropdown-item"><i class="fa fa-fast-backward text-danger"></i><span>Clear All</span> </a>
+                                </div>
+                            </li>
+                            <button type="button" class="text-white bg-primary" id="undobtn" data-toggle="tooltip" data-placement="bottom" title="Undo (Keyboard: Z)"><i class="fa fa-undo text-white"></i></button>
+                            <button type="button" class="text-white bg-primary" id="redobtn" data-toggle="tooltip" data-placement="bottom" title="Redo (Keyboard: Y)"><i class="fa fa-share text-white"></i></button>
+                            <button type="button" class="text-white bg-primary" id="zoominbtn" data-toggle="tooltip" data-placement="bottom" title="Zoom In (Mouse Wheel)"><i class="fa fa-search-plus text-white"></i></button>
+                            <button type="button" class="text-white bg-primary" id="zoomoutbtn" data-toggle="tooltip" data-placement="bottom" title="Zoom Out (Mouse Wheel)"><i class="fa fa-search-minus text-white"></i></button>
+                            <button type="button" class="text-white bg-primary" id="fittoscreenbtn" data-toggle="tooltip" data-placement="bottom" title="Zoom to Fit (Keyboard: Home)"><i class="fa fa-search-minus text-white"></i></button>
+                            <button type="button" class="text-white bg-white" id="singlescreenbtn" data-toggle="tooltip" data-placement="bottom" title="Single Pane View (Keyboard: 1)"><i class="fa fa-caret-square-o-up text-dark"></i></button>
+                            <button type="button" class="text-white bg-white" id="doublescreenbtn" data-toggle="tooltip" data-placement="bottom" title="Split View (Keyboard: 2)"><i class="fa fa-columns text-dark"></i></button>
+                            <button type="button" class="text-white bg-white" id="savebtn"><i class="fa fa-save text-dark"></i></button>
+                            <button type="button" class="text-white bg-primary" id="downloadbtn" data-toggle="tooltip" data-placement="bottom" title="Download Results"><span class="text-capitalize">Subscribe to download</span><i class="fa fa-download text-white"></i></button>
+                            <button type="button" class="text-white bg-white" id="settingbtn" data-toggle="tooltip" data-placement="bottom" title="Output Results"><i class="fa fa-cogs text-dark"></i></button>
+                            <button type="button" class=" bg-white" id="pricingbtn"><span class="text-capitalize">pricing</span> <i class="fa fa-external-link text-dark"></i></button>
 
-    </li>
-</ul>
-</nav>
-        </div>
-        <div class="col-2" id="sidenavbuttons">
-            <button type="button" class="text-white bg-primary" id="closebtn" data-toggle="tooltip" data-placement="bottom" title="Exit"><i class="fa fa-times text-white"></i></button>
-            <button type="button" class="text-white mr-2" id="helpbtn"><i class="fa fa-question text-white"></i></button>
-        </div>
-    </div>
-    <!--Settings-->
-<!--<div class="maintab" id="setting">-->
-<!--    <div class="container m-0">-->
-<!--        <div class="row fixed" id="settingtop">-->
-<!--            <div class="col-3 m-2">-->
-<!--            <p class="-weight-bold text-center text-capitalize"><i class="fa fa-cog text-dark"></i>Preferences</p>-->
-<!--            </div>-->
-<!--        <div class="col-6 m-2">-->
-<!--            <ul class="nav nav-tabs md-tabs tabs-orange" id="Tabs" role="tablist">-->
-<!--                <li class="nav-item">-->
-<!--                    <a class="nav-link active" id="defaultsetting" data-toggle="tab" href="#defaultsetting-md" role="tab" aria-controls="defaultsetting"-->
-<!--                       aria-selected="fasle">Default Settings</a>-->
-<!--                </li>-->
-<!--                <li class="nav-item">-->
-<!--                    <a class="nav-link" id="inputoption" data-toggle="tab" href="#inputoption-md" role="tab" aria-controls="inputoption"-->
-<!--                       aria-selected="false">Input Options</a>-->
-<!--                </li>-->
-<!--                <li class="nav-item">-->
-<!--                    <a class="nav-link" id="outputoption" data-toggle="tab" href="#outputoption-md" role="tab" aria-controls="outputoption"-->
-<!--                       aria-selected="true">Output Options</a>-->
-<!--                </li>-->
-<!--            </ul>-->
-<!--        </div>-->
-<!--        <div class="col-2 m-2">-->
-<!--            <i class="fa fa-times" id="closesetting"></i>-->
-<!--        </div>-->
-
-<!--    </div>-->
-
-<!--        <div class="tab-content pt-5" id="TabContent">-->
-<!--            <div class="tab-pane fade show active" id="defaultsetting-md" role="tabpanel" aria-labelledby="defaultsetting">-->
-<!--                <p class="psettings">The default settings below apply to new images</p>-->
-<!--                <div class="container mt-4">-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-3 ">-->
-<!--                            <h3>General</h3>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 size">-->
-<!--                            <p>Default</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 size">-->
-<!--                            <p>Current Image</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 size">-->
-<!--                            <p>Factory Default</p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-
-<!--                    <div class="row">-->
-<!--                        <div class="col-3">-->
-<!--                            <p>Brush size</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 ">-->
-<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">20px</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">20px</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">20px</span></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-3">-->
-<!--                            <p>Background Color</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 ">-->
-<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2"></span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2"></span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2"></span></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="container mt-4">-->
-<!--                        <div class="row">-->
-<!--                            <div class="col-3 ">-->
-<!--                                <h3>Output Options</h3>-->
-<!--                            </div>-->
-<!--                            <div class="col-3 size">-->
-<!--                                <p>Default</p>-->
-<!--                            </div>-->
-<!--                            <div class="col-3 size">-->
-<!--                                <p>Current Image</p>-->
-<!--                            </div>-->
-<!--                            <div class="col-3 size">-->
-<!--                                <p>Factory Default</p>-->
-<!--                            </div>-->
-<!--                        </div>-->
-
-<!--                        <div class="row">-->
-<!--                            <div class="col-3">-->
-<!--                                <p>Output Color Space</p>-->
-<!--                            </div>-->
-<!--                            <div class="col-3 ">-->
-<!--                                <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">sRGB</span></p>-->
-<!--                            </div>-->
-<!--                            <div class="col-3 text-muted">-->
-<!--                                <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">sRGB</span></p>-->
-<!--                            </div>-->
-<!--                            <div class="col-3 text-muted">-->
-<!--                                <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">sRGB</span></p>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="row">-->
-<!--                            <div class="col-3">-->
-<!--                                <p>Output DPI</p>-->
-<!--                            </div>-->
-<!--                            <div class="col-3 ">-->
-<!--                                <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">72 DPI</span></p>-->
-<!--                            </div>-->
-<!--                            <div class="col-3 text-muted">-->
-<!--                                <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">72 DPI</span></p>-->
-<!--                            </div>-->
-<!--                            <div class="col-3 text-muted">-->
-<!--                                <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">72 DPI</span></p>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="row">-->
-<!--                            <div class="col-3">-->
-<!--                                <p>Opaque File Format</p>-->
-<!--                            </div>-->
-<!--                            <div class="col-3 ">-->
-<!--                                <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">JPEG</span></p>-->
-<!--                            </div>-->
-<!--                            <div class="col-3 text-muted">-->
-<!--                                <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">JPEG</span></p>-->
-<!--                            </div>-->
-<!--                            <div class="col-3 text-muted">-->
-<!--                                <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">JPEG</span></p>-->
-<!--                            </div>-->
-<!--                        </div>-->
-
-<!--                        <div class="row">-->
-<!--                            <div class="col-3">-->
-<!--                                <p>JPEG Quality</p>-->
-<!--                            </div>-->
-<!--                            <div class="col-3 ">-->
-<!--                                <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">75</span></p>-->
-<!--                            </div>-->
-<!--                            <div class="col-3 text-muted">-->
-<!--                                <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">75</span></p>-->
-<!--                            </div>-->
-<!--                            <div class="col-3 text-muted">-->
-<!--                                <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">75</span></p>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="row">-->
-<!--                            <div class="col-3">-->
-<!--                                <p>JPEG optimization</p>-->
-<!--                            </div>-->
-<!--                            <div class="col-3 ">-->
-<!--                                <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">Enabled</span></p>-->
-<!--                            </div>-->
-<!--                            <div class="col-3 text-muted">-->
-<!--                                <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">Enabled</span></p>-->
-<!--                            </div>-->
-<!--                            <div class="col-3 text-muted">-->
-<!--                                <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">Enabled</span></p>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="row">-->
-<!--                            <div class="col-3">-->
-<!--                                <p>PNG Optimization</p>-->
-<!--                            </div>-->
-<!--                            <div class="col-3 ">-->
-<!--                                <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">Lossless</span></p>-->
-<!--                            </div>-->
-<!--                            <div class="col-3 text-muted">-->
-<!--                                <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">Lossless</span></p>-->
-<!--                            </div>-->
-<!--                            <div class="col-3 text-muted">-->
-<!--                                <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">Lossless</span></p>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="container mt-4">-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-3 ">-->
-<!--                            <h3>Colors</h3>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 size">-->
-<!--                            <p>Default</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 size">-->
-<!--                            <p>Current Image</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 size">-->
-<!--                            <p>Factory Default</p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-
-<!--                    <div class="row">-->
-<!--                        <div class="col-3">-->
-<!--                            <p>Auto Colors Level</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 ">-->
-<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">Off</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">On</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">Off</span></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="container mt-4">-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-3 ">-->
-<!--                            <h3>Crop & Resize</h3>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 size">-->
-<!--                            <p>Default</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 size">-->
-<!--                            <p>Current Image</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 size">-->
-<!--                            <p>Factory Default</p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-
-<!--                    <div class="row">-->
-<!--                        <div class="col-3">-->
-<!--                            <p>Mode</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 ">-->
-<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">Unconstrained</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">Unconstrained</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">Unconstrained</span></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-
-<!--                    <div class="row">-->
-<!--                        <div class="col-3">-->
-<!--                            <p>Aspect Ratio</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 ">-->
-<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">Unchanged</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">Unchanged</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">Unchanged</span></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-3">-->
-<!--                            <p>Target Size</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 ">-->
-<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">Unchanged</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">Unchanged</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">Unchanged</span></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-
-<!--                    <div class="row">-->
-<!--                        <div class="col-3">-->
-<!--                            <p>Allow Enlarging</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 ">-->
-<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">Off</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">Off</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">Off</span></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-
-<!--                    <div class="row">-->
-<!--                        <div class="col-3">-->
-<!--                            <p>Fit to Result</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 ">-->
-<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">Off</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">Off</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">Off</span></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-3">-->
-<!--                            <p>Margin (Percent)</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 ">-->
-<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">5%</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">5%</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">5%</span></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-3">-->
-<!--                            <p>Margin (Pixels)</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 ">-->
-<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">25px</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">25px</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">25px</span></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-3">-->
-<!--                            <p>Margin Units</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 ">-->
-<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">Percent</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">Percent</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">Percent</span></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-3">-->
-<!--                            <p>Object Size</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 ">-->
-<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">Large</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">Large</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">Large</span></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-3">-->
-<!--                            <p>Verticle Alignment</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 ">-->
-<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">Middle</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">Middle</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">Middle</span></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-3">-->
-<!--                            <p>Shadows</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 ">-->
-<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">Pad</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">Pad</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">Pad</span></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="container mt-4">-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-3 ">-->
-<!--                            <h3>Edges</h3>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 size">-->
-<!--                            <p>Default</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 size">-->
-<!--                            <p>Current Image</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 size">-->
-<!--                            <p>Factory Default</p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-
-<!--                    <div class="row">-->
-<!--                        <div class="col-3">-->
-<!--                            <p>Corners</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 ">-->
-<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">On</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">On</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">On</span></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-3">-->
-<!--                            <p>Smoothing</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 ">-->
-<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">Smart</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">Smart</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">Smart</span></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-3">-->
-<!--                            <p>Smoothing Level</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 ">-->
-<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">1</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">1</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">1</span></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-3">-->
-<!--                            <p>Feathering</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 ">-->
-<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">Smart</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">Smart</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">Smart</span></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-3">-->
-<!--                            <p>Feathering Radius</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 ">-->
-<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">1</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">1</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">1</span></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-3">-->
-<!--                            <p>Offset</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 ">-->
-<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">0px</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">0px</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">0px</span></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="container mt-4">-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-3 ">-->
-<!--                            <h3>Oval Shadows</h3>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 size">-->
-<!--                            <p>Default</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 size">-->
-<!--                            <p>Current Image</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 size">-->
-<!--                            <p>Factory Default</p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-
-<!--                    <div class="row">-->
-<!--                        <div class="col-3">-->
-<!--                            <p>Opacity</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 ">-->
-<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">50%</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">50%</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">50%</span></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-3">-->
-<!--                            <p>Core Size</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 ">-->
-<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">25%</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">25%</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">25%</span></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-
-<!--                </div>-->
-
-<!--                <div class="container mt-4">-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-3 ">-->
-<!--                            <h3>Drop Shadows</h3>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 size">-->
-<!--                            <p>Default</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 size">-->
-<!--                            <p>Current Image</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 size">-->
-<!--                            <p>Factory Default</p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-
-<!--                    <div class="row">-->
-<!--                        <div class="col-3">-->
-<!--                            <p>Enabled</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 ">-->
-<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">Off</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">Off</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">Off</span></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-3">-->
-<!--                            <p>Clipping Enabled</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 ">-->
-<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">Off</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">Off</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">Off</span></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-3">-->
-<!--                            <p>Opacity</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 ">-->
-<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">75%</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">75%</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">75%</span></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-3">-->
-<!--                            <p>Blur Radius</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 ">-->
-<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">25px</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">25px</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">25px</span></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-3">-->
-<!--                            <p>Offset X</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 ">-->
-<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">30px</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">30px</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">30px</span></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-3">-->
-<!--                            <p>Offset Y</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 ">-->
-<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">30px</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">30px</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">30px</span></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-
-
-<!--                <div class="container mt-4">-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-3 ">-->
-<!--                            <h3>Reflections</h3>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 size">-->
-<!--                            <p>Default</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 size">-->
-<!--                            <p>Current Image</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 size">-->
-<!--                            <p>Factory Default</p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-
-<!--                    <div class="row">-->
-<!--                        <div class="col-3">-->
-<!--                            <p>Enabled</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 ">-->
-<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">Off</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">Off</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">Off</span></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-3">-->
-<!--                            <p>Opacity</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 ">-->
-<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">50%</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">50%</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">50%</span></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-3">-->
-<!--                            <p>Height</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 ">-->
-<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">200px</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">200px</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">200px</span></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-
-<!--                <div class="container mt-4 mb-2">-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-3 ">-->
-<!--                            <h3>Cast Shadows</h3>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 size">-->
-<!--                            <p>Default</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 size">-->
-<!--                            <p>Current Image</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 size">-->
-<!--                            <p>Factory Default</p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-
-<!--                    <div class="row">-->
-<!--                        <div class="col-3">-->
-<!--                            <p>Enabled</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 ">-->
-<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">Off</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">Off</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">Off</span></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-3">-->
-<!--                            <p>Opacity</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 ">-->
-<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">25%</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">25%</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">25%</span></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-3">-->
-<!--                            <p>Opacity Scale</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 ">-->
-<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">50%</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">50%</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">50%</span></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-3">-->
-<!--                            <p>Blur Radius</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 ">-->
-<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">10px</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">10px</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">10px</span></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-3">-->
-<!--                            <p>Blur Radius Scale</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 ">-->
-<!--                            <p><i class="fa fa-undo text-secondary"></i><span class="ml-2">400%</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-check text-secondary text-muted"></i><span class="ml-2">400%</span></p>-->
-<!--                        </div>-->
-<!--                        <div class="col-3 text-muted">-->
-<!--                            <p><i class="fa fa-undo text-secondary "></i><span class="ml-2">400%</span></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="fixed">-->
-<!--                    <div class="container m-5">-->
-<!--                        <div class="row">-->
-<!--                            <div class="col-3"></div>-->
-<!--                            <div class="col-3"></div>-->
-<!--                            <div class="col-6">-->
-<!--                                <button class="btn btn-gray text-muted text-white" type="button">Reset All</button>-->
-<!--                                <button class="btn btn-gray text-muted text-white" type="button">Set All</button>-->
-<!--                                <button class="btn btn-gray text-muted text-white" type="button">Restore All</button>-->
-<!--                                <button class="btn btn-primary ml-2 text-white" type="button">Ok</button>-->
-<!--                            </div>-->
-
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-
-<!--            </div>-->
-<!--            <div class="tab-pane fade" id="inputoption-md" role="tabpanel" aria-labelledby="inputoption">-->
-<!--                <div><strong>Input Options</strong></div><hr>-->
-<!--                <div class="row mt-2">-->
-<!--                    <div class="col-6">-->
-<!--                        <p>Image Size Limit: 4 megapixels</p>-->
-<!--                        <button type="btn" class="btn btn-secondary bg-secondary"><i class="fa fa-minus text-white"></i> </button>-->
-<!--                        <button type="btn" class="btn btn-secondary bg-secondary ml-2"><i class="fa fa-plus text-white"></i> </button>-->
-<!--                        <button type="btn" class="btn btn-secondary bg-secondary ml-4"><i class="fa fa-undo text-white"></i> </button>-->
-<!--                    </div>-->
-<!--                    <div class="col-6 text-center">-->
-<!--                        <p>Max: 8</p>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <hr>-->
-<!--                <p class="text-secondary font-italic">Images that exceed the size limit will be shrunk to match it.</p>-->
-<!--                <p class="mt-2 font-italic">We recommend choosing the smallest size limit that meets your needs. Larger images take longer to upload and process, and can lead to a sluggish user interface, especially on older computers.-->
-<!--                </p>-->
-<!--                <hr>-->
-<!--                <form>-->
-<!--                    <input type="checkbox"  class="form-group mr-2 text-muted"> Enable Pre-Crop-->
-<!--                </form>-->
-<!--                <p class="text-muted text-secondary font-italic">When an image exceeds the size limit, Pre-Crop allows you to crop out unneeded parts of the image to maximize the resolution of the result.-->
-<!--                </p>-->
-<!--                <hr>-->
-<!--                <h3 class="mt-2">Processing Mode Options</h3>-->
-<!--                <hr>-->
-<!--                <form>-->
-<!--                    <input type="checkbox"  class="form-group mr-2"> Always Use Normal Photo Mode For New Images-->
-<!--                </form>-->
-<!--                <p class="text-secondary text-muted font-italic">Check this box to not use Graphics Mode for newly uploaded images.-->
-<!--                </p>-->
-<!--                <hr>-->
-<!--                <form>-->
-<!--                    <input type="checkbox"  class="form-group mr-2"> Enable Auto-Clip For New Images-->
-<!--                </form>-->
-<!--                <p class="text-secondary text-muted font-italic">Check this box to enable the fully-automatic Auto-Clip feature when available..-->
-<!--                </p>-->
-<!--                <hr>-->
-<!--                <div class="fixed">-->
-<!--                    <div class="container m-5">-->
-<!--                        <div class="row">-->
-<!--                            <div class="col-3"></div>-->
-<!--                            <div class="col-3"></div>-->
-<!--                            <div class="col-6 text-left">-->
-<!--                                <button class="btn btn-primary text-white" type="button">Ok</button>-->
-<!--                            </div>-->
-
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="tab-pane fade" id="outputoption-md" role="tabpanel" aria-labelledby="outputoption">-->
-<!--                <div><strong>Output Options</strong></div>-->
-<!--                <div class="container">-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-4">-->
-<!--                            <p>Color Space:</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-4">-->
-<!--                            <div class="dropdown">-->
-<!--                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">sRGB-->
-<!--                                    <span class="caret"></span></button>-->
-<!--                                <ul class="dropdown-menu">-->
-<!--                                    <li><a href="#">sRGB(Web Standard)</a></li>-->
-<!--                                    <li><a href="#">Adobe RGB (1998)</a></li>-->
-<!--                                    <li><a href="#">Apple RGB</a></li>-->
-<!--                                    <li><a href="#">ColorMatch RGB</a></li>-->
-<!--                                </ul>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="col-4">-->
-<!--                            <i class="fa fa-cog text-secondary"></i>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-4">-->
-<!--                            <p>DPI:</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-4">-->
-<!--                            <div class="dropdown">-->
-<!--                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">72DPI-->
-<!--                                    <span class="caret"></span></button>-->
-<!--                                <ul class="dropdown-menu">-->
-<!--                                    <li><a href="#">72 DPI</a></li>-->
-<!--                                    <li><a href="#">96 DPI</a></li>-->
-<!--                                    <li><a href="#">300 DPI</a></li>-->
-<!--                                </ul>-->
-<!--                            </div>-->
-<!--                            <button type="btn" class="btn btn-primary text-white"><i class="fa fa-minus text-white"></i> </button>-->
-<!--                            <button type="btn" class="btn btn-primary text-white"><i class="fa fa-plus text-white"></i> </button>-->
-<!--                            <button type="btn" class="btn btn-secondary ml-2 text-white"><i class="fa fa-undo text-white"></i> </button>-->
-<!--                        </div>-->
-<!--                        <div class="col-4">-->
-<!--                            <i class="fa fa-cog text-secondary"></i>-->
-<!--                        </div>-->
-<!--                        <p class="text-danger font-italic">Web-optimized output does not contain DPI information</p>-->
-<!--                    </div>-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-4">-->
-<!--                            <p>Opaque File Format:</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-4">-->
-<!--                            <button type="btn" class="btn btn-primary text-white">JPEG</button>-->
-<!--                            <button type="btn" class="btn btn-white text-dark">PNG </button>-->
-
-<!--                        </div>-->
-<!--                        <div class="col-4">-->
-<!--                            <i class="fa fa-cog text-secondary"></i>-->
-<!--                        </div>-->
-<!--                        <p class="text-secondary font-italic">Results witha a transparent background are always save as PNGs</p>-->
-<!--                    </div>-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-4">-->
-<!--                            <p>DPI:</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-4">-->
-<!--                            <div class="dropdown">-->
-<!--                                <button class="btn btn-primary text-white dropdown-toggle" type="button" data-toggle="dropdown">75-->
-<!--                                    <span class="caret"></span></button>-->
-<!--                                <ul class="dropdown-menu">-->
-<!--                                    <li><a href="#">25 (very low)</a></li>-->
-<!--                                    <li><a href="#">50 (low)</a></li>-->
-<!--                                    <li><a href="#">75 (medium)</a></li>-->
-<!--                                    <li><a href="#">90 (high)</a></li>-->
-<!--                                    <li><a href="#">100 (highest)</a></li>-->
-<!--                                </ul>-->
-<!--                            </div>-->
-<!--                            <button type="btn" class="btn btn-primary text-white"><i class="fa fa-minus text-white"></i> </button>-->
-<!--                            <button type="btn" class="btn btn-primary text-white"><i class="fa fa-plus text-white"></i> </button>-->
-<!--                            <button type="btn" class="btn btn-secondary ml-2 text-white"><i class="fa fa-undo text-white"></i> </button>-->
-<!--                        </div>-->
-<!--                        <div class="col-4">-->
-<!--                            <i class="fa fa-cog text-secondary"></i>-->
-<!--                        </div>-->
-<!--                        <p class="text-danger font-italic">	A higher JPEG quality means better image quality, but a larger file size.</p>-->
-<!--                    </div>-->
-
-
-<!--                </div>-->
-
-
-
-<!--                <div><strong>Web Optimized Output</strong></div>-->
-<!--                <div class="container">-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-4">-->
-<!--                            <p>Color Space:</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-4">-->
-<!--                            <button type="btn" class="btn btn-white text-dark">None</button>-->
-<!--                            <button type="btn" class="btn btn-primary text-white">Enabled </button>-->
-<!--                        </div>-->
-<!--                        <div class="col-4">-->
-<!--                            <i class="fa fa-cog text-secondary"></i>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-4">-->
-<!--                            <p>DPI:</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-4">-->
-<!--                            <button type="btn" class="btn btn-white text-dark">None</button>-->
-<!--                            <button type="btn" class="btn btn-primary text-white">Lossless </button>-->
-<!--                            <button type="btn" class="btn btn-ehite text-dark">Lossy </button>-->
-<!--                        </div>-->
-<!--                        <div class="col-4">-->
-<!--                            <i class="fa fa-cog text-secondary"></i>-->
-<!--                        </div>-->
-<!--                        <p class="text-danger font-italic">-->
-<!--                            To minimize file size, web-optimized output does not contain color space or DPI information.</p>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="fixed">-->
-<!--                    <div class="container m-5">-->
-<!--                        <div class="row">-->
-<!--                            <div class="col-3"></div>-->
-<!--                            <div class="col-3"></div>-->
-<!--                            <div class="col-6">-->
-<!--                                <button class="btn btn-primary text-white" type="button">Download</button>-->
-<!--                                <button class="btn btn-primary ml-2 text-white" type="button">Ok</button>-->
-<!--                            </div>-->
-
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-
-
-<!--    </div>-->
-<!--</div>-->
-
-<div  class="row">
-<div class="col-6">
-<canvas id="leftcanvas"></canvas>
-</div>
-<div class="col-6">
-    <canvas id="rightcanvas"></canvas>
-</div>
-</div>
-    <div class="text-center" id="sidenav">
-        <div >
-            <button class="btn bg-primary text-light " id="originalbtn" type="button" data-toggle="tooltip" data-placement="bottom" title="Hover to show original (Keyboard: Q)">Original</button>
-        </div>
-        <div >
-            <button class="btn bg-primary text-light " id="autoclipbtn" type="button" data-toggle="tooltip" data-placement="bottom" title="Toggle whether a result is produced automatically"><i class="fa fa-check" style="border: 1px solid" ></i> <span >Auto-Clip</span></button>
-        </div>
-        <div >
-            <button class="btn bg-primary text-light " id="graphicbtn" type="button">Graphic</button>
-        </div>
-        <div >
-            <button class="btn bg-white text-dark " id="photobtn" type="button">Photo</button>
-        </div>
-        <div  class="text-center">
-            <button class="btn bg-white text-dark" id="modebtn" type="button">Mode <span class="bg-white"><i class="fa fa-info-circle bg-white text-black"></i> </span></button>
-        </div>
-
-
-    </div>
-<div class="bottomdivs">
-    <div id="ecommercediv">
-<p>Some Text Here</p>
-    <i class="fa fa-external-link text-primary"></i>
-</div>
-    <div id="brushdiv">
-        <div id="placeholder5px" style="display: none">Brush Size: <strong>5px</strong>
-        <button type="button" class="btn btn-primary btn-small"><i class="fa fa-minus text-small"></i> </button>
-            <button type="button" class="btn btn-primary btn-small"><i class="fa fa-plus text-small"></i> </button>
-            <button type="button" class="btn btn-primary btn-small ml-3" id="placeholder5-5px">5px </button>
-            <button type="button" class="btn btn-primary btn-small" id="placeholder5-10px">10px </button>
-            <button type="button" class="btn btn-primary btn-small " id="placeholder5-20px">20px </button>
-            <button type="button" class="btn btn-primary btn-small " id="placeholder5-30px">30px </button>
-            <button type="button" class="btn btn-primary btn-small " id="placeholder5-40px">40px </button>
-            <i class="fa fa-cog text-secondary ml-3"></i>
-        </div>
-        <div id="placeholder10px" style="display: none">Brush Size: <strong>10px</strong>
-            <button type="button" class="btn btn-primary btn-small"><i class="fa fa-minus text-small"></i> </button>
-            <button type="button" class="btn btn-primary btn-small"><i class="fa fa-plus text-small"></i> </button>
-            <button type="button" class="btn btn-primary btn-small ml-3" id="placeholder10-5px">5px </button>
-            <button type="button" class="btn btn-primary btn-small" id="placeholder10-10px">10px </button>
-            <button type="button" class="btn btn-primary btn-small " id="placeholder10-20px">20px </button>
-            <button type="button" class="btn btn-primary btn-small " id="placeholder10-30px">30px </button>
-            <button type="button" class="btn btn-primary btn-small " id="placeholder10-40px">40px </button>
-            <i class="fa fa-cog text-secondary ml-3"></i>
-        </div>
-        <div id="placeholder20px"> Brush Size: <strong>20px</strong>
-            <button type="button" class="btn btn-primary btn-small"><i class="fa fa-minus text-small"></i> </button>
-            <button type="button" class="btn btn-primary btn-small"><i class="fa fa-plus text-small"></i> </button>
-            <button type="button" class="btn btn-primary btn-small ml-3" id="placeholder20-5px">5px </button>
-            <button type="button" class="btn btn-primary btn-small" id="placeholder20-10px">10px </button>
-            <button type="button" class="btn btn-primary btn-small " id="placeholder20-20px">20px </button>
-            <button type="button" class="btn btn-primary btn-small " id="placeholder20-30px">30px </button>
-            <button type="button" class="btn btn-primary btn-small " id="placeholder20-40px">40px </button>
-            <i class="fa fa-cog text-secondary ml-3"></i>
-        </div>
-        <div id="placeholder30px" style="display: none">Brush Size: <strong>30px</strong>
-            <button type="button" class="btn btn-primary btn-small"><i class="fa fa-minus text-small"></i> </button>
-            <button type="button" class="btn btn-primary btn-small"><i class="fa fa-plus text-small"></i> </button>
-            <button type="button" class="btn btn-primary btn-small ml-3" id="placeholder30-5px">5px </button>
-            <button type="button" class="btn btn-primary btn-small" id="placeholder30-10px">10px </button>
-            <button type="button" class="btn btn-primary btn-small " id="placeholder30-20px">20px </button>
-            <button type="button" class="btn btn-primary btn-small " id="placeholder30-30px">30px </button>
-            <button type="button" class="btn btn-primary btn-small " id="placeholder30-40px">40px </button>
-            <i class="fa fa-cog text-secondary ml-3"></i>
-        </div>
-        <div id="placeholder40px" style="display: none">Brush Size: <strong>40px</strong>
-            <button type="button" class="btn btn-primary btn-small"><i class="fa fa-minus text-small"></i> </button>
-            <button type="button" class="btn btn-primary btn-small"><i class="fa fa-plus text-small"></i> </button>
-            <button type="button" class="btn btn-primary btn-small ml-3" id="placeholder40-5px">5px </button>
-            <button type="button" class="btn btn-primary btn-small" id="placeholder40-10px">10px </button>
-            <button type="button" class="btn btn-primary btn-small " id="placeholder40-20px">20px </button>
-            <button type="button" class="btn btn-primary btn-small " id="placeholder40-30px">30px </button>
-            <button type="button" class="btn btn-primary btn-small " id="placeholder40-40px">40px </button>
-            <i class="fa fa-cog text-secondary ml-3"></i>
-        </div>
-    </div>
-
-    <div id="backgrounddiv">
-        <p>Background Color:
-            <button type="button" class="btn btn-primary btn-small"> </button>
-            <button type="button" class="btn btn-white btn-small"> </button>
-            <button type="button" class="btn btn-gray btn-small ml-2"> </button>
-            <button type="button" class="btn btn-black btn-small ml-2"></button>
-            <button type="button" class="btn btn-brown btn-small ml-2"> </button>
-            <button type="button" class="btn btn-warning btn-small ml-2"> </button>
-            <button type="button" class="btn btn-green btn-small ml-2"> </button>
-            <button type="button" class="btn btn-blue btn-small ml-2"> </button> |
-            <button type="button" class="btn btn-blue btn-sky ml-2"> </button>
-            <button type="button" class="btn btn-blue btn-success text-white ml-2 ">#338855 </button>
-            <i class="fa fa-cog text-secondary ml-3"></i>
-        </p>
-    </div>
-    <div id="reviewdiv">
-        <p>Review Contour:
-            <button type="button" class="btn btn-primary btn-small ml-2"><i class="fa fa-greater-than text-white"></i> </button>
-            <button type="button" class="btn btn-white btn-small"> <i class="fa fa-less-than text-white"></i></button>
-        </p>
-    </div>
-</div>
-    <div class="edgebottomdiv">
-<div id="edgediv">
-    <div class="container">
-        <div class="row">
-            <div class="col-3">
-                <p>Corners:</p>
-            </div>
-            <div class="col-3">
-                <p>Smoothing Level: <strong>1</strong></p>
-            </div>
-            <div class="col-3">
-                <p>Feathering radius: <strong>1px</strong></p>
-            </div>
-            <div class="col-2">
-                <p>Offset: <strong>0px</strong></p>
-            </div>
-
-            <div class="col-1">
-                <i class="fa fa-cog text-secondary"></i>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-2">
-                <button type="button" class="btn btn-secondary text-muted">On</button>
-                <button type="button" class="btn btn-secondary text-muted">Off</button>
-            </div>
-            <div class="col-5">
-                <button type="button" class="btn btn-secondary text-muted text-white">Smart</button>
-                <button type="button" class="btn btn-secondary text-muted">Fixed</button>
-                <button type="button" class="btn btn-secondary text-muted"><i class="fa fa-minus text-muted"></i></button>
-                <button type="button" class="btn btn-secondary text-muted"><i class="fa fa-plus text-muted"></i></button>
-                <button type="button" class="btn btn-secondary text-muted">Reset</button>
-            </div>
-            <div class="col-4">
-                <button type="button" class="btn btn-primary text-left">Smart</button>
-                <button type="button" class="btn bg-white">Fixed</button>
-                <button type="button" class="btn btn-primary text-muted ml-2"><i class="fa fa-minus text-muted"></i></button>
-                <button type="button" class="btn btn-primary text-muted"><i class="fa fa-plus text-muted"></i></button>
-                <button type="button" class="btn btn-secondary text-muted">Reset</button>
-            </div>
-            <div class="col-1">
-                <button type="button" class="btn btn-secondary text-muted"><i class="fa fa-minus fa-1px text-muted"></i></button>
-                <button type="button" class="btn btn-secondary text-muted"><i class="fa fa-plus text-muted"></i></button>
-                <button type="button" class="btn btn-secondary text-muted">Reset</button>
-            </div>
-
-        </div>
-    </div>
-
-</div>
-
-    </div>
-<!--Modals-->
-<div class="modal m-4" id="colormodal">
-    <div class="modal-xl">
-        <div class="modal-content">
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-8">
-                        <canvas id="modalcanvas">
-
-                        </canvas>
-                    </div>
-                    <div class="col-4">
-                        <div class="row bg-primary headmodal">
-                        <div class="col-4">
-                        <button id="modalundo" type="button" class="btn btn-primary"><i class="fa fa-undo"></i> </button>
-                        <button id="modalredo" type="button" class="btn btn-primary"><i class="fa fa-share"></i> </button>
-                        </div>
-                        <div class="col-7 ml-0">
-                            <button id="modalzoomin" type="button" class="btn btn-primary"><i class="fa fa-search-plus"></i> </button>
-                            <button id="modalzoomout" type="button" class="btn btn-primary"><i class="fa fa-search-minus"></i> </button>
-                            <button id="modalfitscreen" type="button" class="btn btn-primary"><i class="fa fa-search-minus"></i> </button>
-                            <button id="modaldownload" type="button" class="btn btn-primary"><i class="fa fa-arrow-down"></i> </button>
-                        </div>
-                        <div class="col-1 text-right">
-                            <button id="modalcorrect" type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-check"></i> </button>
-                        </div>
-                        </div>
-                        <div class="row headmodal mt-0">
-                            <div class="col-4">
-                                <button id="modalColor" class=" btn-white"><i class="fa fa-adjust"></i><span>Color</span> </button>
-                            </div>
-                            <div class="col-4">
-                                <button id="modalCrop"  class=" btn-white"><i class="fa fa-crop"></i><span>Crop</span> </button>
-
-                            </div>
-                            <div class="col-4">
-                                <button id="modalShadow" class="btn-white"><i class="fa fa-clone"></i><span>Shadows</span> </button>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12 mt-2">
-                               <h3>Color Adjustments</h3>
-                            </div>
-                        </div>
-                        <div class="row bg-light">
-                            <div class="col-4">
-                                <p>Brightness: </p>
-                            </div>
-                            <div class="col-4">
-                            <h5 class="text-primary">0</h5>
-                        </div>
-                            <div class="col-4 text-center">
-                                <button class="btn-primary  modal-button"><i class="fa fa-minus"></i> </button>
-                                <button class="btn-primary  modal-button"><i class="fa fa-plus"></i> </button>
-                                <button class="btn-secondary text-muted ml-2  modal-button"><i class="fa fa-undo text-white"></i> </button>
-                            </div>
-                        </div>
-                        <div class="row bg-white">
-                            <div class="col-4">
-                                <p>Shadows: </p>
-                            </div>
-                            <div class="col-4">
-                                <h5 class="text-primary">0</h5>
-                            </div>
-                            <div class="col-4 text-center">
-                                <button class="btn-primary  modal-button"><i class="fa fa-minus"></i> </button>
-                                <button class="btn-primary  modal-button"><i class="fa fa-plus"></i> </button>
-                                <button class="btn-secondary text-muted ml-2  modal-button"><i class="fa fa-undo text-white"></i> </button>
-                            </div>
-                        </div>
-
-                        <div class="row bg-light">
-                            <div class="col-4">
-                                <p>Highlights: </p>
-                            </div>
-                            <div class="col-4">
-                                <h5 class="text-primary">0</h5>
-                            </div>
-                            <div class="col-4 text-center">
-                                <button class="btn-primary  modal-button"><i class="fa fa-minus"></i> </button>
-                                <button class="btn-primary  modal-button"><i class="fa fa-plus"></i> </button>
-                                <button class="btn-secondary text-muted ml-2  modal-button"><i class="fa fa-undo text-white"></i> </button>
-                            </div>
-                        </div>
-                        <div class="row bg-white">
-                            <div class="col-4">
-                                <p>Temperature: </p>
-                            </div>
-                            <div class="col-4">
-                                <h5 class="text-primary">0</h5>
-                            </div>
-                            <div class="col-4 text-center">
-                                <button class="btn-primary  modal-button"><i class="fa fa-minus"></i> </button>
-                                <button class="btn-primary  modal-button"><i class="fa fa-plus"></i> </button>
-                                <button class="btn-secondary text-muted ml-2  modal-button"><i class="fa fa-undo text-white"></i> </button>
-                            </div>
-                        </div>
-                        <div class="row bg-light">
-                            <div class="col-4">
-                                <p>Saturation: </p>
-                            </div>
-                            <div class="col-4">
-                                <h5 class="text-primary">0</h5>
-                            </div>
-                            <div class="col-4 text-center">
-                                <button class="btn-primary  modal-button"><i class="fa fa-minus"></i> </button>
-                                <button class="btn-primary  modal-button"><i class="fa fa-plus"></i> </button>
-                                <button class="btn-secondary text-muted ml-2  modal-button"><i class="fa fa-undo text-white"></i> </button>
-                            </div>
-                        </div>
-                        <div class="row bg-white mt-2">
-                            <div class="col-10">
-                                <button class="btn-primary  modal-button">Auto Levels </button>
-                                <button class="btn-white text-muted  modal-button">Reset</button>
-                            </div>
-                            <div class="col-2 text-right">
-
-                                <button class="btn-white text-muted  modal-button"><i class="fa fa-cog text-secondary"></i> </button>
-
-                            </div>
-                        </div>
-                        <div class="row bg-white mt-2" id="modalwbbtn">
-                            <div class="col-12">
-                                <h3><button class="bg-white"><i class="fa fa-square-o bg-white text-white"></i> </button><span class="ml-2">White Balance</span></h3>
-                            </div>
-                        </div>
-                        <div class="row bg-white mt-2" id="modalwbbtnshow" style="display: none">
-                            <div class="col-12" >
-                                <h3 id="modalwbbtnhide"><button class="bg-primary modal-button" ><i class="fa fa-check bg-primary text-white"></i> </button><span class="ml-2">White Balance</span></h3>
-                                <div><button class="btn-white modal-button text-secondary"><i class="fa fa-eyedropper text-secondary"></i> </button>
-                                    <button class="btn-white modal-button"><i class="fa fa-hand-paper-o text-secondary"></i> </button> </div>
-                                <p class="font-italic">Pick a color that should be neutral (white/gray)</p>
-                            </div>
-
-                        </div>
-                        <div class="row bg-white mt-2" id="modalccrbtn">
-                            <div class="col-12">
-                                <h3><button class="bg-white"><i class="fa fa-square-o bg-white text-white"></i> </button><span class="ml-2">Color Cast Removal</span></h3>
-                            </div>
-                        </div>
-                        <div class="row bg-white mt-2" id="modalccrbtnshow" style="display: none">
-                            <div class="col-12" >
-                                <h3 id="modalccrbtnhide"><button class="bg-primary modal-button" ><i class="fa fa-check bg-primary text-white"></i> </button><span class="ml-2">Color Cast Removal</span></h3>
-                                <div><button class="btn-white modal-button text-secondary"><i class="fa fa-eyedropper text-secondary"></i> </button>
-                                    <button class="btn-white modal-button"><i class="fa fa-hand-paper-o text-secondary"></i> </button> </div>
-                            </div>
-
-                                <div class="col-12 bg-light mt-2">
-                                    <p>Foreground Guard:  <span class="text-primary">+4</span>
-
-                                    <button class="btn-primary  modal-button ml-5"><i class="fa fa-minus"></i> </button>
-                                    <button class="btn-primary  modal-button"><i class="fa fa-plus"></i> </button>
-                                    <button class="btn-secondary text-muted ml-2  modal-button"><i class="fa fa-undo text-white"></i> </button>
-                                    </p></div>
-
-                        </div>
-
-                        <div class="row bg-light mt-2 mb-0">
-                            <div class="col-12 text-right">
-                                <button class="bg-white modal-button-bottom">Reset </button>
-                                    <button class="bg-primary modal-button-bottom ml-3 text-white w-25"data-dismiss="modal">Ok </button>
-                            </div>
-                        </div>
-
+                        </li>
+                    </ul>
+                </nav>
+                <div>
+                    <div class="col-2" id="sidenavbuttons">
+                        <button type="button" class="text-white bg-primary" id="closebtn" data-toggle="tooltip" data-placement="bottom" title="Exit"><i class="fa fa-times text-white"></i></button>
+                        <button type="button" class="text-white mr-2" id="helpbtn"><i class="fa fa-question text-white"></i></button>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
+        <div  class="row">
+            <div class="col-6">
+                <canvas id="leftcanvas"></canvas>
+            </div>
+            <div class="col-6">
+                <canvas id="rightcanvas"></canvas>
+            </div>
+        </div>
+        <div class="text-center" id="sidenav">
+            <div >
+                <button class="btn bg-primary text-light " id="originalbtn" type="button" data-toggle="tooltip" data-placement="bottom" title="Hover to show original (Keyboard: Q)">Original</button>
+            </div>
+            <div >
+                <button class="btn bg-primary text-light " id="autoclipbtn" type="button" data-toggle="tooltip" data-placement="bottom" title="Toggle whether a result is produced automatically"><i class="fa fa-check" style="border: 1px solid" ></i> <span >Auto-Clip</span></button>
+            </div>
+            <div >
+                <button class="btn bg-primary text-light " id="graphicbtn" type="button">Graphic</button>
+            </div>
+            <div >
+                <button class="btn bg-white text-dark " id="photobtn" type="button">Photo</button>
+            </div>
+            <div  class="text-center">
+                <button class="btn bg-white text-dark" id="modebtn" type="button">Mode <span class="bg-white"><i class="fa fa-info-circle bg-white text-black"></i> </span></button>
+            </div>
 
-    <!--CropModal-->
-    <div class="modal m-4" id="cropmodal">
-        <div class="modal-xl">
-            <div class="modal-content">
-                <div class="modal-body">
+
+        </div>
+
+        <div class="bottomdivs">
+            <div id="ecommercediv">
+                <p>Some Text Here</p>
+                <i class="fa fa-external-link text-primary"></i>
+            </div>
+            <div id="brushdiv">
+                <div id="placeholder5px" style="display: none">Brush Size: <strong>5px</strong>
+                <button type="button" class="btn btn-primary btn-small"><i class="fa fa-minus text-small"></i> </button>
+                    <button type="button" class="btn btn-primary btn-small"><i class="fa fa-plus text-small"></i> </button>
+                    <button type="button" class="btn btn-primary btn-small ml-3" id="placeholder5-5px">5px </button>
+                    <button type="button" class="btn btn-primary btn-small" id="placeholder5-10px">10px </button>
+                    <button type="button" class="btn btn-primary btn-small " id="placeholder5-20px">20px </button>
+                    <button type="button" class="btn btn-primary btn-small " id="placeholder5-30px">30px </button>
+                    <button type="button" class="btn btn-primary btn-small " id="placeholder5-40px">40px </button>
+                    <i class="fa fa-cog text-secondary ml-3"></i>
+                </div>
+                <div id="placeholder10px" style="display: none">Brush Size: <strong>10px</strong>
+                    <button type="button" class="btn btn-primary btn-small"><i class="fa fa-minus text-small"></i> </button>
+                    <button type="button" class="btn btn-primary btn-small"><i class="fa fa-plus text-small"></i> </button>
+                    <button type="button" class="btn btn-primary btn-small ml-3" id="placeholder10-5px">5px </button>
+                    <button type="button" class="btn btn-primary btn-small" id="placeholder10-10px">10px </button>
+                    <button type="button" class="btn btn-primary btn-small " id="placeholder10-20px">20px </button>
+                    <button type="button" class="btn btn-primary btn-small " id="placeholder10-30px">30px </button>
+                    <button type="button" class="btn btn-primary btn-small " id="placeholder10-40px">40px </button>
+                    <i class="fa fa-cog text-secondary ml-3"></i>
+                </div>
+                <div id="placeholder20px"> Brush Size: <strong>20px</strong>
+                    <button type="button" class="btn btn-primary btn-small"><i class="fa fa-minus text-small"></i> </button>
+                    <button type="button" class="btn btn-primary btn-small"><i class="fa fa-plus text-small"></i> </button>
+                    <button type="button" class="btn btn-primary btn-small ml-3" id="placeholder20-5px">5px </button>
+                    <button type="button" class="btn btn-primary btn-small" id="placeholder20-10px">10px </button>
+                    <button type="button" class="btn btn-primary btn-small " id="placeholder20-20px">20px </button>
+                    <button type="button" class="btn btn-primary btn-small " id="placeholder20-30px">30px </button>
+                    <button type="button" class="btn btn-primary btn-small " id="placeholder20-40px">40px </button>
+                    <i class="fa fa-cog text-secondary ml-3"></i>
+                </div>
+                <div id="placeholder30px" style="display: none">Brush Size: <strong>30px</strong>
+                    <button type="button" class="btn btn-primary btn-small"><i class="fa fa-minus text-small"></i> </button>
+                    <button type="button" class="btn btn-primary btn-small"><i class="fa fa-plus text-small"></i> </button>
+                    <button type="button" class="btn btn-primary btn-small ml-3" id="placeholder30-5px">5px </button>
+                    <button type="button" class="btn btn-primary btn-small" id="placeholder30-10px">10px </button>
+                    <button type="button" class="btn btn-primary btn-small " id="placeholder30-20px">20px </button>
+                    <button type="button" class="btn btn-primary btn-small " id="placeholder30-30px">30px </button>
+                    <button type="button" class="btn btn-primary btn-small " id="placeholder30-40px">40px </button>
+                    <i class="fa fa-cog text-secondary ml-3"></i>
+                </div>
+                <div id="placeholder40px" style="display: none">Brush Size: <strong>40px</strong>
+                    <button type="button" class="btn btn-primary btn-small"><i class="fa fa-minus text-small"></i> </button>
+                    <button type="button" class="btn btn-primary btn-small"><i class="fa fa-plus text-small"></i> </button>
+                    <button type="button" class="btn btn-primary btn-small ml-3" id="placeholder40-5px">5px </button>
+                    <button type="button" class="btn btn-primary btn-small" id="placeholder40-10px">10px </button>
+                    <button type="button" class="btn btn-primary btn-small " id="placeholder40-20px">20px </button>
+                    <button type="button" class="btn btn-primary btn-small " id="placeholder40-30px">30px </button>
+                    <button type="button" class="btn btn-primary btn-small " id="placeholder40-40px">40px </button>
+                    <i class="fa fa-cog text-secondary ml-3"></i>
+                </div>
+            </div>
+
+            <div id="backgrounddiv">
+                <p>Background Color:
+                    <button type="button" class="btn btn-primary btn-small"> </button>
+                    <button type="button" class="btn btn-white btn-small"> </button>
+                    <button type="button" class="btn btn-gray btn-small ml-2"> </button>
+                    <button type="button" class="btn btn-black btn-small ml-2"></button>
+                    <button type="button" class="btn btn-brown btn-small ml-2"> </button>
+                    <button type="button" class="btn btn-warning btn-small ml-2"> </button>
+                    <button type="button" class="btn btn-green btn-small ml-2"> </button>
+                    <button type="button" class="btn btn-blue btn-small ml-2"> </button> |
+                    <button type="button" class="btn btn-blue btn-sky ml-2"> </button>
+                    <button type="button" class="btn btn-blue btn-success text-white ml-2 ">#338855 </button>
+                    <i class="fa fa-cog text-secondary ml-3"></i>
+                </p>
+            </div>
+            <div id="reviewdiv">
+                <p>Review Contour:
+                    <button type="button" class="btn btn-primary btn-small ml-2"><i class="fa fa-greater-than text-white"></i> </button>
+                    <button type="button" class="btn btn-white btn-small"> <i class="fa fa-less-than text-white"></i></button>
+                </p>
+            </div>
+        </div>
+        <div class="edgebottomdiv">
+            <div id="edgediv">
+                <div class="container">
                     <div class="row">
-                        <div class="col-8">
-                            <canvas id="modalcropcanvas">
+                        <div class="col-3">
+                            <p>Corners:</p>
+                        </div>
+                        <div class="col-3">
+                            <p>Smoothing Level: <strong>1</strong></p>
+                        </div>
+                        <div class="col-3">
+                            <p>Feathering radius: <strong>1px</strong></p>
+                        </div>
+                        <div class="col-2">
+                            <p>Offset: <strong>0px</strong></p>
+                        </div>
 
-                            </canvas>
+                        <div class="col-1">
+                            <i class="fa fa-cog text-secondary"></i>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2">
+                            <button type="button" class="btn btn-secondary text-muted">On</button>
+                            <button type="button" class="btn btn-secondary text-muted">Off</button>
+                        </div>
+                        <div class="col-5">
+                            <button type="button" class="btn btn-secondary text-muted text-white">Smart</button>
+                            <button type="button" class="btn btn-secondary text-muted">Fixed</button>
+                            <button type="button" class="btn btn-secondary text-muted"><i class="fa fa-minus text-muted"></i></button>
+                            <button type="button" class="btn btn-secondary text-muted"><i class="fa fa-plus text-muted"></i></button>
+                            <button type="button" class="btn btn-secondary text-muted">Reset</button>
                         </div>
                         <div class="col-4">
-                            <div class="row bg-primary headmodal">
+                            <button type="button" class="btn btn-primary text-left">Smart</button>
+                            <button type="button" class="btn bg-white">Fixed</button>
+                            <button type="button" class="btn btn-primary text-muted ml-2"><i class="fa fa-minus text-muted"></i></button>
+                            <button type="button" class="btn btn-primary text-muted"><i class="fa fa-plus text-muted"></i></button>
+                            <button type="button" class="btn btn-secondary text-muted">Reset</button>
+                        </div>
+                        <div class="col-1">
+                            <button type="button" class="btn btn-secondary text-muted"><i class="fa fa-minus fa-1px text-muted"></i></button>
+                            <button type="button" class="btn btn-secondary text-muted"><i class="fa fa-plus text-muted"></i></button>
+                            <button type="button" class="btn btn-secondary text-muted">Reset</button>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!--Modals-->
+        <div class="modal m-4" id="colormodal">
+            <div class="modal-xl">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-8">
+                                <canvas id="modalcanvas">
+
+                                </canvas>
+                            </div>
+                            <div class="col-4">
+                                <div class="row bg-primary headmodal">
                                 <div class="col-4">
-                                    <button id="modalcropundo" type="button" class="btn btn-primary"><i class="fa fa-undo"></i> </button>
-                                    <button id="modalcropredo" type="button" class="btn btn-primary"><i class="fa fa-share"></i> </button>
+                                <button id="modalundo" type="button" class="btn btn-primary"><i class="fa fa-undo"></i> </button>
+                                <button id="modalredo" type="button" class="btn btn-primary"><i class="fa fa-share"></i> </button>
                                 </div>
                                 <div class="col-7 ml-0">
-                                    <button id="modalcropzoomin" type="button" class="btn btn-primary"><i class="fa fa-search-plus"></i> </button>
-                                    <button id="modalcropzoomout" type="button" class="btn btn-primary"><i class="fa fa-search-minus"></i> </button>
-                                    <button id="modalcropfitscreen" type="button" class="btn btn-primary"><i class="fa fa-search-minus"></i> </button>
-                                    <button id="modalcropdownload" type="button" class="btn btn-primary"><i class="fa fa-arrow-down"></i> </button>
+                                    <button id="modalzoomin" type="button" class="btn btn-primary"><i class="fa fa-search-plus"></i> </button>
+                                    <button id="modalzoomout" type="button" class="btn btn-primary"><i class="fa fa-search-minus"></i> </button>
+                                    <button id="modalfitscreen" type="button" class="btn btn-primary"><i class="fa fa-search-minus"></i> </button>
+                                    <button id="modaldownload" type="button" class="btn btn-primary"><i class="fa fa-arrow-down"></i> </button>
                                 </div>
                                 <div class="col-1 text-right">
-                                    <button id="modalcropcorrect" type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-check"></i> </button>
+                                    <button id="modalcorrect" type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-check"></i> </button>
                                 </div>
-                            </div>
-                            <div class="row headmodal mt-0">
-                                <div class="col-4">
-                                    <button id="modalcropColor" class=" btn-white"><i class="fa fa-adjust"></i><span>Color</span> </button>
                                 </div>
-                                <div class="col-4">
-                                    <button id="modalcropCrop"  class=" btn-white"><i class="fa fa-crop"></i><span>Crop</span> </button>
-
-                                </div>
-                                <div class="col-4">
-                                    <button id="modalcropShadow" class="btn-white"><i class="fa fa-clone"></i><span>Shadows</span> </button>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-10 mt-2">
-                                    <h3>Crop & Resize</h3>
-                                </div>
-
-                                <div class="col-2 mt-2">
-                                    <button class="btn-white text-muted"><i class="fa fa-cog text-secondary"></i> </button>
-                                </div>
-                            </div>
-                            <div class="row bg-light mt-2">
-                                <div class="col-6">
-                                <p><input type="radio"><span class="ml-3">Unconstrained</span></p>
-                                </div>
-                            </div>
-                            <div class="row bg-white mt-2">
-                                <div class="col-6">
-                                    <p><input type="radio"><span class="ml-3">Aspect Ratio:</span>
-                                    <button type="button" class="dropdown-toggle btn-primary" data-toggle="dropdown-menu" aria-haspopup="true" aria-expanded="false">
-                                        3:2
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="#">1:1</a>
-                                        <a class="dropdown-item" href="#">5:4</a>
-                                        <a class="dropdown-item" href="#">4:3</a>
-                                        <a class="dropdown-item" href="#">3:2</a>
-                                        <a class="dropdown-item" href="#">1.618:1</a>
-                                        <a class="dropdown-item" href="#">16:9</a>
-                                        <a class="dropdown-item" href="#">Custom</a>
+                                <div class="row headmodal mt-0">
+                                    <div class="col-4">
+                                        <button id="modalColor" class=" btn-white"><i class="fa fa-adjust"></i><span>Color</span> </button>
                                     </div>
-                                    </p>
+                                    <div class="col-4">
+                                        <button id="modalCrop"  class=" btn-white"><i class="fa fa-crop"></i><span>Crop</span> </button>
+
+                                    </div>
+                                    <div class="col-4">
+                                        <button id="modalShadow" class="btn-white"><i class="fa fa-clone"></i><span>Shadows</span> </button>
+                                    </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col-12 mt-2">
+                                    <h3>Color Adjustments</h3>
+                                    </div>
+                                </div>
+                                <div class="row bg-light">
+                                    <div class="col-4">
+                                        <p>Brightness: </p>
+                                    </div>
+                                    <div class="col-4">
+                                    <h5 class="text-primary">0</h5>
+                                </div>
+                                    <div class="col-4 text-center">
+                                        <button class="btn-primary  modal-button"><i class="fa fa-minus"></i> </button>
+                                        <button class="btn-primary  modal-button"><i class="fa fa-plus"></i> </button>
+                                        <button class="btn-secondary text-muted ml-2  modal-button"><i class="fa fa-undo text-white"></i> </button>
+                                    </div>
+                                </div>
+                                <div class="row bg-white">
+                                    <div class="col-4">
+                                        <p>Shadows: </p>
+                                    </div>
+                                    <div class="col-4">
+                                        <h5 class="text-primary">0</h5>
+                                    </div>
+                                    <div class="col-4 text-center">
+                                        <button class="btn-primary  modal-button"><i class="fa fa-minus"></i> </button>
+                                        <button class="btn-primary  modal-button"><i class="fa fa-plus"></i> </button>
+                                        <button class="btn-secondary text-muted ml-2  modal-button"><i class="fa fa-undo text-white"></i> </button>
+                                    </div>
+                                </div>
+
+                                <div class="row bg-light">
+                                    <div class="col-4">
+                                        <p>Highlights: </p>
+                                    </div>
+                                    <div class="col-4">
+                                        <h5 class="text-primary">0</h5>
+                                    </div>
+                                    <div class="col-4 text-center">
+                                        <button class="btn-primary  modal-button"><i class="fa fa-minus"></i> </button>
+                                        <button class="btn-primary  modal-button"><i class="fa fa-plus"></i> </button>
+                                        <button class="btn-secondary text-muted ml-2  modal-button"><i class="fa fa-undo text-white"></i> </button>
+                                    </div>
+                                </div>
+                                <div class="row bg-white">
+                                    <div class="col-4">
+                                        <p>Temperature: </p>
+                                    </div>
+                                    <div class="col-4">
+                                        <h5 class="text-primary">0</h5>
+                                    </div>
+                                    <div class="col-4 text-center">
+                                        <button class="btn-primary  modal-button"><i class="fa fa-minus"></i> </button>
+                                        <button class="btn-primary  modal-button"><i class="fa fa-plus"></i> </button>
+                                        <button class="btn-secondary text-muted ml-2  modal-button"><i class="fa fa-undo text-white"></i> </button>
+                                    </div>
+                                </div>
+                                <div class="row bg-light">
+                                    <div class="col-4">
+                                        <p>Saturation: </p>
+                                    </div>
+                                    <div class="col-4">
+                                        <h5 class="text-primary">0</h5>
+                                    </div>
+                                    <div class="col-4 text-center">
+                                        <button class="btn-primary  modal-button"><i class="fa fa-minus"></i> </button>
+                                        <button class="btn-primary  modal-button"><i class="fa fa-plus"></i> </button>
+                                        <button class="btn-secondary text-muted ml-2  modal-button"><i class="fa fa-undo text-white"></i> </button>
+                                    </div>
+                                </div>
+                                <div class="row bg-white mt-2">
+                                    <div class="col-10">
+                                        <button class="btn-primary  modal-button">Auto Levels </button>
+                                        <button class="btn-white text-muted  modal-button">Reset</button>
+                                    </div>
+                                    <div class="col-2 text-right">
+
+                                        <button class="btn-white text-muted  modal-button"><i class="fa fa-cog text-secondary"></i> </button>
+
+                                    </div>
+                                </div>
+                                <div class="row bg-white mt-2" id="modalwbbtn">
+                                    <div class="col-12">
+                                        <h3><button class="bg-white"><i class="fa fa-square-o bg-white text-white"></i> </button><span class="ml-2">White Balance</span></h3>
+                                    </div>
+                                </div>
+                                <div class="row bg-white mt-2" id="modalwbbtnshow" style="display: none">
+                                    <div class="col-12" >
+                                        <h3 id="modalwbbtnhide"><button class="bg-primary modal-button" ><i class="fa fa-check bg-primary text-white"></i> </button><span class="ml-2">White Balance</span></h3>
+                                        <div><button class="btn-white modal-button text-secondary"><i class="fa fa-eyedropper text-secondary"></i> </button>
+                                            <button class="btn-white modal-button"><i class="fa fa-hand-paper-o text-secondary"></i> </button> </div>
+                                        <p class="font-italic">Pick a color that should be neutral (white/gray)</p>
+                                    </div>
+
+                                </div>
+                                <div class="row bg-white mt-2" id="modalccrbtn">
+                                    <div class="col-12">
+                                        <h3><button class="bg-white"><i class="fa fa-square-o bg-white text-white"></i> </button><span class="ml-2">Color Cast Removal</span></h3>
+                                    </div>
+                                </div>
+                                <div class="row bg-white mt-2" id="modalccrbtnshow" style="display: none">
+                                    <div class="col-12" >
+                                        <h3 id="modalccrbtnhide"><button class="bg-primary modal-button" ><i class="fa fa-check bg-primary text-white"></i> </button><span class="ml-2">Color Cast Removal</span></h3>
+                                        <div><button class="btn-white modal-button text-secondary"><i class="fa fa-eyedropper text-secondary"></i> </button>
+                                            <button class="btn-white modal-button"><i class="fa fa-hand-paper-o text-secondary"></i> </button> </div>
+                                    </div>
+
+                                        <div class="col-12 bg-light mt-2">
+                                            <p>Foreground Guard:  <span class="text-primary">+4</span>
+
+                                            <button class="btn-primary  modal-button ml-5"><i class="fa fa-minus"></i> </button>
+                                            <button class="btn-primary  modal-button"><i class="fa fa-plus"></i> </button>
+                                            <button class="btn-secondary text-muted ml-2  modal-button"><i class="fa fa-undo text-white"></i> </button>
+                                            </p></div>
+
+                                </div>
+
+                                <div class="row bg-light mt-2 mb-0">
+                                    <div class="col-12 text-right">
+                                        <button class="bg-white modal-button-bottom">Reset </button>
+                                            <button class="bg-primary modal-button-bottom ml-3 text-white w-25"data-dismiss="modal">Ok </button>
+                                    </div>
+                                </div>
+
                             </div>
-                            <div class="row bg-light mt-2">
-                                <div class="col-12">
-                                    <p><input type="radio"><span class="ml-3">Target Size:</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--CropModal-->
+        <div class="modal m-4" id="cropmodal">
+            <div class="modal-xl">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-8">
+                                <canvas id="modalcropcanvas">
+
+                                </canvas>
+                            </div>
+                            <div class="col-4">
+                                <div class="row bg-primary headmodal">
+                                    <div class="col-4">
+                                        <button id="modalcropundo" type="button" class="btn btn-primary"><i class="fa fa-undo"></i> </button>
+                                        <button id="modalcropredo" type="button" class="btn btn-primary"><i class="fa fa-share"></i> </button>
+                                    </div>
+                                    <div class="col-7 ml-0">
+                                        <button id="modalcropzoomin" type="button" class="btn btn-primary"><i class="fa fa-search-plus"></i> </button>
+                                        <button id="modalcropzoomout" type="button" class="btn btn-primary"><i class="fa fa-search-minus"></i> </button>
+                                        <button id="modalcropfitscreen" type="button" class="btn btn-primary"><i class="fa fa-search-minus"></i> </button>
+                                        <button id="modalcropdownload" type="button" class="btn btn-primary"><i class="fa fa-arrow-down"></i> </button>
+                                    </div>
+                                    <div class="col-1 text-right">
+                                        <button id="modalcropcorrect" type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-check"></i> </button>
+                                    </div>
+                                </div>
+                                <div class="row headmodal mt-0">
+                                    <div class="col-4">
+                                        <button id="modalcropColor" class=" btn-white"><i class="fa fa-adjust"></i><span>Color</span> </button>
+                                    </div>
+                                    <div class="col-4">
+                                        <button id="modalcropCrop"  class=" btn-white"><i class="fa fa-crop"></i><span>Crop</span> </button>
+
+                                    </div>
+                                    <div class="col-4">
+                                        <button id="modalcropShadow" class="btn-white"><i class="fa fa-clone"></i><span>Shadows</span> </button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-10 mt-2">
+                                        <h3>Crop & Resize</h3>
+                                    </div>
+
+                                    <div class="col-2 mt-2">
+                                        <button class="btn-white text-muted"><i class="fa fa-cog text-secondary"></i> </button>
+                                    </div>
+                                </div>
+                                <div class="row bg-light mt-2">
+                                    <div class="col-6">
+                                    <p><input type="radio"><span class="ml-3">Unconstrained</span></p>
+                                    </div>
+                                </div>
+                                <div class="row bg-white mt-2">
+                                    <div class="col-6">
+                                        <p><input type="radio"><span class="ml-3">Aspect Ratio:</span>
                                         <button type="button" class="dropdown-toggle btn-primary" data-toggle="dropdown-menu" aria-haspopup="true" aria-expanded="false">
-                                            1500x1000px(3:2)
-
+                                            3:2
                                         </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="#">640x360px (16:9)</a>
-                                        <a class="dropdown-item" href="#">851x315px (2.702:1)</a>
-                                        <a class="dropdown-item" href="#">1920x1080px (16:9)</a>
-                                        <a class="dropdown-item" href="#">2048x2048px (1:1)</a>
-                                        <a class="dropdown-item" href="#">3000x3000px (1:1)</a>
-                                        <a class="dropdown-item" href="#">1500x1000px (3:2)</a>
-                                        <a class="dropdown-item" href="#">Custom</a>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item" href="#">1:1</a>
+                                            <a class="dropdown-item" href="#">5:4</a>
+                                            <a class="dropdown-item" href="#">4:3</a>
+                                            <a class="dropdown-item" href="#">3:2</a>
+                                            <a class="dropdown-item" href="#">1.618:1</a>
+                                            <a class="dropdown-item" href="#">16:9</a>
+                                            <a class="dropdown-item" href="#">Custom</a>
+                                        </div>
+                                        </p>
                                     </div>
-                                    </p>
-                                    <input class="ml-4" type="checkbox"> <span>Allow Enlarging Result</span>
                                 </div>
-                            </div>
-                            <div class="row bg-white mt-3" id="modalfittoscreenbtn">
-                                <div class="col-10">
-                                    <h5><button class="bg-white"><i class="fa fa-square-o bg-white text-white"></i> </button><span class="ml-2">Fit to Result</span></h5>
+                                <div class="row bg-light mt-2">
+                                    <div class="col-12">
+                                        <p><input type="radio"><span class="ml-3">Target Size:</span>
+                                            <button type="button" class="dropdown-toggle btn-primary" data-toggle="dropdown-menu" aria-haspopup="true" aria-expanded="false">
+                                                1500x1000px(3:2)
+
+                                            </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item" href="#">640x360px (16:9)</a>
+                                            <a class="dropdown-item" href="#">851x315px (2.702:1)</a>
+                                            <a class="dropdown-item" href="#">1920x1080px (16:9)</a>
+                                            <a class="dropdown-item" href="#">2048x2048px (1:1)</a>
+                                            <a class="dropdown-item" href="#">3000x3000px (1:1)</a>
+                                            <a class="dropdown-item" href="#">1500x1000px (3:2)</a>
+                                            <a class="dropdown-item" href="#">Custom</a>
+                                        </div>
+                                        </p>
+                                        <input class="ml-4" type="checkbox"> <span>Allow Enlarging Result</span>
+                                    </div>
                                 </div>
-                                <div class="col-2">
-                                    <button class="btn-white text-muted"><i class="fa fa-cog text-secondary"></i> </button>
-                                </div>
-                            </div>
-                            <div id="modalfittoscreenbtnshow" style="display: none">
-                                <div class="row bg-white mt-2" id="modalfittoscreenbtnhide">
+                                <div class="row bg-white mt-3" id="modalfittoscreenbtn">
                                     <div class="col-10">
                                         <h5><button class="bg-white"><i class="fa fa-square-o bg-white text-white"></i> </button><span class="ml-2">Fit to Result</span></h5>
                                     </div>
@@ -1496,195 +499,195 @@
                                         <button class="btn-white text-muted"><i class="fa fa-cog text-secondary"></i> </button>
                                     </div>
                                 </div>
-                            <div class="row bg-white mt-2" >
-
-                                <div class="col-4">
-                                    <p>Margin: </p>
-                                </div>
-                                <div class="col-4">
-                                    <h5 class="text-primary">5.0&percnt;</h5>
-                                </div>
-                                <div class="col-4 text-center">
-                                    <button class="btn-primary  modal-button"><i class="fa fa-minus"></i> </button>
-                                    <button class="btn-primary  modal-button"><i class="fa fa-plus"></i> </button>
-                                    <button class="btn-secondary text-muted ml-2  modal-button"><i class="fa fa-undo text-white"></i> </button>
-                                </div>
-
-                            </div>
-                                <div class="row bg-light" >
+                                <div id="modalfittoscreenbtnshow" style="display: none">
+                                    <div class="row bg-white mt-2" id="modalfittoscreenbtnhide">
+                                        <div class="col-10">
+                                            <h5><button class="bg-white"><i class="fa fa-square-o bg-white text-white"></i> </button><span class="ml-2">Fit to Result</span></h5>
+                                        </div>
+                                        <div class="col-2">
+                                            <button class="btn-white text-muted"><i class="fa fa-cog text-secondary"></i> </button>
+                                        </div>
+                                    </div>
+                                <div class="row bg-white mt-2" >
 
                                     <div class="col-4">
-                                        <p>Units: </p>
+                                        <p>Margin: </p>
                                     </div>
                                     <div class="col-4">
-                                        <button class="btn-white text-dark  modal-button">Pixels </button>
-                                        <button class="btn-primary  modal-button">Percent </button>
+                                        <h5 class="text-primary">5.0&percnt;</h5>
+                                    </div>
+                                    <div class="col-4 text-center">
+                                        <button class="btn-primary  modal-button"><i class="fa fa-minus"></i> </button>
+                                        <button class="btn-primary  modal-button"><i class="fa fa-plus"></i> </button>
+                                        <button class="btn-secondary text-muted ml-2  modal-button"><i class="fa fa-undo text-white"></i> </button>
+                                    </div>
+
+                                </div>
+                                    <div class="row bg-light" >
+
+                                        <div class="col-4">
+                                            <p>Units: </p>
+                                        </div>
+                                        <div class="col-4">
+                                            <button class="btn-white text-dark  modal-button">Pixels </button>
+                                            <button class="btn-primary  modal-button">Percent </button>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="row bg-white" >
+
+                                        <div class="col-4">
+                                            <p>Object Size: </p>
+                                        </div>
+                                        <div class="col-8">
+                                            <button class="btn-white text-dark  modal-button">Small </button>
+                                            <button class="btn-primary  modal-button">Medium </button>
+                                            <button class="btn-white text-dark  modal-button">Large </button>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="row bg-light" >
+
+                                        <div class="col-4">
+                                            <p>Alignment: </p>
+                                        </div>
+                                        <div class="col-8">
+                                            <button class="btn-white text-dark  modal-button">Top </button>
+                                            <button class="btn-primary  modal-button">Middle </button>
+                                            <button class="btn-white text-dark  modal-button">Bottom </button>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="row bg-white" >
+
+                                        <div class="col-4">
+                                            <p>Shadows: </p>
+                                        </div>
+                                        <div class="col-8">
+                                            <button class="btn-white text-dark  modal-button">Ignore </button>
+                                            <button class="btn-primary  modal-button">Pad </button>
+                                            <button class="btn-white text-dark  modal-button">Tight </button>
+
+                                        </div>
 
                                     </div>
 
                                 </div>
-                                <div class="row bg-white" >
-
-                                    <div class="col-4">
-                                        <p>Object Size: </p>
+                                <div class="row bg-white mt-2">
+                                    <div class="col-12">
+                                        <h4>Rotate</h4>
                                     </div>
-                                    <div class="col-8">
-                                        <button class="btn-white text-dark  modal-button">Small </button>
-                                        <button class="btn-primary  modal-button">Medium </button>
-                                        <button class="btn-white text-dark  modal-button">Large </button>
+                                </div>
+                                <div class="row bg-light mt-2">
+                                    <div class="col-4 mt-2">
+                                        <p>Rotate 90&deg;</p>
+                                    </div>
+                                    <div class="col-4 mt-2 text-center">
+                                        <h6 class="text-primary">0&deg;</h6>
+                                    </div>
+                                    <div class="col-4 mt-2 text-center">
+                                        <button class="btn-primary  modal-button"><i class="fa fa-minus"></i> </button>
+                                        <button class="btn-primary  modal-button"><i class="fa fa-plus"></i> </button>
+                                        <button class="btn-secondary text-muted ml-2  modal-button"><i class="fa fa-undo text-white"></i> </button>
+                                    </div>
+                                </div>
+                                <div class="row bg-white">
+                                    <div class="col-4 mt-2">
+                                        <p>Straighten:</p>
+                                    </div>
+                                    <div class="col-4 mt-2 text-center">
+                                        <h6 class="text-primary">0.0&deg;</h6>
+                                    </div>
+                                    <div class="col-4 mt-2 text-center">
+                                        <button class="btn-primary  modal-button"><i class="fa fa-minus"></i> </button>
+                                        <button class="btn-primary  modal-button"><i class="fa fa-plus"></i> </button>
+                                        <button class="btn-secondary text-muted ml-2  modal-button"><i class="fa fa-undo text-white"></i> </button>
+                                    </div>
+                                </div>
+                                <div class="row bg-white mt-2" >
 
+                                    <div class="col-12 bg-white mt-2">
+                                        <p><strong>Output:</strong><span class="text-secondary ml-2">1451 x 1000px (1.451:1)</span>
+
+
+                                        </p>
                                     </div>
 
                                 </div>
-                                <div class="row bg-light" >
 
-                                    <div class="col-4">
-                                        <p>Alignment: </p>
+                                <div class="row bg-light mt-2 mb-0">
+                                    <div class="col-12 text-right">
+                                        <button class="bg-white modal-button-bottom">Reset </button>
+                                        <button class="bg-primary modal-button-bottom ml-3 text-white w-25 " data-dismiss="modal">Ok </button>
                                     </div>
-                                    <div class="col-8">
-                                        <button class="btn-white text-dark  modal-button">Top </button>
-                                        <button class="btn-primary  modal-button">Middle </button>
-                                        <button class="btn-white text-dark  modal-button">Bottom </button>
-
-                                    </div>
-
-                                </div>
-                                <div class="row bg-white" >
-
-                                    <div class="col-4">
-                                        <p>Shadows: </p>
-                                    </div>
-                                    <div class="col-8">
-                                        <button class="btn-white text-dark  modal-button">Ignore </button>
-                                        <button class="btn-primary  modal-button">Pad </button>
-                                        <button class="btn-white text-dark  modal-button">Tight </button>
-
-                                    </div>
-
                                 </div>
 
                             </div>
-                            <div class="row bg-white mt-2">
-                                <div class="col-12">
-                                    <h4>Rotate</h4>
-                                </div>
-                            </div>
-                            <div class="row bg-light mt-2">
-                                <div class="col-4 mt-2">
-                                    <p>Rotate 90&deg;</p>
-                                </div>
-                                <div class="col-4 mt-2 text-center">
-                                    <h6 class="text-primary">0&deg;</h6>
-                                </div>
-                                <div class="col-4 mt-2 text-center">
-                                    <button class="btn-primary  modal-button"><i class="fa fa-minus"></i> </button>
-                                    <button class="btn-primary  modal-button"><i class="fa fa-plus"></i> </button>
-                                    <button class="btn-secondary text-muted ml-2  modal-button"><i class="fa fa-undo text-white"></i> </button>
-                                </div>
-                            </div>
-                            <div class="row bg-white">
-                                <div class="col-4 mt-2">
-                                    <p>Straighten:</p>
-                                </div>
-                                <div class="col-4 mt-2 text-center">
-                                    <h6 class="text-primary">0.0&deg;</h6>
-                                </div>
-                                <div class="col-4 mt-2 text-center">
-                                    <button class="btn-primary  modal-button"><i class="fa fa-minus"></i> </button>
-                                    <button class="btn-primary  modal-button"><i class="fa fa-plus"></i> </button>
-                                    <button class="btn-secondary text-muted ml-2  modal-button"><i class="fa fa-undo text-white"></i> </button>
-                                </div>
-                            </div>
-                            <div class="row bg-white mt-2" >
-
-                                <div class="col-12 bg-white mt-2">
-                                    <p><strong>Output:</strong><span class="text-secondary ml-2">1451 x 1000px (1.451:1)</span>
-
-
-                                    </p>
-                                </div>
-
-                            </div>
-
-                            <div class="row bg-light mt-2 mb-0">
-                                <div class="col-12 text-right">
-                                    <button class="bg-white modal-button-bottom">Reset </button>
-                                    <button class="bg-primary modal-button-bottom ml-3 text-white w-25 " data-dismiss="modal">Ok </button>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!--EndCropModal-->
+        <!--EndCropModal-->
 
-    <!--ShadowModal-->
-    <div class="modal m-4" id="shadowmodal">
-        <div class="modal-xl">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-8">
-                            <canvas id="modalshadowcanvas">
+        <!--ShadowModal-->
+        <div class="modal m-4" id="shadowmodal">
+            <div class="modal-xl">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-8">
+                                <canvas id="modalshadowcanvas">
 
-                            </canvas>
-                        </div>
-                        <div class="col-4">
-                            <div class="row bg-primary headmodal">
-                                <div class="col-4">
-                                    <button id="modalshadowundo" type="button" class="btn btn-primary"><i class="fa fa-undo"></i> </button>
-                                    <button id="modalshadowredo" type="button" class="btn btn-primary"><i class="fa fa-share"></i> </button>
-                                </div>
-                                <div class="col-7 ml-0">
-                                    <button id="modalshadowzoomin" type="button" class="btn btn-primary"><i class="fa fa-search-plus"></i> </button>
-                                    <button id="modalshadowzoomout" type="button" class="btn btn-primary"><i class="fa fa-search-minus"></i> </button>
-                                    <button id="modalshadowfitscreen" type="button" class="btn btn-primary"><i class="fa fa-search-minus"></i> </button>
-                                    <button id="modalshadowdownload" type="button" class="btn btn-primary"><i class="fa fa-arrow-down"></i> </button>
-                                </div>
-                                <div class="col-1 text-right">
-                                    <button id="modalshadowcorrect" type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-check"></i> </button>
-                                </div>
+                                </canvas>
                             </div>
-                            <div class="row headmodal mt-0">
-                                <div class="col-4">
-                                    <button id="modalshadowColor" class=" btn-white"><i class="fa fa-adjust"></i><span>Color</span> </button>
+                            <div class="col-4">
+                                <div class="row bg-primary headmodal">
+                                    <div class="col-4">
+                                        <button id="modalshadowundo" type="button" class="btn btn-primary"><i class="fa fa-undo"></i> </button>
+                                        <button id="modalshadowredo" type="button" class="btn btn-primary"><i class="fa fa-share"></i> </button>
+                                    </div>
+                                    <div class="col-7 ml-0">
+                                        <button id="modalshadowzoomin" type="button" class="btn btn-primary"><i class="fa fa-search-plus"></i> </button>
+                                        <button id="modalshadowzoomout" type="button" class="btn btn-primary"><i class="fa fa-search-minus"></i> </button>
+                                        <button id="modalshadowfitscreen" type="button" class="btn btn-primary"><i class="fa fa-search-minus"></i> </button>
+                                        <button id="modalshadowdownload" type="button" class="btn btn-primary"><i class="fa fa-arrow-down"></i> </button>
+                                    </div>
+                                    <div class="col-1 text-right">
+                                        <button id="modalshadowcorrect" type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-check"></i> </button>
+                                    </div>
                                 </div>
-                                <div class="col-4">
-                                    <button id="modalshadowCrop"  class=" btn-white"><i class="fa fa-crop"></i><span>Crop</span> </button>
+                                <div class="row headmodal mt-0">
+                                    <div class="col-4">
+                                        <button id="modalshadowColor" class=" btn-white"><i class="fa fa-adjust"></i><span>Color</span> </button>
+                                    </div>
+                                    <div class="col-4">
+                                        <button id="modalshadowCrop"  class=" btn-white"><i class="fa fa-crop"></i><span>Crop</span> </button>
 
+                                    </div>
+                                    <div class="col-4">
+                                        <button id="modalshadowShadow" class="btn-white"><i class="fa fa-clone"></i><span>Shadows</span> </button>
+                                    </div>
                                 </div>
-                                <div class="col-4">
-                                    <button id="modalshadowShadow" class="btn-white"><i class="fa fa-clone"></i><span>Shadows</span> </button>
+                                <div class="row">
+                                    <div class="col-12 mt-2">
+                                        <h3>Oval Shadows</h3>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12 mt-2">
-                                    <h3>Oval Shadows</h3>
+                                <div class="row">
+                                    <div class="col-3 ml-4">
+                                        <button class="modal-button bg-white text-dark"><i class="fa fa-hand-paper-o"></i></button>
+                                        <button class="modal-button bg-white text-dark" ><i class="fa fa-circle"></i> </button>
+                                    </div>
+                                    <div class="col-6 text-left">
+                                        <p class="font-italic">Create new oval shadows</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-3 ml-4">
-                                    <button class="modal-button bg-white text-dark"><i class="fa fa-hand-paper-o"></i></button>
-                                    <button class="modal-button bg-white text-dark" ><i class="fa fa-circle"></i> </button>
-                                </div>
-                                <div class="col-6 text-left">
-                                    <p class="font-italic">Create new oval shadows</p>
-                                </div>
-                            </div>
-                            <div class="row bg-white mt-3" id="modaldropshadowbtn">
-                                <div class="col-10">
-                                    <h5><button class="bg-white"><i class="fa fa-square-o bg-white text-white"></i> </button><span class="ml-2">Drop Shadow</span></h5>
-                                </div>
-                                <div class="col-2">
-                                    <button class="btn-white text-muted"><i class="fa fa-cog text-secondary"></i> </button>
-                                </div>
-                            </div>
-                            <div id="modaldropshadowbtnshow" style="display: none">
-                                <div class="row bg-white mt-2" id="modaldropshadowbtnhide">
+                                <div class="row bg-white mt-3" id="modaldropshadowbtn">
                                     <div class="col-10">
                                         <h5><button class="bg-white"><i class="fa fa-square-o bg-white text-white"></i> </button><span class="ml-2">Drop Shadow</span></h5>
                                     </div>
@@ -1692,76 +695,76 @@
                                         <button class="btn-white text-muted"><i class="fa fa-cog text-secondary"></i> </button>
                                     </div>
                                 </div>
-                                <div class="row bg-white mt-2" >
+                                <div id="modaldropshadowbtnshow" style="display: none">
+                                    <div class="row bg-white mt-2" id="modaldropshadowbtnhide">
+                                        <div class="col-10">
+                                            <h5><button class="bg-white"><i class="fa fa-square-o bg-white text-white"></i> </button><span class="ml-2">Drop Shadow</span></h5>
+                                        </div>
+                                        <div class="col-2">
+                                            <button class="btn-white text-muted"><i class="fa fa-cog text-secondary"></i> </button>
+                                        </div>
+                                    </div>
+                                    <div class="row bg-white mt-2" >
 
-                                    <div class="col-4">
-                                        <p>Clipping: </p>
-                                    </div>
-                                    <div class="col-4  text-center">
-                                        <h6 class="text-primary">Off</h6>
-                                    </div>
-                                    <div class="col-4 text-center">
-                                        <button class="btn-primary  modal-button">Enable </button>
-                                    </div>
+                                        <div class="col-4">
+                                            <p>Clipping: </p>
+                                        </div>
+                                        <div class="col-4  text-center">
+                                            <h6 class="text-primary">Off</h6>
+                                        </div>
+                                        <div class="col-4 text-center">
+                                            <button class="btn-primary  modal-button">Enable </button>
+                                        </div>
 
+                                    </div>
+                                    <div class="row bg-light" >
+
+                                        <div class="col-4">
+                                            <p>Opacity: </p>
+                                        </div>
+                                        <div class="col-4 text-center">
+                                            <h6 class="text-primary">75&percnt; </h6>
+                                        </div>
+                                        <div class="col-4 mt-2 text-center">
+                                            <button class="btn-primary  modal-button"><i class="fa fa-minus"></i> </button>
+                                            <button class="btn-primary  modal-button"><i class="fa fa-plus"></i> </button>
+                                            <button class="btn-secondary text-muted ml-2  modal-button"><i class="fa fa-undo text-white"></i> </button>
+                                        </div>
+
+                                    </div>
+                                    <div class="row bg-white" >
+
+                                        <div class="col-4">
+                                            <p>Blur Radius: </p>
+                                        </div>
+                                        <div class="col-4 text-center">
+                                            <h6 class="text-primary">25px </h6>
+                                        </div>
+                                        <div class="col-4 mt-2 text-center">
+                                            <button class="btn-primary  modal-button"><i class="fa fa-minus"></i> </button>
+                                            <button class="btn-primary  modal-button"><i class="fa fa-plus"></i> </button>
+                                            <button class="btn-secondary text-muted ml-2  modal-button"><i class="fa fa-undo text-white"></i> </button>
+                                        </div>
+
+                                    </div>
+                                    <div class="row bg-light" >
+
+                                        <div class="col-4">
+                                            <p>Offset: </p>
+                                        </div>
+                                        <div class="col-4 text-center">
+                                            <h6 class="text-primary">-50, +50 </h6>
+                                        </div>
+                                        <div class="col-4 mt-3 text-center">
+                                            <button class="btn-primary  modal-button"><i class="fa fa-clone"></i> </button>
+                                            <button class="btn-primary  modal-button"><i class="fa fa-clone"></i> </button>
+                                            <button class="btn-primary  modal-button"><i class="fa fa-clone"></i> </button>
+                                        </div>
+
+                                    </div>
                                 </div>
-                                <div class="row bg-light" >
 
-                                    <div class="col-4">
-                                        <p>Opacity: </p>
-                                    </div>
-                                    <div class="col-4 text-center">
-                                        <h6 class="text-primary">75&percnt; </h6>
-                                    </div>
-                                    <div class="col-4 mt-2 text-center">
-                                        <button class="btn-primary  modal-button"><i class="fa fa-minus"></i> </button>
-                                        <button class="btn-primary  modal-button"><i class="fa fa-plus"></i> </button>
-                                        <button class="btn-secondary text-muted ml-2  modal-button"><i class="fa fa-undo text-white"></i> </button>
-                                    </div>
-
-                                </div>
-                                <div class="row bg-white" >
-
-                                    <div class="col-4">
-                                        <p>Blur Radius: </p>
-                                    </div>
-                                    <div class="col-4 text-center">
-                                        <h6 class="text-primary">25px </h6>
-                                    </div>
-                                    <div class="col-4 mt-2 text-center">
-                                        <button class="btn-primary  modal-button"><i class="fa fa-minus"></i> </button>
-                                        <button class="btn-primary  modal-button"><i class="fa fa-plus"></i> </button>
-                                        <button class="btn-secondary text-muted ml-2  modal-button"><i class="fa fa-undo text-white"></i> </button>
-                                    </div>
-
-                                </div>
-                                <div class="row bg-light" >
-
-                                    <div class="col-4">
-                                        <p>Offset: </p>
-                                    </div>
-                                    <div class="col-4 text-center">
-                                        <h6 class="text-primary">-50, +50 </h6>
-                                    </div>
-                                    <div class="col-4 mt-3 text-center">
-                                        <button class="btn-primary  modal-button"><i class="fa fa-clone"></i> </button>
-                                        <button class="btn-primary  modal-button"><i class="fa fa-clone"></i> </button>
-                                        <button class="btn-primary  modal-button"><i class="fa fa-clone"></i> </button>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <div class="row bg-white mt-3" id="modalreflectionbtn">
-                                <div class="col-10">
-                                    <h5><button class="bg-white"><i class="fa fa-square-o bg-white text-white"></i> </button><span class="ml-2">Reflection</span></h5>
-                                </div>
-                                <div class="col-2">
-                                    <button class="btn-white text-muted"><i class="fa fa-cog text-secondary"></i> </button>
-                                </div>
-                            </div>
-                            <div id="modalreflectionbtnshow" style="display: none">
-                                <div class="row bg-white mt-2" id="modalreflectionbtnhide">
+                                <div class="row bg-white mt-3" id="modalreflectionbtn">
                                     <div class="col-10">
                                         <h5><button class="bg-white"><i class="fa fa-square-o bg-white text-white"></i> </button><span class="ml-2">Reflection</span></h5>
                                     </div>
@@ -1769,49 +772,49 @@
                                         <button class="btn-white text-muted"><i class="fa fa-cog text-secondary"></i> </button>
                                     </div>
                                 </div>
-                                <div class="row bg-light" >
+                                <div id="modalreflectionbtnshow" style="display: none">
+                                    <div class="row bg-white mt-2" id="modalreflectionbtnhide">
+                                        <div class="col-10">
+                                            <h5><button class="bg-white"><i class="fa fa-square-o bg-white text-white"></i> </button><span class="ml-2">Reflection</span></h5>
+                                        </div>
+                                        <div class="col-2">
+                                            <button class="btn-white text-muted"><i class="fa fa-cog text-secondary"></i> </button>
+                                        </div>
+                                    </div>
+                                    <div class="row bg-light" >
 
-                                    <div class="col-4">
-                                        <p>Opacity: </p>
+                                        <div class="col-4">
+                                            <p>Opacity: </p>
+                                        </div>
+                                        <div class="col-4 text-center">
+                                            <h6 class="text-primary">50&percnt; </h6>
+                                        </div>
+                                        <div class="col-4 mt-2 text-center">
+                                            <button class="btn-primary  modal-button"><i class="fa fa-minus"></i> </button>
+                                            <button class="btn-primary  modal-button"><i class="fa fa-plus"></i> </button>
+                                            <button class="btn-secondary text-muted ml-2  modal-button"><i class="fa fa-undo text-white"></i> </button>
+                                        </div>
+
                                     </div>
-                                    <div class="col-4 text-center">
-                                        <h6 class="text-primary">50&percnt; </h6>
+                                    <div class="row bg-white" >
+
+                                        <div class="col-4">
+                                            <p>Height: </p>
+                                        </div>
+                                        <div class="col-4 text-center">
+                                            <h6 class="text-primary">200px </h6>
+                                        </div>
+                                        <div class="col-4 mt-2 text-center">
+                                            <button class="btn-primary  modal-button"><i class="fa fa-minus"></i> </button>
+                                            <button class="btn-primary  modal-button"><i class="fa fa-plus"></i> </button>
+                                            <button class="btn-secondary text-muted ml-2  modal-button"><i class="fa fa-undo text-white"></i> </button>
+                                        </div>
+
                                     </div>
-                                    <div class="col-4 mt-2 text-center">
-                                        <button class="btn-primary  modal-button"><i class="fa fa-minus"></i> </button>
-                                        <button class="btn-primary  modal-button"><i class="fa fa-plus"></i> </button>
-                                        <button class="btn-secondary text-muted ml-2  modal-button"><i class="fa fa-undo text-white"></i> </button>
-                                    </div>
+
 
                                 </div>
-                                <div class="row bg-white" >
-
-                                    <div class="col-4">
-                                        <p>Height: </p>
-                                    </div>
-                                    <div class="col-4 text-center">
-                                        <h6 class="text-primary">200px </h6>
-                                    </div>
-                                    <div class="col-4 mt-2 text-center">
-                                        <button class="btn-primary  modal-button"><i class="fa fa-minus"></i> </button>
-                                        <button class="btn-primary  modal-button"><i class="fa fa-plus"></i> </button>
-                                        <button class="btn-secondary text-muted ml-2  modal-button"><i class="fa fa-undo text-white"></i> </button>
-                                    </div>
-
-                                </div>
-
-
-                            </div>
-                            <div class="row bg-white mt-3" id="modalcastshadowbtn">
-                                <div class="col-10">
-                                    <h5><button class="bg-white"><i class="fa fa-square-o bg-white text-white"></i> </button><span class="ml-2">Cast Shadow</span></h5>
-                                </div>
-                                <div class="col-2">
-                                    <button class="btn-white text-muted"><i class="fa fa-cog text-secondary"></i> </button>
-                                </div>
-                            </div>
-                            <div id="modalcastshadowbtnshow" style="display: none">
-                                <div class="row bg-white mt-2" id="modalcastshadowbtnhide">
+                                <div class="row bg-white mt-3" id="modalcastshadowbtn">
                                     <div class="col-10">
                                         <h5><button class="bg-white"><i class="fa fa-square-o bg-white text-white"></i> </button><span class="ml-2">Cast Shadow</span></h5>
                                     </div>
@@ -1819,131 +822,142 @@
                                         <button class="btn-white text-muted"><i class="fa fa-cog text-secondary"></i> </button>
                                     </div>
                                 </div>
-                                <div class="row bg-light" >
+                                <div id="modalcastshadowbtnshow" style="display: none">
+                                    <div class="row bg-white mt-2" id="modalcastshadowbtnhide">
+                                        <div class="col-10">
+                                            <h5><button class="bg-white"><i class="fa fa-square-o bg-white text-white"></i> </button><span class="ml-2">Cast Shadow</span></h5>
+                                        </div>
+                                        <div class="col-2">
+                                            <button class="btn-white text-muted"><i class="fa fa-cog text-secondary"></i> </button>
+                                        </div>
+                                    </div>
+                                    <div class="row bg-light" >
 
-                                    <div class="col-4">
-                                        <p>Opacity: </p>
+                                        <div class="col-4">
+                                            <p>Opacity: </p>
+                                        </div>
+                                        <div class="col-4 text-center">
+                                            <h6 class="text-primary">25&percnt; </h6>
+                                        </div>
+                                        <div class="col-4 mt-2 text-center">
+                                            <button class="btn-primary  modal-button"><i class="fa fa-minus"></i> </button>
+                                            <button class="btn-primary  modal-button"><i class="fa fa-plus"></i> </button>
+                                            <button class="btn-secondary text-muted ml-2  modal-button"><i class="fa fa-undo text-white"></i> </button>
+                                        </div>
+
                                     </div>
-                                    <div class="col-4 text-center">
-                                        <h6 class="text-primary">25&percnt; </h6>
+                                    <div class="row bg-white" >
+
+                                        <div class="col-4">
+                                            <p>Opacity Scale: </p>
+                                        </div>
+                                        <div class="col-4 text-center">
+                                            <h6 class="text-primary">50&percnt; </h6>
+                                        </div>
+                                        <div class="col-4 mt-2 text-center">
+                                            <button class="btn-primary  modal-button"><i class="fa fa-minus"></i> </button>
+                                            <button class="btn-primary  modal-button"><i class="fa fa-plus"></i> </button>
+                                            <button class="btn-secondary text-muted ml-2  modal-button"><i class="fa fa-undo text-white"></i> </button>
+                                        </div>
+
                                     </div>
-                                    <div class="col-4 mt-2 text-center">
-                                        <button class="btn-primary  modal-button"><i class="fa fa-minus"></i> </button>
-                                        <button class="btn-primary  modal-button"><i class="fa fa-plus"></i> </button>
-                                        <button class="btn-secondary text-muted ml-2  modal-button"><i class="fa fa-undo text-white"></i> </button>
+                                    <div class="row bg-light" >
+
+                                        <div class="col-4">
+                                            <p>Blur Radius: </p>
+                                        </div>
+                                        <div class="col-4 text-center">
+                                            <h6 class="text-primary">10px </h6>
+                                        </div>
+                                        <div class="col-4 mt-2 text-center">
+                                            <button class="btn-primary  modal-button"><i class="fa fa-minus"></i> </button>
+                                            <button class="btn-primary  modal-button"><i class="fa fa-plus"></i> </button>
+                                            <button class="btn-secondary text-muted ml-2  modal-button"><i class="fa fa-undo text-white"></i> </button>
+                                        </div>
+
+                                    </div>
+                                    <div class="row bg-white" >
+
+                                        <div class="col-4">
+                                            <p>Blur Scale: </p>
+                                        </div>
+                                        <div class="col-4 text-center">
+                                            <h6 class="text-primary">400&percnt; </h6>
+                                        </div>
+                                        <div class="col-4 mt-2 text-center">
+                                            <button class="btn-primary  modal-button"><i class="fa fa-minus"></i> </button>
+                                            <button class="btn-primary  modal-button"><i class="fa fa-plus"></i> </button>
+                                            <button class="btn-secondary text-muted ml-2  modal-button"><i class="fa fa-undo text-white"></i> </button>
+                                        </div>
+
                                     </div>
 
                                 </div>
-                                <div class="row bg-white" >
 
+
+                                <div class="row bg-light mt-2 mb-0">
                                     <div class="col-4">
-                                        <p>Opacity Scale: </p>
+                                        <button class="bg-white modal-button-bottom">Preview </button>
                                     </div>
-                                    <div class="col-4 text-center">
-                                        <h6 class="text-primary">50&percnt; </h6>
+                                    <div class="col-8 text-right">
+                                        <button class="bg-white modal-button-bottom">Reset </button>
+                                        <button class="bg-primary modal-button-bottom ml-3 text-white w-25 " data-dismiss="modal">Ok </button>
                                     </div>
-                                    <div class="col-4 mt-2 text-center">
-                                        <button class="btn-primary  modal-button"><i class="fa fa-minus"></i> </button>
-                                        <button class="btn-primary  modal-button"><i class="fa fa-plus"></i> </button>
-                                        <button class="btn-secondary text-muted ml-2  modal-button"><i class="fa fa-undo text-white"></i> </button>
-                                    </div>
-
-                                </div>
-                                <div class="row bg-light" >
-
-                                    <div class="col-4">
-                                        <p>Blur Radius: </p>
-                                    </div>
-                                    <div class="col-4 text-center">
-                                        <h6 class="text-primary">10px </h6>
-                                    </div>
-                                    <div class="col-4 mt-2 text-center">
-                                        <button class="btn-primary  modal-button"><i class="fa fa-minus"></i> </button>
-                                        <button class="btn-primary  modal-button"><i class="fa fa-plus"></i> </button>
-                                        <button class="btn-secondary text-muted ml-2  modal-button"><i class="fa fa-undo text-white"></i> </button>
-                                    </div>
-
-                                </div>
-                                <div class="row bg-white" >
-
-                                    <div class="col-4">
-                                        <p>Blur Scale: </p>
-                                    </div>
-                                    <div class="col-4 text-center">
-                                        <h6 class="text-primary">400&percnt; </h6>
-                                    </div>
-                                    <div class="col-4 mt-2 text-center">
-                                        <button class="btn-primary  modal-button"><i class="fa fa-minus"></i> </button>
-                                        <button class="btn-primary  modal-button"><i class="fa fa-plus"></i> </button>
-                                        <button class="btn-secondary text-muted ml-2  modal-button"><i class="fa fa-undo text-white"></i> </button>
-                                    </div>
-
                                 </div>
 
                             </div>
-
-
-                            <div class="row bg-light mt-2 mb-0">
-                                <div class="col-4">
-                                    <button class="bg-white modal-button-bottom">Preview </button>
-                                </div>
-                                <div class="col-8 text-right">
-                                    <button class="bg-white modal-button-bottom">Reset </button>
-                                    <button class="bg-primary modal-button-bottom ml-3 text-white w-25 " data-dismiss="modal">Ok </button>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!--EndShadowModal-->
+        <!--EndModals-->
+
+
+        <nav class="navbar navbar-expand-md bg-white fixed-bottom" id="bottomnav">
+            <ul class="navbar-nav m-2">
+                <li class="nav-item">
+                    <button type="button" class="text-white bg-white" id="bottomsettingbtn" data-toggle="tooltip" data-placement="bottom" title="Application Preferences"><i class="fa fa-cog text-dark"></i></button>
+                    <button type="button" class="text-white bg-white" id="shopingbtn" data-toggle="tooltip" data-placement="bottom" title="eCommerce"><i class="fa fa-shopping-cart text-dark"></i></button>
+                </li>
+                <li class="nav-item " id="bottombutton"><a class="text-center text-dark text-capitalize"><span>Brush:</span><button class="btn-rounded btn-primary" id="sizebtn" data-toggle="tooltip" data-placement="bottom" title="Brush Size">20px</button> </a>
+
+                </li>
+                <li class="nav-item" id="background">
+                    <a  class="text-center text-dark text-capitalize"><span>Background:</span> <i class="fa fa-palette text-dark" id="bckrndbtn"></i> </a>
+                </li>
+                <li class="nav-item">
+                    <button type="button" class="text-white bg-light" id="colorbtn" data-target="#colormodal" data-toggle="modal" ><i class="fa fa-adjust text-dark"></i><span data-toggle="tooltip modal" data-placement="bottom" title="Open Color Editor" class="text-capitalize text-dark">Color</span></button>
+                </li>
+                <li class="nav-item">
+                    <button type="button" class="text-white bg-light" id="cropbtn" data-target="#cropmodal" data-toggle="modal"><i class="fa fa-crop text-dark"></i><span class="text-capitalize text-dark" data-toggle="tooltip modal" data-placement="bottom" title="Open Crop Editor">Crop</span></button>
+                </li>
+                <li class="nav-item">
+                    <button type="button" class="text-white bg-light" id="shadowsbtn" data-target="#shadowmodal" data-toggle="modal"><i class="fa fa-clone text-dark"></i><span class="text-capitalize text-dark" data-toggle="tooltip modal" data-placement="bottom" title="Open Shadows Editor">Shadows</span></button>
+                </li>
+                <li class="nav-item " id="bottomedgebutton"><a class="text-center text-dark text-capitalize"><span>Edges:</span><button class="btn-rounded btn-primary" id="edgebtn" data-toggle="tooltip modal" data-placement="bottom" title="Refine Edges: Smoothing, Feathering, Offset">1 , 1, 0</button> </a>
+                    <button class="btn-rounded btn-primary" id="reviewbtn" data-toggle="tooltip modal" data-placement="bottom" title="Review">Review</button>
+                </li>
+            </ul>
+
+        </nav>
+
     </div>
 
-    <!--EndShadowModal-->
-<!--EndModals-->
-
-
-<nav class="navbar navbar-expand-md bg-white fixed-bottom" id="bottomnav">
-        <ul class="navbar-nav m-2">
-        <li class="nav-item">
-            <button type="button" class="text-white bg-white" id="bottomsettingbtn" data-toggle="tooltip" data-placement="bottom" title="Application Preferences"><i class="fa fa-cog text-dark"></i></button>
-            <button type="button" class="text-white bg-white" id="shopingbtn" data-toggle="tooltip" data-placement="bottom" title="eCommerce"><i class="fa fa-shopping-cart text-dark"></i></button>
-        </li>
-            <li class="nav-item " id="bottombutton"><a class="text-center text-dark text-capitalize"><span>Brush:</span><button class="btn-rounded btn-primary" id="sizebtn" data-toggle="tooltip" data-placement="bottom" title="Brush Size">20px</button> </a>
-
-            </li>
-            <li class="nav-item" id="background">
-                <a  class="text-center text-dark text-capitalize"><span>Background:</span> <i class="fa fa-palette text-dark" id="bckrndbtn"></i> </a>
-            </li>
-            <li class="nav-item">
-                <button type="button" class="text-white bg-light" id="colorbtn" data-target="#colormodal" data-toggle="modal" ><i class="fa fa-adjust text-dark"></i><span data-toggle="tooltip modal" data-placement="bottom" title="Open Color Editor" class="text-capitalize text-dark">Color</span></button>
-            </li>
-            <li class="nav-item">
-                <button type="button" class="text-white bg-light" id="cropbtn" data-target="#cropmodal" data-toggle="modal"><i class="fa fa-crop text-dark"></i><span class="text-capitalize text-dark" data-toggle="tooltip modal" data-placement="bottom" title="Open Crop Editor">Crop</span></button>
-            </li>
-            <li class="nav-item">
-                <button type="button" class="text-white bg-light" id="shadowsbtn" data-target="#shadowmodal" data-toggle="modal"><i class="fa fa-clone text-dark"></i><span class="text-capitalize text-dark" data-toggle="tooltip modal" data-placement="bottom" title="Open Shadows Editor">Shadows</span></button>
-            </li>
-            <li class="nav-item " id="bottomedgebutton"><a class="text-center text-dark text-capitalize"><span>Edges:</span><button class="btn-rounded btn-primary" id="edgebtn" data-toggle="tooltip modal" data-placement="bottom" title="Refine Edges: Smoothing, Feathering, Offset">1 , 1, 0</button> </a>
-                <button class="btn-rounded btn-primary" id="reviewbtn" data-toggle="tooltip modal" data-placement="bottom" title="Review">Review</button>
-            </li>
-        </ul>
-
-    </nav>
-
-</div>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/3.6.2/fabric.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script type="text/javascript" src="add.js"></script>
+
 <script>
     $(document).ready(function () {
-    // $("#bottomsettingbtn").click(function () {
-    //     if($("#setting").hide()) {
-    //         $("#setting").show();
-    //         $("#topnav").hide();
-    //         $("#leftcanvas").hide();
-    //         $("#bottomnav").hide();
-    //     }
-    // });
+    
         $("#shopingbtn").click(function () {
             if($("#ecommercediv").hide()) {
                 $("#ecommercediv").show();
@@ -2374,11 +1388,5 @@
         });
     });
 </script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </html>
