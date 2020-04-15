@@ -8,8 +8,7 @@ let canvas = new fabric.Canvas('leftcanvas',{
     backgroundColor: '#d3d3d3',
     isDrawingMode : false,
     height:650,
-    width:650
-    
+    width:650 
 });
 let canvas2 = new fabric.Canvas('rightcanvas',{
     backgroundColor: '#d3d3d3',
@@ -23,7 +22,6 @@ socket.addEventListener('open', function (event) {
 socket.addEventListener('close', function (event) {
     console.log('Connection is closed');
 });
-
 socket.addEventListener('message', function (event) {
     console.log('Message from server ', event.data);
 });
@@ -32,7 +30,6 @@ let imageUpload = function () {
     console.log(photo);
     const file = photo;
     const reader = new FileReader();
-
     reader.addEventListener("load", function () {
         console.log(reader.result)
         url = reader.result;
@@ -43,14 +40,11 @@ let imageUpload = function () {
         fabric.Image.fromURL(url, function(oImg) {
             resizeImg(oImg)
             canvas.add(oImg);
-
             });
     }, false);
-
     if (file) {
         reader.readAsDataURL(file);
     }
-    
 }
 let addgreen = () => {
     canvas.set("isDrawingMode", true);
@@ -80,7 +74,6 @@ let resizeImg = (img) => {
             scaleX:scaleElementX
         });
     }
-    
 }
 let onObjectAdded  = (event) => {
     const addedObject = event.target;
@@ -177,7 +170,6 @@ canvas.on('object:added', onObjectAdded);
 //     var zoom = canvas.getZoom();
 //     console.log(opt.e.clientX)
 //     console.log(opt.e.clientY)
-
 //     zoom = zoom + delta/350;
 //     if (zoom > 20) zoom = 20;
 //     if (zoom < 0.01) zoom = 0.01;
@@ -186,7 +178,6 @@ canvas.on('object:added', onObjectAdded);
 //     opt.e.preventDefault();
 //     //opt.e.stopPropagation();
 //   })
-
 $('#imgUploaded').change(imageUpload);
 $("#plusbtn").click(addgreen);
 $("#minusbtn").click(addred);
