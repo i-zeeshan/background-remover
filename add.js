@@ -53,17 +53,13 @@ let imageUpload = function () {
     
 }
 let addgreen = () => {
-    
-    console.log(document.getElementById("sizebtn").innerHTML)
     canvas.set("isDrawingMode", true);
     canvas.freeDrawingBrush.color = "#00ff00";
 }
 let addred = () => {
-    console.log(document.getElementById("sizebtn").innerHTML)
     canvas.set("isDrawingMode", true);
     canvas.freeDrawingBrush.color = "#ff0000";
 }
-
 let dis = (state0, state1) => {
     return(Math.pow(Math.pow(state0[0]-state1[0], 2)+Math.pow(state0[1]-state1[1], 2), 1/2))
 }
@@ -86,7 +82,6 @@ let resizeImg = (img) => {
     }
     
 }
-
 let onObjectAdded  = (event) => {
     const addedObject = event.target;
     
@@ -99,11 +94,10 @@ let onObjectAdded  = (event) => {
         imageObj = addedObject;
         addedObject.set({
             "selectable": false
-        });
-        
+        }); 
     }
 }
-mouseDownBefore = (evt) => {
+let mouseDownBefore = (evt) => {
     if(canvas.freeDrawingBrush.width < 5){
         canvas.freeDrawingBrush.width =20;
     }
@@ -123,7 +117,7 @@ mouseDownBefore = (evt) => {
         canvas.freeDrawingBrush.width = 40;
     }
 }
-mouseDown = (opt) => {
+let mouseDown = (opt) => {
     if(canvas.isDrawingMode){
         drawingState = true;
     }
@@ -138,14 +132,11 @@ mouseDown = (opt) => {
         else if (canvas.freeDrawingBrush.color === "#ff0000"){
             msg = {"event": "b", "data": {"x": Math.round(opt.e.clientX/imageObj.scaleX), "y": Math.round(opt.e.clientY/imageObj.scaleY)}};
             socket.send(JSON.stringify(msg));
-        }
-        
+        }  
     }
-    
 }
-mouseMove = (opt) => {
+let mouseMove = (opt) => {
     if(drawingState){
-        
         if(dis(pastState, [Math.round(opt.e.clientX/imageObj.scaleX), Math.round(opt.e.clientY/imageObj.scaleY)])>10){
             console.log(opt.e.clientX);
             console.log(opt.e.clientY);
@@ -161,7 +152,7 @@ mouseMove = (opt) => {
         }
     }
 }
-mouseUp = (opt) => {
+let mouseUp = (opt) => {
     if(drawingState){
         console.log(opt.e.clientX);
         console.log(opt.e.clientY);
@@ -176,7 +167,6 @@ mouseUp = (opt) => {
     }
     drawingState = false;
 }
-
 canvas.on('mouse:down:before',mouseDownBefore)
 canvas.on('mouse:down', mouseDown)
 canvas.on('mouse:move', mouseMove)
