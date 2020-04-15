@@ -1,6 +1,4 @@
 const socket = new WebSocket('ws://192.168.100.120:8080');
-let scaleElementX = 1;
-let scaleElementY = 1;
 let imageObj = null;
 let drawingState = false;
 let pastState = [0, 0];
@@ -70,7 +68,8 @@ dis = (state0, state1) => {
     return(Math.pow(Math.pow(state0[0]-state1[0], 2)+Math.pow(state0[1]-state1[1], 2), 1/2))
 }
 resizeImg = (img) => {
-    
+    let scaleElementX = 1;
+    let scaleElementY = 1;
     if(img.width > img.height){
         scaleElementY = canvas.width/img.width;
         img.set({
@@ -88,7 +87,7 @@ resizeImg = (img) => {
     
 }
 
-onObjectAdded  = function (event) {
+onObjectAdded  = (event) => {
     const addedObject = event.target;
     
     if (addedObject.type == "path"){
