@@ -98,7 +98,6 @@ onObjectAdded  = (event) => {
     else if(addedObject.type == "image"){
         imageObj = addedObject;
         addedObject.set({
-            // "selectable": true,
             "selectable": false
         });
         
