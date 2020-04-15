@@ -1,22 +1,35 @@
+const socket = new WebSocket('ws://192.168.100.120:8080');
+let scaleElementX = 1;
+let scaleElementY = 1;
+let imageObj = null;
+let drawingState = false;
+let pastState = [0, 0];
+let photo = null;
+let url = null;
 let canvas = new fabric.Canvas('leftcanvas',{
     backgroundColor: '#d3d3d3',
     isDrawingMode : false,
+    height:650,
+    width:650
     
 });
 let canvas2 = new fabric.Canvas('rightcanvas',{
     backgroundColor: '#d3d3d3',
     isDrawingMode : false,
-    
+    height:650,
+    width:650 
 });
-canvas2.setHeight(650);
-canvas2.setWidth(649);
+socket.addEventListener('open', function (event) {
+    console.log("Connection is open")
+});
+socket.addEventListener('close', function (event) {
+    console.log('Connection is closed');
+});
 
-drawingState = false;
-pastState = [0, 0];
-let photo = null;
-let url = null;
-
-$('#imgUploaded').change(function () {
+socket.addEventListener('message', function (event) {
+    console.log('Message from server ', event.data);
+});
+let imageUpload = function () {
     photo = this.files[0];
     console.log(photo);
     const file = photo;
@@ -25,8 +38,14 @@ $('#imgUploaded').change(function () {
     reader.addEventListener("load", function () {
         console.log(reader.result)
         url = reader.result;
-        fabric.Image.fromURL(reader.result, function(oImg) {
+        if(socket.readyState === WebSocket.OPEN){
+            msg = {"event": "image", "data": url}
+            socket.send(JSON.stringify(msg))
+        }
+        fabric.Image.fromURL(url, function(oImg) {
+            resizeImg(oImg)
             canvas.add(oImg);
+
             });
     }, false);
 
@@ -34,36 +53,43 @@ $('#imgUploaded').change(function () {
         reader.readAsDataURL(file);
     }
     
-});
-const socket = new WebSocket('ws://192.168.100.120:5678');
-
-// Connection opened
-socket.addEventListener('open', function (event) {
-    // socket.send('Connection is open');
-    console.log("Connection is open")
-});
-socket.addEventListener('close', function (event) {
-    console.log('Connection is closed');
-});
-
-// Listen for messages
-socket.addEventListener('message', function (event) {
-    console.log('Message from server ', event.data);
-});
+}
+let addgreen = () => {
+    
+    console.log(document.getElementById("sizebtn").innerHTML)
+    canvas.set("isDrawingMode", true);
+    canvas.freeDrawingBrush.color = "#00ff00";
+}
+let addred = () => {
+    console.log(document.getElementById("sizebtn").innerHTML)
+    canvas.set("isDrawingMode", true);
+    canvas.freeDrawingBrush.color = "#ff0000";
+}
 
 dis = (state0, state1) => {
     return(Math.pow(Math.pow(state0[0]-state1[0], 2)+Math.pow(state0[1]-state1[1], 2), 1/2))
 }
-
-
-
+resizeImg = (img) => {
+    
+    if(img.width > img.height){
+        scaleElementY = canvas.width/img.width;
+        img.set({
+            scaleY:scaleElementY,
+            scaleX:scaleElementY
+        });
+    }
+    else{
+        scaleElementX = canvas.height/img.height;
+        img.set({
+            scaleY:scaleElementX,
+            scaleX:scaleElementX
+        });
+    }
+    
+}
 
 onObjectAdded  = function (event) {
     const addedObject = event.target;
-    //const objectIndex = canvas.getObjects().length - 1;
-    //if (canvas.isDrawingMode) {
-        //const customVariables = {"subType": "free-drawing"};
-        //addedObject.customVariables = customVariables;
     
     if (addedObject.type == "path"){
         addedObject.set({
@@ -71,28 +97,15 @@ onObjectAdded  = function (event) {
         });
     }
     else if(addedObject.type == "image"){
+        imageObj = addedObject;
         addedObject.set({
             // "selectable": true,
             "selectable": false
-
         });
-        if(socket.readyState === WebSocket.OPEN){
-            msg = {"event": "image", "data": url}
-            // print(JSON.stringify(msg))
-            // socket.send(JSON.parse(JSON.stringify(msg)));
-            socket.send(JSON.stringify(msg))
-        }
         
-        // addedObject.center();
-
-        
-        // if(socket.readyState === WebSocket.OPEN){
-        //     msg = {event: "image", data: base64String}
-        //     socket.send(msg);
-        // }
     }
     return false;
-    //}
+    
 }
 mouseDownBefore = (evt) => {
     if(canvas.freeDrawingBrush.width < 5){
@@ -113,22 +126,21 @@ mouseDownBefore = (evt) => {
     else if(document.getElementById("sizebtn").innerHTML === "40px"){
         canvas.freeDrawingBrush.width = 40;
     }
-    // if()
 }
 mouseDown = (opt) => {
     if(canvas.isDrawingMode){
         drawingState = true;
     }
     if(drawingState){
-        pastState = [opt.e.clientX, opt.e.clientY]
+        pastState = [Math.round(opt.e.clientX/imageObj.scaleX), Math.round(opt.e.clientY/imageObj.scaleY)]
         console.log(opt.e.clientX);
         console.log(opt.e.clientY);
         if (canvas.freeDrawingBrush.color === "#00ff00"){
-            msg = {"event": "f", "data": {"x": opt.e.clientX, "y": opt.e.clientY}};
+            msg = {"event": "f", "data": {"x": Math.round(opt.e.clientX/imageObj.scaleX), "y": Math.round(opt.e.clientY/imageObj.scaleY)}};
             socket.send(JSON.stringify(msg));
         }
         else if (canvas.freeDrawingBrush.color === "#ff0000"){
-            msg = {"event": "b", "data": {"x": opt.e.clientX, "y": opt.e.clientY}};
+            msg = {"event": "b", "data": {"x": Math.round(opt.e.clientX/imageObj.scaleX), "y": Math.round(opt.e.clientY/imageObj.scaleY)}};
             socket.send(JSON.stringify(msg));
         }
         
@@ -136,47 +148,44 @@ mouseDown = (opt) => {
     
 }
 mouseMove = (opt) => {
-    // console.log(canvas.isDrawingMode)
     if(drawingState){
         
-        if(dis(pastState, [opt.e.clientX, opt.e.clientY])>10){
+        if(dis(pastState, [Math.round(opt.e.clientX/imageObj.scaleX), Math.round(opt.e.clientY/imageObj.scaleY)])>10){
             console.log(opt.e.clientX);
             console.log(opt.e.clientY);
             if (canvas.freeDrawingBrush.color === "#00ff00"){
-                msg = {"event": "f", "data": {"x": opt.e.clientX, "y": opt.e.clientY}};
+                msg = {"event": "f", "data": {"x": Math.round(opt.e.clientX/imageObj.scaleX), "y": Math.round(opt.e.clientY/imageObj.scaleY)}};
                 socket.send(JSON.stringify(msg));
             }
             else if (canvas.freeDrawingBrush.color === "#ff0000"){
-                msg = {"event": "b", "data": {"x": opt.e.clientX, "y": opt.e.clientY}};
+                msg = {"event": "b", "data": {"x": Math.round(opt.e.clientX/imageObj.scaleX), "y": Math.round(opt.e.clientY/imageObj.scaleY)}};
                 socket.send(JSON.stringify(msg));
             }
             pastState = [opt.e.clientX, opt.e.clientY];
         }
-        
-        
     }
-
 }
 mouseUp = (opt) => {
     if(drawingState){
         console.log(opt.e.clientX);
         console.log(opt.e.clientY);
         if (canvas.freeDrawingBrush.color === "#00ff00"){
-            msg = {"event": "f", "data": {"x": opt.e.clientX, "y": opt.e.clientY}};
+            msg = {"event": "f", "data": {"x": Math.round(opt.e.clientX/imageObj.scaleX), "y": Math.round(opt.e.clientY/imageObj.scaleY)}};
             socket.send(JSON.stringify(msg));
         }
         else if (canvas.freeDrawingBrush.color === "#ff0000"){
-            msg = {"event": "b", "data": {"x": opt.e.clientX, "y": opt.e.clientY}};
+            msg = {"event": "b", "data": {"x": Math.round(opt.e.clientX/imageObj.scaleX), "y": Math.round(opt.e.clientY/imageObj.scaleY)}};
             socket.send(JSON.stringify(msg));
         }
-        
     }
     drawingState = false;
 }
+
 canvas.on('mouse:down:before',mouseDownBefore)
 canvas.on('mouse:down', mouseDown)
 canvas.on('mouse:move', mouseMove)
 canvas.on('mouse:up', mouseUp)
+canvas.on('object:added', onObjectAdded);
 // canvas.on('mouse:wheel', function(opt) {
 //     var delta = opt.e.deltaY;
 //     var zoom = canvas.getZoom();
@@ -192,137 +201,8 @@ canvas.on('mouse:up', mouseUp)
 //     //opt.e.stopPropagation();
 //   })
 
-// img = new fabric.Image.fromURL('http://fabricjs.com/assets/pug_small.jpg', function (img) {
-//     // let c = document.createElement('canvas');
-    
-//     // width = img.width * img.scaleX, 
-//     // height = img.height * img.scaleY
-//     // c.height = img.naturalHeight;
-//     // c.width = img.naturalWidth;
-//     // var ctx = c.getContext('2d');
-//     // let imageObj = new Image();
-//     // imageObj.src = 'http://fabricjs.com/assets/pug_small.jpg';
-//     // imageObj.onload = function() {
-//     //     ctx.drawImage(imageObj, 0, 0);
-//     //     // let base64String = c.toDataURL();
-//     //     // console.log({event: base64String})
-//     //     console.log(imageObj);
-//     // };
-    
-    
-    
-//     /*var scalex = canvas.width/img.width;
-//     var scaley = canvas.height/img.height;
-//     var scale;
-//     if (scalex > 1){
-//         scale = scaley;
-//     }
-//     else{
-//         scale = scalex;
-//     }*/
-    
-// //     img.on('mousedown',function(options) {
-        
-// //         /*var object = new fabric.Circle({
-// //             radius: 15,
-// //             fill: 'blue',
-// //             left: 100,
-// //             top: 100,
-// //             clientX: options.e.clientX,
-// //             clientY: options.e.clientY
-// //         });
-// //         object.set({ hasControls: false, hasBorders: false, selectable: false })
-// //         canvas.add(object);
-// //         console.log(options.e.clientX, options.e.clientY)});*/
-// //     //canvas.freeDrawingBrush.color = '#00ff00';
-// //     //canvas.freeDrawingBrush.width = 15;
-// // });
-// //     img.on('mousemove',function(options) {
-// //         /*var object = new fabric.Circle({
-// //             radius: 15,
-// //             fill: 'blue',
-// //             left: 100,
-// //             top: 100,
-// //             clientX: options.e.clientX,
-// //             clientY: options.e.clientY
-// //         });
-// //         canvas.add(object);
-// //     console.log(options.e.clientX, options.e.clientY)*/
-// //     var color = document.getElementById("favcolor").value;
-// //     console.log(color);
-// //     canvas.freeDrawingBrush.color = color;
-// //     canvas.freeDrawingBrush.width = 15;
-// //     /*var i;
-// //     var len = canvas.getObjects().length;
-// //     for (i = 0; i < len; i++) {
-// //         if(canvas.getObjects()[i].type == "path"){
-// //             canvas.getObjects()[i].selectable = false;
-// //         }
-// //     }*/
-// //     // isDrawingMode : false,
-// //     // canvas.freeDrawingBrush.selectable = false;
-// //     // canvas.freeDrawingBrush.hasControls = false;
-// //     // canvas.freeDrawingBrush.hasBorders = false;
-// //     // canvas.freeDrawingBrush.lockMovementX = true;
-// //     // canvas.freeDrawingBrush.lockMovementY = true;
-    
-// //     canvas.renderAll();
-// // });
-//     //var oImg;
-
-
-//   // Centers object vertically and horizontally on canvas to which is was added last
-//     //oImg = img.set({ hasControls: false, hasBorders: false, selectable: true });
-//     // img.centerH();
-//     // img.centerV();
-//     canvas.add(img);
-
-// });
-
-canvas.on('object:added', onObjectAdded);
-// img;
-canvas.setHeight(650);
-canvas.setWidth(649);
-canvas.renderAll();
-
-$("#dra").click(function(){
-    canvas.set("isDrawingMode", true);
-    
-}   
-);
-var addgreen = () => {
-    
-    console.log(document.getElementById("sizebtn").innerHTML)
-    canvas.set("isDrawingMode", true);
-    canvas.freeDrawingBrush.color = "#00ff00";
-    
-    
-    
-}
-let addred = () => {
-    console.log(document.getElementById("sizebtn").innerHTML)
-    canvas.set("isDrawingMode", true);
-    canvas.freeDrawingBrush.color = "#ff0000";
-    if(canvas.freeDrawingBrush.width < 5){
-        canvas.freeDrawingBrush.width =20;
-    }
-}
-// let readval = () => {
-//     console.log(this.value);
-// }
+$('#imgUploaded').change(imageUpload);
 $("#plusbtn").click(addgreen);
 $("#minusbtn").click(addred);
-// $("#sizebtn").click(readval)
 
-
-
-/*var canvas1 = new fabric.Canvas('d');
-canvas1.setHeight(750);
-canvas1.setWidth(490);
-canvas1.renderAll();
-fabric.Image.fromURL('http://fabricjs.com/assets/pug_small.jpg', function(myImg) {
-    var oImg;
-    oImg = myImg.set({ hasControls: false, hasBorders: false, selectable: false });
-    canvas1.add(oImg);
-})*/
 
