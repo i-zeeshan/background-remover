@@ -64,10 +64,10 @@ let addred = () => {
     canvas.freeDrawingBrush.color = "#ff0000";
 }
 
-dis = (state0, state1) => {
+let dis = (state0, state1) => {
     return(Math.pow(Math.pow(state0[0]-state1[0], 2)+Math.pow(state0[1]-state1[1], 2), 1/2))
 }
-resizeImg = (img) => {
+let resizeImg = (img) => {
     let scaleElementX = 1;
     let scaleElementY = 1;
     if(img.width > img.height){
@@ -87,7 +87,7 @@ resizeImg = (img) => {
     
 }
 
-onObjectAdded  = (event) => {
+let onObjectAdded  = (event) => {
     const addedObject = event.target;
     
     if (addedObject.type == "path"){
