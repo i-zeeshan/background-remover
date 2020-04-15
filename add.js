@@ -78,12 +78,12 @@ let resizeImg = (img) => {
 let onObjectAdded  = (event) => {
     const addedObject = event.target;
     
-    if (addedObject.type == "path"){
+    if (addedObject.type === "path"){
         addedObject.set({
             "selectable": false
         });
     }
-    else if(addedObject.type == "image"){
+    else if(addedObject.type === "image"){
         imageObj = addedObject;
         addedObject.set({
             "selectable": false
@@ -152,10 +152,12 @@ let mouseUp = (opt) => {
         if (canvas.freeDrawingBrush.color === "#00ff00"){
             msg = {"event": "f", "data": {"x": Math.round(opt.e.clientX/imageObj.scaleX), "y": Math.round(opt.e.clientY/imageObj.scaleY)}};
             socket.send(JSON.stringify(msg));
+            socket.send(JSON.stringify({"event": "register"}))
         }
         else if (canvas.freeDrawingBrush.color === "#ff0000"){
             msg = {"event": "b", "data": {"x": Math.round(opt.e.clientX/imageObj.scaleX), "y": Math.round(opt.e.clientY/imageObj.scaleY)}};
             socket.send(JSON.stringify(msg));
+            socket.send(JSON.stringify({"event": "register"}))
         }
     }
     drawingState = false;
