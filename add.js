@@ -102,8 +102,6 @@ onObjectAdded  = (event) => {
         });
         
     }
-    return false;
-    
 }
 mouseDownBefore = (evt) => {
     if(canvas.freeDrawingBrush.width < 5){
